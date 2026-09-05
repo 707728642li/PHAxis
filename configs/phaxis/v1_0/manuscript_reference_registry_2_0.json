@@ -1,0 +1,216 @@
+{
+  "schema_version": "PHAxis-manuscript-reference-registry-2.0",
+  "product": "PHAxis",
+  "product_version": "1.0.0",
+  "checked_date": "2026-08-31",
+  "status": "current_biology_forward_primary_source_registry",
+  "citation_style": "numbered_by_first_appearance",
+  "journal_reference_limit": 20,
+  "manuscript": "docs/phaxis/PHAXIS_MANUSCRIPT_MASTER_DRAFT_20260830.md",
+  "legacy_registry_policy": "configs/rhpheno_plant_phenomics_reference_registry_v1.json is frozen RHAxis provenance and is not PHAxis authority",
+  "references": [
+    {
+      "number": 1,
+      "id": "du_2025_mild_heat_rhd6",
+      "title": "Root Hair Development Is Suppressed by Long-Term Mild Heat Through Down-Regulation of RHD6 and RHD6-like Genes",
+      "container": "Plant, Cell & Environment",
+      "year": 2025,
+      "doi": "10.1111/pce.15563",
+      "primary_url": "https://doi.org/10.1111/pce.15563",
+      "role": "RHD6-linked long-term mild-heat biology"
+    },
+    {
+      "number": 2,
+      "id": "lee_2002_root_epidermal_pattern",
+      "title": "Cell Pattern in the Arabidopsis Root Epidermis Determined by Lateral Inhibition with Feedback",
+      "container": "The Plant Cell",
+      "year": 2002,
+      "doi": "10.1105/tpc.010434",
+      "primary_url": "https://doi.org/10.1105/tpc.010434",
+      "role": "positional epidermal fate and the WER-CPC-GL2 framework"
+    },
+    {
+      "number": 3,
+      "id": "masucci_1994_rhd6_initiation",
+      "title": "The rhd6 mutation of Arabidopsis thaliana alters root-hair initiation through an auxin- and ethylene-associated process",
+      "container": "Plant Physiology",
+      "year": 1994,
+      "doi": "10.1104/pp.106.4.1335",
+      "primary_url": "https://doi.org/10.1104/pp.106.4.1335",
+      "role": "RHD6-linked root-hair initiation"
+    },
+    {
+      "number": 4,
+      "id": "pires_2013_ancient_root_hair_grn",
+      "title": "Recruitment and Remodeling of an Ancient Gene Regulatory Network During Land Plant Evolution",
+      "container": "Proceedings of the National Academy of Sciences",
+      "year": 2013,
+      "doi": "10.1073/pnas.1305457110",
+      "primary_url": "https://doi.org/10.1073/pnas.1305457110",
+      "role": "RHD6-RSL hierarchy separating visible formation from elongation programs"
+    },
+    {
+      "number": 5,
+      "id": "yi_2010_bhlh_root_hair_growth",
+      "title": "A basic helix–loop–helix transcription factor controls cell growth and size in root hairs",
+      "container": "Nature Genetics",
+      "year": 2010,
+      "doi": "10.1038/ng.529",
+      "primary_url": "https://doi.org/10.1038/ng.529",
+      "role": "RHD6-RSL developmental biology"
+    },
+    {
+      "number": 6,
+      "id": "datta_2015_rsl4_pulse",
+      "title": "Intensity of a pulse of RSL4 transcription factor synthesis determines Arabidopsis root hair cell size",
+      "container": "Nature Plants",
+      "year": 2015,
+      "doi": "10.1038/nplants.2015.138",
+      "primary_url": "https://doi.org/10.1038/nplants.2015.138",
+      "role": "separation of regulatory pulse and hair size"
+    },
+    {
+      "number": 7,
+      "id": "ma_2001_phosphorus_density",
+      "title": "Regulation of root hair density by phosphorus availability in Arabidopsis thaliana",
+      "container": "Plant, Cell & Environment",
+      "year": 2001,
+      "doi": "10.1046/j.1365-3040.2001.00695.x",
+      "primary_url": "https://doi.org/10.1046/j.1365-3040.2001.00695.x",
+      "role": "environmental regulation of root-hair density"
+    },
+    {
+      "number": 8,
+      "id": "stetter_2015_root_hair_diversity",
+      "title": "Uncovering genes and ploidy involved in the high diversity in root hair density, length and response to local scarce phosphate in Arabidopsis thaliana",
+      "container": "PLOS ONE",
+      "year": 2015,
+      "doi": "10.1371/journal.pone.0120604",
+      "primary_url": "https://doi.org/10.1371/journal.pone.0120604",
+      "role": "genetic and environmental root-hair trait diversity"
+    },
+    {
+      "number": 9,
+      "id": "bahamonde_2026_boron_rhd6_rsl4",
+      "title": "Auxin-Dependent Activation of RHD6-RSL4 Cascade Promotes Root Hair Growth Under Boron Deficiency in Arabidopsis Primary Root Apices",
+      "container": "Plant, Cell & Environment",
+      "year": 2026,
+      "doi": "10.1111/pce.70601",
+      "primary_url": "https://doi.org/10.1111/pce.70601",
+      "role": "developmental-zone displacement and fixed distal-window interpretation"
+    },
+    {
+      "number": 10,
+      "id": "yang_2026_phr1_rsl2",
+      "title": "The PHR1–RSL2 Module Regulates Root Hair Elongation Induced by Phosphate Deficiency",
+      "container": "The Plant Journal",
+      "year": 2026,
+      "doi": "10.1111/tpj.71068",
+      "primary_url": "https://doi.org/10.1111/tpj.71068",
+      "role": "RSL2-linked elongation and cell-wall remodeling"
+    },
+    {
+      "number": 11,
+      "id": "guichard_2019_root_hair_sizer",
+      "title": "Root Hair Sizer: an algorithm for high throughput recovery of different root hair and root developmental parameters",
+      "container": "Plant Methods",
+      "year": 2019,
+      "doi": "10.1186/s13007-019-0483-z",
+      "primary_url": "https://doi.org/10.1186/s13007-019-0483-z",
+      "role": "profile-based root-hair and root phenotyping"
+    },
+    {
+      "number": 12,
+      "id": "pietrzyk_2025_dirt_mu",
+      "title": "DIRT/µ: automated extraction of root-hair traits using combinatorial optimization",
+      "container": "Journal of Experimental Botany",
+      "year": 2025,
+      "doi": "10.1093/jxb/erae385",
+      "primary_url": "https://doi.org/10.1093/jxb/erae385",
+      "role": "individual curved-hair reconstruction"
+    },
+    {
+      "number": 13,
+      "id": "tsang_2026_pyroothair",
+      "title": "pyRootHair: Machine learning accelerated software for high-throughput phenotyping of plant root hair traits",
+      "container": "GigaScience",
+      "year": 2026,
+      "doi": "10.1093/gigascience/giaf141",
+      "primary_url": "https://doi.org/10.1093/gigascience/giaf141",
+      "role": "high-throughput root-hair profile phenotyping; literature comparison only"
+    },
+    {
+      "number": 14,
+      "id": "themistokleous_2026_root_hair_area_finder",
+      "title": "RootHairAreaFinder: an image processing method for quantifying barley root growth and root hairs simultaneously in a flat rhizotron system",
+      "container": "Plant Methods",
+      "year": 2026,
+      "doi": "10.1186/s13007-026-01564-z",
+      "primary_url": "https://doi.org/10.1186/s13007-026-01564-z",
+      "role": "joint projected root and root-hair area phenotyping"
+    },
+    {
+      "number": 15,
+      "id": "berrigan_2024_root_pose",
+      "title": "Fast and Efficient Root Phenotyping via Pose Estimation",
+      "container": "Plant Phenomics",
+      "year": 2024,
+      "doi": "10.34133/plantphenomics.0175",
+      "primary_url": "https://doi.org/10.34133/plantphenomics.0175",
+      "role": "root topology representation linked to validated traits and plant-facing use cases"
+    },
+    {
+      "number": 16,
+      "id": "shoaib_2025_algorithmic_root_traits",
+      "title": "Seeing the unseen: A novel approach to extract latent plant root traits from digital images",
+      "container": "Plant Phenomics",
+      "year": 2025,
+      "doi": "10.1016/j.plaphe.2025.100088",
+      "primary_url": "https://doi.org/10.1016/j.plaphe.2025.100088",
+      "role": "interpretable algorithm-derived root traits linked to biological discrimination"
+    },
+    {
+      "number": 17,
+      "id": "walsh_2021_dome",
+      "title": "DOME: recommendations for supervised machine learning validation in biology",
+      "container": "Nature Methods",
+      "year": 2021,
+      "doi": "10.1038/s41592-021-01205-4",
+      "primary_url": "https://doi.org/10.1038/s41592-021-01205-4",
+      "role": "training-development-application evidence boundaries"
+    },
+    {
+      "number": 18,
+      "id": "shit_2021_cldice",
+      "title": "clDice—A Novel Topology-Preserving Loss Function for Tubular Structure Segmentation",
+      "container": "CVPR 2021",
+      "year": 2021,
+      "doi": "10.1109/CVPR46437.2021.01629",
+      "primary_url": "https://doi.org/10.1109/CVPR46437.2021.01629",
+      "role": "topology-preserving line supervision"
+    },
+    {
+      "number": 19,
+      "id": "hurlbert_1984_pseudoreplication",
+      "title": "Pseudoreplication and the Design of Ecological Field Experiments",
+      "container": "Ecological Monographs",
+      "year": 1984,
+      "doi": "10.2307/1942661",
+      "primary_url": "https://doi.org/10.2307/1942661",
+      "role": "biological replication and analysis-unit interpretation"
+    },
+    {
+      "number": 20,
+      "id": "phaxis_1_0_0_release",
+      "title": "PHAxis 1.0.0 software and data release",
+      "container": "Versioned software and data archive",
+      "year": 2026,
+      "doi": null,
+      "primary_url": null,
+      "doi_authority_token": "PHAXIS_RELEASE_DOI",
+      "status": "pending_human_release_authority",
+      "role": "citable PHAxis software and data release"
+    }
+  ],
+  "reference_story_authority": "docs/phaxis/PHAXIS_REFERENCE_STORY_RECONCILIATION_20260830.md"
+}

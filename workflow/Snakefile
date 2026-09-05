@@ -1,0 +1,9 @@
+# Run with: snakemake --snakefile workflow/Snakefile --cores 1
+rule all:
+    input: "demo-results/report.html"
+
+rule demo:
+    output: "demo-results/report.html"
+    threads: 1
+    resources: mem_mb=512
+    shell: "phaxis demo --output demo-results"

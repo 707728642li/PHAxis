@@ -1,0 +1,1722 @@
+{
+  "schema_version": "PHAxis-local-source-inventory-1.0",
+  "formal_release_authority": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 471,
+      "sha256": "f0a2e9fe2c82771f94f11879f7a29e1d6ff562e40debf4c75feb18c7ed1a4eff"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "bytes": 129,
+      "sha256": "1f700c6441479ee70b5e4406e1b4e0f69fe114defc6dd3e6c3388d7ca511eaca"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "bytes": 205,
+      "sha256": "91972644e73d3876d6ab63b4dc9e34d8eeebfe287614967d828e5cb0b3b34359"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "bytes": 416,
+      "sha256": "38ad9cfd970a8092a9c4e757602d25ed5e656bdedf565d8d888f5f1e67022077"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "bytes": 223,
+      "sha256": "db4326e3df8c71d01fd156e607b928f4ee8f3a2497f8b4ec46d8c3cfdf64c712"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 185,
+      "sha256": "7857a9e1df3588184fc5bdeab740bcee55c9a7938c5c50beb013ac3056d99dd1"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1270,
+      "sha256": "b00ee53aa99d0862419d409a986d6a03b163377f12344e67bbd88c6477a0fca1"
+    },
+    {
+      "path": ".github/workflows/docs.yml",
+      "bytes": 564,
+      "sha256": "5e995c92c09ea3a58a012589b4c0e6a24c6ec9b78244484d651ccc0f8fa010de"
+    },
+    {
+      "path": ".github/workflows/pypi.yml",
+      "bytes": 920,
+      "sha256": "645d6d22e342024c3f973f065d8faeef8d256e472e10b68d3d7ffcb8b5fda0ff"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 612,
+      "sha256": "44914454c33fe60fbdf14fd649f58fdb2f22af11e69e2c7350d3f5d89680f753"
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "bytes": 427,
+      "sha256": "6bbf987e647f1c8f4bddf511bfe8f963f6fae67fd69e19cd1b770d6748377932"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 271,
+      "sha256": "94c799b43966aca71cf3dedec1e153082a84cb68c42a5d5bc012b88abb2201c6"
+    },
+    {
+      "path": "benchmarks/README.md",
+      "bytes": 289,
+      "sha256": "0c24c39a11a216d3eb9e59c046d0af5049f9401bc11c2aa31e32dbe7f4761a87"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 858,
+      "sha256": "463a9fafbe1024794e64e32471d82b3cfedbccbebcd954516a346608c67489ea"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 308,
+      "sha256": "570bc3ab731084c25d37b0822f91384c33a10dbfe9fb973677dbbcffbf111456"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "bytes": 475,
+      "sha256": "358059fb23a5701cf89de425c61423ee9d5050bad8c2f3a96f45b22ec3b0ac0b"
+    },
+    {
+      "path": "configs/phaxis/v1_0/axial_profile_analysis_contract.json",
+      "bytes": 1957,
+      "sha256": "2eb182a2cfe58237aadd9132f2a0cae7f5ffdcb0b1227aef038efdb69a62bedf"
+    },
+    {
+      "path": "configs/phaxis/v1_0/axial_profile_contract.json",
+      "bytes": 1060,
+      "sha256": "7dc256259b5ce829f0792f05e22f776000d66b271f7143e20ad271de20342116"
+    },
+    {
+      "path": "configs/phaxis/v1_0/biological_analysis_contract.json",
+      "bytes": 3855,
+      "sha256": "6f434d3bf4f057c430ae2c551119b26ec5dafacbc29bf6d6228dc7d068ceef1a"
+    },
+    {
+      "path": "configs/phaxis/v1_0/biological_model_spec.json",
+      "bytes": 7602,
+      "sha256": "4f2d536f75434b27931e1f0ec7cbb1e457befd3811cfd9dad178a895222b1c47"
+    },
+    {
+      "path": "configs/phaxis/v1_0/image_traits.schema.json",
+      "bytes": 13802,
+      "sha256": "e768272a93970cae051f277b83c0649eb5ca6e265b7d5d5545f094dda0b5be83"
+    },
+    {
+      "path": "configs/phaxis/v1_0/locked_qcdevelopment44_ids.txt",
+      "bytes": 440,
+      "sha256": "5be09bf1a9e2afef7e178aef230d77caf5655416a77274fab6e4be9e00c04798"
+    },
+    {
+      "path": "configs/phaxis/v1_0/manuscript_reference_registry.json",
+      "bytes": 8802,
+      "sha256": "4f94a878d7cdbaf34b919f5c247140991a5a88c51510b69259c69f05fe7d4eea"
+    },
+    {
+      "path": "configs/phaxis/v1_0/manuscript_reference_registry_2_0.json",
+      "bytes": 9149,
+      "sha256": "dfd268b8f8ebc3ef3ebab338529ff5c4ef71a4e9e151fdab6850676acfccecb3"
+    },
+    {
+      "path": "configs/phaxis/v1_0/model_contract.json",
+      "bytes": 37887,
+      "sha256": "5dce9ddfb28f01b32f6e725124454188fe5fdadef1f66d089eafce4b5b37d4f3"
+    },
+    {
+      "path": "configs/phaxis/v1_0/POST_TRAINING_HANDOVER_ATTESTATION_TEMPLATE.json",
+      "bytes": 1354,
+      "sha256": "74715a52cc36fc5d1cc9501ebf40e65622c01241544958a2c40af3bf014bf24f"
+    },
+    {
+      "path": "configs/phaxis/v1_0/POST_TRAINING_MANUSCRIPT_METADATA_TEMPLATE.json",
+      "bytes": 2667,
+      "sha256": "b42a82f6eba2ba92b293b015a23b8662b86ddbda8d7012092e85dee0a30f0f66"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_2.json",
+      "bytes": 14918,
+      "sha256": "ca985f5870b7fbdc8c3fbf09c68079f7d0a0fdac587d62749a93a8868530e082"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_3.json",
+      "bytes": 15133,
+      "sha256": "51f9cd4d16d75e67e6538e43be94ba9dd8949b851da1da596d582570b6779627"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_4.json",
+      "bytes": 15133,
+      "sha256": "418e443edf10f0c2df2431a14c640871ed11745a7caf64e13e88950cdfaf8506"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_5.json",
+      "bytes": 15155,
+      "sha256": "f969e173e9d9003fe1b31ee9b2bf3750375d31f12ece2a79d654ae9f2a13550d"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_6.json",
+      "bytes": 15155,
+      "sha256": "cbedf95f64b5ffa3e0a9632dc33129c8cc0f7937119f505a89dc5abddf78ebf8"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_7.json",
+      "bytes": 15155,
+      "sha256": "fe42bf6a7ad92325376dfc589269f7550e445c759224147795721c43623a7c95"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_8.json",
+      "bytes": 15155,
+      "sha256": "393172f73308e48f21510485e6cb742756158f642134b0ccb62b02869821e82b"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_assembly_config_1_9.json",
+      "bytes": 15153,
+      "sha256": "3e9fd1ceb2bde8552cd94bf57c5f0f8f5365d78e9b38838c1fb813196dd20a33"
+    },
+    {
+      "path": "configs/phaxis/v1_0/POST_TRAINING_RELEASE_AUTHOR_METADATA_TEMPLATE.json",
+      "bytes": 1835,
+      "sha256": "f9c72e8a91606a8f9d4bb536ec910b00f920f22ca66b656dffd477f66d8b2345"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_2.json",
+      "bytes": 142443,
+      "sha256": "6035eebd5bebb161ad10565187504af9615f08b78f48e05caf65c59bc3414dd3"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_3.json",
+      "bytes": 144066,
+      "sha256": "955184beb3a4207a3f245abfae7c1e52b2357ae932ff1e5591633fcf7da92bfb"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_4.json",
+      "bytes": 144066,
+      "sha256": "955184beb3a4207a3f245abfae7c1e52b2357ae932ff1e5591633fcf7da92bfb"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_5.json",
+      "bytes": 144049,
+      "sha256": "6dd91ed43d987b64eede0724cc2c4b6ccb235fe47f6f2af8b04044359f1e75d8"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_6.json",
+      "bytes": 143891,
+      "sha256": "e79bff8c37ce4e632f362782771ef12d894db238fdf960239e16a82af6e5b38f"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_7.json",
+      "bytes": 144720,
+      "sha256": "311a27501d6a77d103e7dd16bde37ad4a7811b2927fe9511eadb928fb87dd9d0"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_8.json",
+      "bytes": 145737,
+      "sha256": "4303648ddb0db1fd41e5dd36d3181527176a35baf70145d7b22712f617533a8e"
+    },
+    {
+      "path": "configs/phaxis/v1_0/post_training_release_stage_contract_1_9.json",
+      "bytes": 145737,
+      "sha256": "4303648ddb0db1fd41e5dd36d3181527176a35baf70145d7b22712f617533a8e"
+    },
+    {
+      "path": "configs/phaxis/v1_0/root_provider_contract.json",
+      "bytes": 2557,
+      "sha256": "d14ae1a059aae5b3283be8be67c8ac492b15bee9588fa1d5b0d3169de265b982"
+    },
+    {
+      "path": "configs/phaxis/v1_0/stageb_train399_training_config.json",
+      "bytes": 1024,
+      "sha256": "3b5ff24f24a5ad26dff57d4d10255a31469d8a1a24708daf3903f8144f71b2d7"
+    },
+    {
+      "path": "configs/phaxis/v1_0/trait_contract.json",
+      "bytes": 16844,
+      "sha256": "2a829c776c3b0df7dca98421530037e70ead881eebea4c0942775cca0a2fbb77"
+    },
+    {
+      "path": "containers/Apptainer.def",
+      "bytes": 171,
+      "sha256": "17453daef9a6ee7c333c8d4d2143dcb0bc9d667213225d3c5769c4ab3b56bfff"
+    },
+    {
+      "path": "containers/Dockerfile",
+      "bytes": 273,
+      "sha256": "d7cf4d149293eb8388b0c68680f1f39b0389b34de4f5995848445902a4604ae6"
+    },
+    {
+      "path": "containers/README.md",
+      "bytes": 527,
+      "sha256": "be58ea7a6d3632504febe46719ff4a8c54a408fa9d610238ba1b84624e1b9d94"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 735,
+      "sha256": "86f9329a21312930c55bf74c45a66843a68ff1ff86cd232191fe2156a23729d5"
+    },
+    {
+      "path": "DATA_CARD.md",
+      "bytes": 3077,
+      "sha256": "6ec8419b7b5de88a52250ef5f08149f9b4cdbe6391da03a36fec56866c580c3d"
+    },
+    {
+      "path": "docs/assets/brand/README.md",
+      "bytes": 338,
+      "sha256": "c8568dbc0e9263de57dfb38eb37db75ee980c017254cb32ba97bb1eb2495b8b5"
+    },
+    {
+      "path": "docs/assets/logo.svg",
+      "bytes": 584,
+      "sha256": "e783bc1ed3e3b14878949da2d3316ed4065cc85459a6a9075879e37cf3f6a99c"
+    },
+    {
+      "path": "docs/assets/report-preview.png",
+      "bytes": 225265,
+      "sha256": "7eb9669274cdfe18cea26cb40362f0858436545629f02bcc2d50e2c45b9826e6"
+    },
+    {
+      "path": "docs/assets/workflow.svg",
+      "bytes": 1652,
+      "sha256": "7c5ab7eabb90e4b35faa426f2f5f500d0fd09367eeeeb678ab8918dc56ae5bd4"
+    },
+    {
+      "path": "docs/changelog.md",
+      "bytes": 310,
+      "sha256": "05dd9e90756e691eb2863488074c2722c1db64ac5605bb50847dc1616610483b"
+    },
+    {
+      "path": "docs/citation.md",
+      "bytes": 324,
+      "sha256": "1b8494b219417e21903199d9a58c9e11ae82352b2d95bef05057bd9ec168a1e4"
+    },
+    {
+      "path": "docs/cli.md",
+      "bytes": 6404,
+      "sha256": "2779142062d00a78b8ceb8f33a32d3afc4396584e7e6ae6277fcde83e4ef8be1"
+    },
+    {
+      "path": "docs/example/provenance.json",
+      "bytes": 546,
+      "sha256": "d8f29de6a71bc8a9a1a07e5310d3f1198d0d32593b31cf582a56e795ae60294a"
+    },
+    {
+      "path": "docs/example/README_results.md",
+      "bytes": 318,
+      "sha256": "e649890c4166b9ad158e29ba352936798910e7f9cd401d640652fae3c36e7323"
+    },
+    {
+      "path": "docs/example/report.html",
+      "bytes": 20708,
+      "sha256": "42a93a566c986b3ed99e43178aaa08df03e67f295435c2a40cb0781a68f10c34"
+    },
+    {
+      "path": "docs/example/report_data.json",
+      "bytes": 17974,
+      "sha256": "0a5160c09a7dc25799f428ff6265f5bf4ffa5211afecf7e407622b8146a3dea4"
+    },
+    {
+      "path": "docs/example/tables/detailed_root_statistics.csv",
+      "bytes": 1044,
+      "sha256": "33cb09aaab4e813afa85db299d4e4fa54fda1ff42215f358a4727a47f3f57900"
+    },
+    {
+      "path": "docs/example/tables/hair_instances.csv",
+      "bytes": 1307,
+      "sha256": "4aa18293f4a54dff76b8f16435863de20a3d84038209cc4451ad7f401dce2dd0"
+    },
+    {
+      "path": "docs/example/tables/image_traits.csv",
+      "bytes": 2916,
+      "sha256": "6612d865c4b8995b9544f8f4a9aa04b79720e0bf07d9e4376c1d81c7487c616a"
+    },
+    {
+      "path": "docs/example/tables/traits.csv",
+      "bytes": 1266,
+      "sha256": "a35fd9e7f7817fe08209d95a0b2868ef0abab06c46ce0ec65cb94c3643938752"
+    },
+    {
+      "path": "docs/faq.md",
+      "bytes": 901,
+      "sha256": "aa92f89eefd18df8e58b6ac67f119b2e65907b8abaed7ae78a81aee54da4c92b"
+    },
+    {
+      "path": "docs/index.md",
+      "bytes": 725,
+      "sha256": "0aadf54ee48aa5d4f4a4d998bbd4445ee44b924ed6db5b686cf5157247c3a88a"
+    },
+    {
+      "path": "docs/inputs.md",
+      "bytes": 952,
+      "sha256": "610321b84c42d9478cdbe723db6a31d63c4cf15b0e2f720dc6f27c771200ed05"
+    },
+    {
+      "path": "docs/installation.md",
+      "bytes": 862,
+      "sha256": "b2a73eb1a827f86419653486f10015540091e7472c9aadafc84e467dc8eb06bb"
+    },
+    {
+      "path": "docs/local_environment.md",
+      "bytes": 764,
+      "sha256": "cc4f6c63b3064696e24ecf59ee45f6b8eb45eca4dc6ee2ac6a892367531b8609"
+    },
+    {
+      "path": "docs/methods.md",
+      "bytes": 1285,
+      "sha256": "715b50523e6ca60883699af190ba445452fc77f7fd094c5731a944e0c46bbeb7"
+    },
+    {
+      "path": "docs/outputs.md",
+      "bytes": 956,
+      "sha256": "b2555c4397e4b49e59ee8481dfff7224ea1b64f30ea095bc54de88d61bdd0fbf"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_BIOLOGICAL_ACQUISITION_METADATA_COMPLETION_CN_20260829.md",
+      "bytes": 6538,
+      "sha256": "325ac9d3fe37199db15337410ebf63f028105ae377096dcd0a1812d7ad87ec1d"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_GITHUB_PYPI_RELEASE_GUIDE_CN_20260828.md",
+      "bytes": 9711,
+      "sha256": "7b26990b5111fb9f9fe7585df7ebc8cecdcff0085cebba8cd78848729038e3d7"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_MANUSCRIPT_FIGURE_INPUT_CONTRACT_20260828.md",
+      "bytes": 23387,
+      "sha256": "69546148ff40aaa7350ad7676ef85ea159b267f56605822a6288bf4a12e6ecc8"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_MANUSCRIPT_REFERENCE_AUDIT_20260828.md",
+      "bytes": 11340,
+      "sha256": "57aa37fd78fd0c817a251e748829c6b97f81f277329a27f51f349571637bcf32"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_MANUSCRIPT_VALUES_COMPILER_CONTRACT_20260828.md",
+      "bytes": 25968,
+      "sha256": "53112cfcc844d43b43349ae0a15c46d04bb000c146f62156d2c9d1c161991e88"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_MEASUREMENT_ASSURANCE_CONTRACT_CN_20260829.md",
+      "bytes": 4452,
+      "sha256": "124bce4b37bbea01a47d5370bb16d45313e31ce7a25dcd84ccea666e980b4fc3"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_REUSE_HANDOVER_PACKAGE_CONTRACT_CN_20260828.md",
+      "bytes": 5799,
+      "sha256": "3f9747fbd0d7b6de51ea5079148940515612d4287a381ff0b64b340d758d75f6"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_ROOT_HAIR_BIOLOGICAL_METRIC_PROTOCOL_20260828.md",
+      "bytes": 5609,
+      "sha256": "257bf3719915639fbdb7f535967bafb289ea0bd895771d68c448dcccd842c0f2"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_SUBMISSION_DOCX_LAYOUT_QA_20260828.md",
+      "bytes": 5505,
+      "sha256": "e32950eca6afe05bf7ffb5492d31235f61b87c644936a81edd5c47ceb0c18445"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_SUPPLEMENTARY_DOCX_LAYOUT_QA_20260829.md",
+      "bytes": 4698,
+      "sha256": "7209b912feea857812adbd38b242ff3d4dfa5cc4666e7f1e7a2dce7eb745a2e0"
+    },
+    {
+      "path": "docs/phaxis/PHAXIS_VERSION_IDENTITY_POLICY_20260828.md",
+      "bytes": 4632,
+      "sha256": "cb2c596e460189e09a451b7b5e8bb441461aa69087d78af787709f8ba13a16dd"
+    },
+    {
+      "path": "docs/phaxis/TRAIT_CONTRACT_CN.md",
+      "bytes": 35720,
+      "sha256": "b076bf6ba6fe2da33e034df9fd82408b48d480c5cf23316c1382a6544b2e0450"
+    },
+    {
+      "path": "docs/phaxis/USER_GUIDE.md",
+      "bytes": 6379,
+      "sha256": "29e02528aab9cdd391f573206eae69276811771c386ac02fc20de9791bdca17f"
+    },
+    {
+      "path": "docs/releasing.md",
+      "bytes": 1532,
+      "sha256": "c4cab2c3684437f3869fb03db3961623cdd6c6da0806be8bbce8484214de9f54"
+    },
+    {
+      "path": "docs/STANDARDS_MATRIX_CN.md",
+      "bytes": 2733,
+      "sha256": "49e89b5945a440a706dd939054bef34120e32468624240fef64f5db0599d0d45"
+    },
+    {
+      "path": "docs/tutorial.md",
+      "bytes": 720,
+      "sha256": "a8d25df804cc7446bf9df69d3553f487d322a7188d63cc2c60bc6c25f0880d10"
+    },
+    {
+      "path": "evidence/biological_analysis_equivalence_audit.json",
+      "bytes": 35724,
+      "sha256": "469a8eb8608b2fc6b6497fada564a8cea30f155b7bd6acfa8393a76b3106fced"
+    },
+    {
+      "path": "evidence/evaluation_metric_parity_audit.json",
+      "bytes": 745,
+      "sha256": "110f214b97b7e5546729ed2f690ab897e17eea9d6d515c5d3935f9bdf00f90b5"
+    },
+    {
+      "path": "evidence/h11_raw_median_amendment_audit.json",
+      "bytes": 12803,
+      "sha256": "ad3f99b63c1abde847aff3b11e5663a8d05930e9a4f9540193f110999dce2dfb"
+    },
+    {
+      "path": "evidence/stageb_amp_backward_retry_amendment.json",
+      "bytes": 4147,
+      "sha256": "28ae6d346e6f7038f54395348f43ff74811d41b49e8ae3a9b96cdacc5f2a1ad2"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 239,
+      "sha256": "b0f31747fa3adba49549c87967c66ec5f4e4819ea6007ce1cbe85914586e70be"
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "bytes": 593,
+      "sha256": "42d9908b8b82a3dcce4939eee9cfd312ac5e09df1244e20bdd0db7db08cfd010"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 10120,
+      "sha256": "29f6bf2bd90a2e8ab6f01c805e4b28d47760597cea2f7474782221f3c283e594"
+    },
+    {
+      "path": "LOCAL_PREPARATION_STATUS.json",
+      "bytes": 764,
+      "sha256": "208042c5fe1f43883baad44952207e9d3e351af927ef45d26268f128af542427"
+    },
+    {
+      "path": "MANIFEST.in",
+      "bytes": 773,
+      "sha256": "58a885b1151cebe5f6ca48d35af2161f4c34f63d150c68126688761699ea8481"
+    },
+    {
+      "path": "mkdocs.yml",
+      "bytes": 653,
+      "sha256": "c6aeb7e5ca1fbe1d92ab2385615bd1ded7eedba9b9a7649e347d243aa3749052"
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "bytes": 4160,
+      "sha256": "8318f3dc56a19169958372c644ec0dee314da449bbc5d143cd791733cd9dfc2e"
+    },
+    {
+      "path": "mypy.ini",
+      "bytes": 148,
+      "sha256": "0397dc8b041a6244f967de85b6f1e28901bfe7f061338413f44c063d1cce50b5"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 670,
+      "sha256": "b6a7ae199181bf731a1e8abdd0b5c86a23ffad1395e9e8d28bf291b0f9c99f33"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 2771,
+      "sha256": "2cd4d4975257a82f8771fc33c7898403f975f7cb379b4ba467286ddc5dd2221f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4261,
+      "sha256": "a8cf8e6502aaf3dd8c94b331127b9af9314a7f4bd6cc5c68fd28d3d149ffd4c6"
+    },
+    {
+      "path": "README_CN.md",
+      "bytes": 923,
+      "sha256": "1ddf8d52917f56f1a7d98a3277adaab3d9daceac0e3c331f497b9db3156d662b"
+    },
+    {
+      "path": "RELEASE_HUMAN_METADATA_TEMPLATE.json",
+      "bytes": 1835,
+      "sha256": "f9c72e8a91606a8f9d4bb536ec910b00f920f22ca66b656dffd477f66d8b2345"
+    },
+    {
+      "path": "ruff.toml",
+      "bytes": 86,
+      "sha256": "4084204c63256766ef7600c61cf75438f8c1fed19b371bb66fdbf99d7ea1a523"
+    },
+    {
+      "path": "SBOM.cdx.json",
+      "bytes": 10249,
+      "sha256": "5110c31bc36aa6fe31c2c51207a47d0edbf02f4c0c33f93015b5873944177040"
+    },
+    {
+      "path": "schemas/report.schema.json",
+      "bytes": 499,
+      "sha256": "542eddffa7e7bb170e3675970e0f4910f84467b7a95a765ca555e99dcea8c3be"
+    },
+    {
+      "path": "scripts/check_cpu.py",
+      "bytes": 846,
+      "sha256": "d020b73276f3e0afeb72209ff9ed21ec518f6d05f4c8a5b335fef1ce018cee4f"
+    },
+    {
+      "path": "scripts/check_links.py",
+      "bytes": 854,
+      "sha256": "a4ecb8f0534b58348d108600a2e61bc551228e1edc6b4b3833059953306292ec"
+    },
+    {
+      "path": "scripts/phaxis/analyze_biological_cohorts.py",
+      "bytes": 40039,
+      "sha256": "24ad3ca43736d22ae599d5cd45aa0d99b4c68898e0e2678ebb961b9f55005000"
+    },
+    {
+      "path": "scripts/phaxis/analyze_distal_axis_profiles.py",
+      "bytes": 1614,
+      "sha256": "545637c82fc48694375420cd1aeb40941d04be005af55d9b58e17f6656e0e030"
+    },
+    {
+      "path": "scripts/phaxis/assemble_handover_build_contract.py",
+      "bytes": 2364,
+      "sha256": "500231ee0bee453733ed1394dfcba8596ec96e24328c5eb61ab7bd1a6c57eca2"
+    },
+    {
+      "path": "scripts/phaxis/assemble_post_training_release_manifest.py",
+      "bytes": 4184,
+      "sha256": "0fc602c844f58e61ecc71af7fa3855a2fd5ee12c53280880e62d022af06d1880"
+    },
+    {
+      "path": "scripts/phaxis/audit_biological_analysis_equivalence.py",
+      "bytes": 15298,
+      "sha256": "1f9007ccbd73f1ea14b3dd42cb1e3f773260e1e09418943e4e421def4e397908"
+    },
+    {
+      "path": "scripts/phaxis/audit_root_provider_reference283.py",
+      "bytes": 1364,
+      "sha256": "8312e930f45fb6c1f12834bdaffa169342eb75267cf03bf55ca44db453af42ba"
+    },
+    {
+      "path": "scripts/phaxis/audit_stage22_h11_raw_median_amendment.py",
+      "bytes": 27644,
+      "sha256": "181f9d786a352625d4e425db6cb1a41051314b8f7e488fdf189ffd471a4abc7f"
+    },
+    {
+      "path": "scripts/phaxis/benchmark_full_workflow.py",
+      "bytes": 8464,
+      "sha256": "b90229e7d538d6844b2014b8a04575fd0129c8f1dcb76b01b7d79406d5be13c1"
+    },
+    {
+      "path": "scripts/phaxis/benchmark_stageb_shared_input.py",
+      "bytes": 25856,
+      "sha256": "2d762193af3cb8010a2b806c3e6bce00b80a2b78ea85fe121d2eed82a734a7be"
+    },
+    {
+      "path": "scripts/phaxis/build_analysis_workflow_manifest.py",
+      "bytes": 11627,
+      "sha256": "38e39639dc68d87bbdc052fc4573c34438d6bd222e947dc67d70b6aebf2e26ea"
+    },
+    {
+      "path": "scripts/phaxis/build_benchmark_artifact_inventory.py",
+      "bytes": 8016,
+      "sha256": "e1988390aaaf36fdadba5459fcd7064d251aa2b1d4ebab10aec1d30a21ff319b"
+    },
+    {
+      "path": "scripts/phaxis/build_biological_cohorts.py",
+      "bytes": 1892,
+      "sha256": "0059ff3aed712d2cabdc63ee470cb248c5bdeb606f6bfb722c75135b619cd2cf"
+    },
+    {
+      "path": "scripts/phaxis/build_clean_install_expected_identity.py",
+      "bytes": 30691,
+      "sha256": "e26d2501a58a94356d8b92753c6373549a303a26618c233c42e0e86f00afad8b"
+    },
+    {
+      "path": "scripts/phaxis/build_clean_install_sample_manifest.py",
+      "bytes": 21550,
+      "sha256": "bc2c3a5dc283c9f23d5639fa8e5b268f115d149c831dd1e7c1951ed1fc855121"
+    },
+    {
+      "path": "scripts/phaxis/build_clean_install_verification.py",
+      "bytes": 74412,
+      "sha256": "90a75d355a14a6ca63f3aa05362465a5f54e0700e0b7a5b610fe575b23a88534"
+    },
+    {
+      "path": "scripts/phaxis/build_condition_blinded_overlay_evidence.py",
+      "bytes": 52672,
+      "sha256": "0de167369488d7ead6ef35d7395310bdcd9d5d229a334b9ade2422d3281c6932"
+    },
+    {
+      "path": "scripts/phaxis/build_direct_benchmark_provider_descriptor.py",
+      "bytes": 7556,
+      "sha256": "eb8c0efcb0561134b3323bb49b0606ad38ba25f6444651deb0531d97795d6363"
+    },
+    {
+      "path": "scripts/phaxis/build_handover_benchmark_manifest.py",
+      "bytes": 2042,
+      "sha256": "09f40178215f6db38e759b7c7993dda402e30bf25ada5e187db13c59834b7343"
+    },
+    {
+      "path": "scripts/phaxis/build_handover_dataset_manifest.py",
+      "bytes": 2593,
+      "sha256": "30ea91a6af0cec44cf5c7004f5d9c3d13eb927684e9d061775acd87fb46450f8"
+    },
+    {
+      "path": "scripts/phaxis/build_handover_image_manifest.py",
+      "bytes": 2123,
+      "sha256": "5ef4567cc620b7ef256b33ac89328926d6e4ed6694acfdc9192c18a4355d743b"
+    },
+    {
+      "path": "scripts/phaxis/build_handover_model_asset_manifest.py",
+      "bytes": 3576,
+      "sha256": "b90fd1874e6884036cc3da69aa9f7e3d02bea6fe0f4b0e4496d43db7dc122ab0"
+    },
+    {
+      "path": "scripts/phaxis/build_handover_model_source_manifest.py",
+      "bytes": 2044,
+      "sha256": "cff9e8c311399f35f2d491538e71e14f0bb341c7f94f127cd6bbd5dfadb14d64"
+    },
+    {
+      "path": "scripts/phaxis/build_handover_package.py",
+      "bytes": 2109,
+      "sha256": "bab6b05bd9a5765fd4643c102fc7b5c36e644df547ee3f3eb7c234a25e432dc6"
+    },
+    {
+      "path": "scripts/phaxis/build_historical_oof443_publication_evidence.py",
+      "bytes": 11725,
+      "sha256": "1363b1b714addecddaad04cfb5f13324ea5bfca395e9bef96065587ae06cf55c"
+    },
+    {
+      "path": "scripts/phaxis/build_humancurated_inference_manifest.py",
+      "bytes": 6571,
+      "sha256": "9152990cd4312537f1bead13252ecbccda3b35daccad8263ad00945d9e08d6d0"
+    },
+    {
+      "path": "scripts/phaxis/build_manuscript_evidence_manifest.py",
+      "bytes": 67582,
+      "sha256": "dbe66e265da9806d8ef2c3f6e5d38ded738cce74add6f4000f54646a0d92e088"
+    },
+    {
+      "path": "scripts/phaxis/build_manuscript_values.py",
+      "bytes": 186362,
+      "sha256": "62819630cbc5ec9970764b9a5ba0000a7400985e923c37af08df98db8959d608"
+    },
+    {
+      "path": "scripts/phaxis/build_measurement_assurance_evidence.py",
+      "bytes": 128114,
+      "sha256": "5e16ad276c75bfc34e6ddd2dbdc410bb3a5524cd3750104a9cbee4efe90b9215"
+    },
+    {
+      "path": "scripts/phaxis/build_paper_first_release_evidence_graph.py",
+      "bytes": 14927,
+      "sha256": "92ff729b2510cec2fe68e492b3176c588b9eebb230538fcce7f73b9d9c024f3f"
+    },
+    {
+      "path": "scripts/phaxis/build_post_training_release_stage_contract.py",
+      "bytes": 63889,
+      "sha256": "f18cdde46d7f38701a6b01b45c766cfb68fe7230df1455dda6a1f16825ad1867"
+    },
+    {
+      "path": "scripts/phaxis/build_production_manifest.py",
+      "bytes": 6467,
+      "sha256": "5fb565d73b02ded5ff7c0afbfa65562165fe0e56b2d726b79d6ce417e6837699"
+    },
+    {
+      "path": "scripts/phaxis/build_publication_figure_inputs.py",
+      "bytes": 195964,
+      "sha256": "7ee1cc42bbd028b4d53a93195a3948f5d868bb6b749080951950f873932df78d"
+    },
+    {
+      "path": "scripts/phaxis/build_publication_figures.py",
+      "bytes": 263025,
+      "sha256": "08903a725dfa2123211d13c82514efd1bd2a819cf7727ad190967da928249959"
+    },
+    {
+      "path": "scripts/phaxis/build_qcdev44_root_provider_inputs.py",
+      "bytes": 15746,
+      "sha256": "00d66535c822067d3ec8938e59f3ea153e4968dd57d9ea94f8da929ea8683b45"
+    },
+    {
+      "path": "scripts/phaxis/build_release_case_prelocks.py",
+      "bytes": 8546,
+      "sha256": "0115e7bc692982af58ea4775093b575bf57456abfdd71b6ebea69cec59259f6d"
+    },
+    {
+      "path": "scripts/phaxis/build_release_distributions.py",
+      "bytes": 43017,
+      "sha256": "0f327414869d699f41502d6a6ed66bf06a15031b626b73788858a3635754642c"
+    },
+    {
+      "path": "scripts/phaxis/build_root_provider_bundle.py",
+      "bytes": 1364,
+      "sha256": "6c28ee014aae91e5d383b6545746561e71b1c3586cd11a08cfbd8ed7bc68bddc"
+    },
+    {
+      "path": "scripts/phaxis/build_root_provider_reference283.py",
+      "bytes": 1396,
+      "sha256": "ee7a12e3d45613ddad1f4fd9b72b782e2c996ff8c32c069d2eae98efb18915a5"
+    },
+    {
+      "path": "scripts/phaxis/build_source_release.py",
+      "bytes": 3329,
+      "sha256": "dd7439d725f0c23768fe4a012d8078c7bcc71bf5339d78c9c979c75059102677"
+    },
+    {
+      "path": "scripts/phaxis/build_stageb_train399_candidate_bundle.py",
+      "bytes": 2569,
+      "sha256": "baec4ce09f7b392a7ccf9cbbd42e390460c9d6d8b4f2f565b6e8d495b035dd01"
+    },
+    {
+      "path": "scripts/phaxis/build_stageb_train399_qcdev44_candidate_pool.py",
+      "bytes": 12965,
+      "sha256": "4cfb2966c64b215b6beeac96f13ab39a1ea70e5b1f868c7c4e64601d2cb64399"
+    },
+    {
+      "path": "scripts/phaxis/build_submission_docx.py",
+      "bytes": 70163,
+      "sha256": "639f0098b05910fe9119034a2fb3d6f9a369f347a4c201907af164d3e028027d"
+    },
+    {
+      "path": "scripts/phaxis/build_supplementary_docx.py",
+      "bytes": 28784,
+      "sha256": "69e5d054de80303ec4bfe40b39639d0735fc30dcbf785cc920f4851b3809788a"
+    },
+    {
+      "path": "scripts/phaxis/build_supplementary_table_data_bundle.py",
+      "bytes": 2629,
+      "sha256": "9c2a59a81ea221246505d367515f4388e47fc3fefe81baf9044a080d703669be"
+    },
+    {
+      "path": "scripts/phaxis/check_post_training_release_topology.py",
+      "bytes": 1457,
+      "sha256": "664c6ab953a66d66f3df5b83869decddb11e49bed73928fc560c6dd97a954dbc"
+    },
+    {
+      "path": "scripts/phaxis/compare_hair_experts_biological_presence.py",
+      "bytes": 10797,
+      "sha256": "443c9fdb67c9da1f671fcb58f0f3d719fd37aae678d10a8ef5f773ce9de1e98d"
+    },
+    {
+      "path": "scripts/phaxis/compile_manuscript.py",
+      "bytes": 21718,
+      "sha256": "3c1bcd10e4640cf4021e14613b57f6e14fb44777e5a47ea533c536ee358a285e"
+    },
+    {
+      "path": "scripts/phaxis/compile_supplementary_manuscript.py",
+      "bytes": 14318,
+      "sha256": "b270c9343f5a30633fa1d7d783053562ede5a4abda886b34b93ae8da32a22309"
+    },
+    {
+      "path": "scripts/phaxis/evaluate_stageb_train399_qcdev44.py",
+      "bytes": 35550,
+      "sha256": "6799a7e5bdbc2f94e89ae22b54816d1ec4a0cd619771fb4fdcbf15decacdc953"
+    },
+    {
+      "path": "scripts/phaxis/export_cohort_distal_axis_profiles.py",
+      "bytes": 1947,
+      "sha256": "30b66dc6d6ed77348549837282787f49518ed7a61df33d7db21cde7a84c6dcdd"
+    },
+    {
+      "path": "scripts/phaxis/export_distal_axis_profiles.py",
+      "bytes": 1760,
+      "sha256": "8da7831324be45db62409111a3b22eb52667511bc0d8bad327db41f45ad7b6e0"
+    },
+    {
+      "path": "scripts/phaxis/export_traits.py",
+      "bytes": 1228,
+      "sha256": "06ad0942390a4ebb9f68423804169a0ca60c5b657a2130a2e45285fddab9e164"
+    },
+    {
+      "path": "scripts/phaxis/handover_manifest_producers.py",
+      "bytes": 109800,
+      "sha256": "6f745c8c22c1e0e1d6cee429c2fdb4d158820f0ba4d8ff37b9bb29565d0a6edb"
+    },
+    {
+      "path": "scripts/phaxis/handover_package_common.py",
+      "bytes": 57630,
+      "sha256": "14d620690c0e36921e866f05effb712fb1b1a19b6d1f49a3f691cd06e8937965"
+    },
+    {
+      "path": "scripts/phaxis/materialize_figure1_geometry.py",
+      "bytes": 16062,
+      "sha256": "a195c944a6870cb12eb8142322827c30a638dbd023499c7f700452604e00fdd1"
+    },
+    {
+      "path": "scripts/phaxis/materialize_offline_dependencies.py",
+      "bytes": 27604,
+      "sha256": "95ae70ec753e99cd2548f9b01d3d845529f3f1a96c4bda48f641adbc0de2d9ad"
+    },
+    {
+      "path": "scripts/phaxis/materialize_verified_root_provider_bundle.py",
+      "bytes": 5195,
+      "sha256": "4a4acadfd327ab525e883424d43d9b4e461dcdafab0b15ea0c6d6efde6a35770"
+    },
+    {
+      "path": "scripts/phaxis/promote_model_contract.py",
+      "bytes": 62982,
+      "sha256": "7e5c0ad79883f1a3de7ab6f5a346f62522f93966f8bc0bf87f54d696370ea3ca"
+    },
+    {
+      "path": "scripts/phaxis/render_distal_axis_profile_figure.py",
+      "bytes": 11834,
+      "sha256": "4b62708981975168f6277d4fd8c3a841ddfb504d499806eaca037913814c7a1d"
+    },
+    {
+      "path": "scripts/phaxis/render_docx_with_word_com_windows.ps1",
+      "bytes": 4713,
+      "sha256": "c85ac1c48bd49a56d0972951a904780906ca60143e6787452e1db7e7d04b741f"
+    },
+    {
+      "path": "scripts/phaxis/render_manuscript_bundle.py",
+      "bytes": 14873,
+      "sha256": "a8a841d1411fad5032648c8214da088d970538797a55c6c8e81047ec5884987f"
+    },
+    {
+      "path": "scripts/phaxis/render_overlays.py",
+      "bytes": 5414,
+      "sha256": "8367d63d19525bf4fb26c11280b195a0a6536b7a00da587ec21782d13015126a"
+    },
+    {
+      "path": "scripts/phaxis/run_cli.py",
+      "bytes": 694,
+      "sha256": "8736f5583bf3207d8999d45fe2fe3b5ddabddbcd9c46f20a38dd58c150d557c2"
+    },
+    {
+      "path": "scripts/phaxis/run_external_direct_benchmark.py",
+      "bytes": 50407,
+      "sha256": "8b06107c2cccce920ee56d24c52d0fced3beb384ed90ded119b04c8a23b2d85e"
+    },
+    {
+      "path": "scripts/phaxis/run_post_training_release.py",
+      "bytes": 2629,
+      "sha256": "8a43c0da41b272473eccaed3ff6e861ce745a899b18c5be8228488d69c728f25"
+    },
+    {
+      "path": "scripts/phaxis/run_root_provider.py",
+      "bytes": 4268,
+      "sha256": "e1efca85bdadde5f7aa5087a7288b868e0f3f4378a665a79c8d02d5b8a9a627b"
+    },
+    {
+      "path": "scripts/phaxis/run_stageb_evaluation_inference.py",
+      "bytes": 16845,
+      "sha256": "3c29f2250892e854016203e9f1ea0db9954e07439d71f12803f2d4738aeddb14"
+    },
+    {
+      "path": "scripts/phaxis/run_stageb_inference.py",
+      "bytes": 14361,
+      "sha256": "7eb2498eeb2ce62320f394657c390b4ddf1209ba890133e5fec8c6d05da12d36"
+    },
+    {
+      "path": "scripts/phaxis/run_stageb_train399_gpu_queue.ps1",
+      "bytes": 50047,
+      "sha256": "f6f8fa16d86b2c93eaaf17bc19733d85e348832155a9607ba5e9d40e6b89a53c"
+    },
+    {
+      "path": "scripts/phaxis/select_stageb_train399_operating_point.py",
+      "bytes": 2190,
+      "sha256": "1327388ad78fef1899d6cdb37da66756361465d221010daa825d3945a6a008de"
+    },
+    {
+      "path": "scripts/phaxis/source_release_common.py",
+      "bytes": 227752,
+      "sha256": "c3dc925b0bc5f555eca4fee08254121340a0e900d568539d4aee9ca0c6e68f8c"
+    },
+    {
+      "path": "scripts/phaxis/train_stageb_train399.py",
+      "bytes": 8537,
+      "sha256": "6d68c8259a9c4fa0f0546ce0eededeb058269321370a59ce0c0a3615b7908941"
+    },
+    {
+      "path": "scripts/phaxis/validate_manuscript_visual_qa.py",
+      "bytes": 15744,
+      "sha256": "802078414ce6eaa1f48840535662b58bb71fb5eb206bf9946b49aa41990d3dba"
+    },
+    {
+      "path": "scripts/phaxis/verify_handover_package.py",
+      "bytes": 837,
+      "sha256": "18d3a286168dd29a7f0df925ff8c08714336f95ef805853f15aebae65cce7e4d"
+    },
+    {
+      "path": "scripts/phaxis/verify_manuscript_artifacts.py",
+      "bytes": 50906,
+      "sha256": "b140fa5e77a4f2cbe5c728ce18498f1cca913f0e0948d61007efb2e7cdb2b415"
+    },
+    {
+      "path": "scripts/phaxis/verify_root_provider_bundle.py",
+      "bytes": 635,
+      "sha256": "8d7147be8d1d9edfd33041aab937632e0491b97905c34f3bb42b7f419d74a2f2"
+    },
+    {
+      "path": "scripts/phaxis/verify_source_release.py",
+      "bytes": 1414,
+      "sha256": "4fb03008a9fd12f2c9f8e27b46a881563ed6073db7d9243b3f9b279c42e278f7"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 512,
+      "sha256": "92e9ec2d2478f834d52d82dae34e8010ecf71d68805c139e006dc3ad2d06e0ce"
+    },
+    {
+      "path": "src/phaxis/__init__.py",
+      "bytes": 716,
+      "sha256": "d3745b1223d8983ec31c9cd5260ae217fc11529172645e19d6763927b8b78078"
+    },
+    {
+      "path": "src/phaxis/__main__.py",
+      "bytes": 49,
+      "sha256": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7"
+    },
+    {
+      "path": "src/phaxis/_demo_fixture.py",
+      "bytes": 3820,
+      "sha256": "438bbe31884c37803d1fa34acff1206443e26061b48f2dfea8ca3fb286c26c8b"
+    },
+    {
+      "path": "src/phaxis/_toml_compat.py",
+      "bytes": 764,
+      "sha256": "53ef904db7a98fdf350a376754cebf012f34e60f1d82a3a71dfbdb1ffb99c5cf"
+    },
+    {
+      "path": "src/phaxis/_vendor/__init__.py",
+      "bytes": 300,
+      "sha256": "71d19332eb3549eb556b057c9a3c118a1840db86706b715afab10065025476f7"
+    },
+    {
+      "path": "src/phaxis/_vendor/tomli/__init__.py",
+      "bytes": 314,
+      "sha256": "6a1b438c6240d8cff0595bc6a73c78609b56c6b581c7aa84f861f9f946281020"
+    },
+    {
+      "path": "src/phaxis/_vendor/tomli/_parser.py",
+      "bytes": 25958,
+      "sha256": "b717804cb137cc7c99faeb215ed61fad9dcba08b3b273405d96d8a2f583024f8"
+    },
+    {
+      "path": "src/phaxis/_vendor/tomli/_re.py",
+      "bytes": 3396,
+      "sha256": "a12359fe294523a72112e434d58452a14c9d050affa2417f9927474e4166bfdd"
+    },
+    {
+      "path": "src/phaxis/_vendor/tomli/_types.py",
+      "bytes": 254,
+      "sha256": "f864c6d9552a929c7032ace654ee05ef26ca75d21b027b801d77e65907138b74"
+    },
+    {
+      "path": "src/phaxis/_vendor/tomli/LICENSE.txt",
+      "bytes": 1072,
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+    },
+    {
+      "path": "src/phaxis/_vendor/tomli/py.typed",
+      "bytes": 26,
+      "sha256": "f0f8f2675695a10a5156fb7bd66bafbaae6a13e8d315990af862c792175e6e67"
+    },
+    {
+      "path": "src/phaxis/axial_profile_analysis.py",
+      "bytes": 21985,
+      "sha256": "76d48cf283f489091d333476e3ec5740588d9cca0da9050966ca97b270672546"
+    },
+    {
+      "path": "src/phaxis/axial_profiles.py",
+      "bytes": 42788,
+      "sha256": "e185893d9efe24a7850e507e77be6bab4e0f154bd02c8fc7b62d4c1c84e844e6"
+    },
+    {
+      "path": "src/phaxis/benchmark.py",
+      "bytes": 69852,
+      "sha256": "6da7fe4e4b289730987f3a82897a34ee9cb4a43242da23e85ec80541aa3e3692"
+    },
+    {
+      "path": "src/phaxis/biological_analysis.py",
+      "bytes": 58916,
+      "sha256": "aaf237b03e360b7ba59e24a4dcd91449e08dfb5cc079f1d811dbe2b2bfdd1d75"
+    },
+    {
+      "path": "src/phaxis/biology.py",
+      "bytes": 34585,
+      "sha256": "837250b8e6a139f1f93d5bfea92cf59205c684c9ec6c95b4ce5dfb1225647339"
+    },
+    {
+      "path": "src/phaxis/cli.py",
+      "bytes": 25600,
+      "sha256": "668c9a1e67ecf85cb6766def16f524e3e11e75f821cf67060ed37ef68626cf8b"
+    },
+    {
+      "path": "src/phaxis/constants.py",
+      "bytes": 2482,
+      "sha256": "88d2b5d422933e2e9c1fbec2a6e0608fc64a7218e0246446b42109a794c26cd6"
+    },
+    {
+      "path": "src/phaxis/contracts.py",
+      "bytes": 12958,
+      "sha256": "c2ddebccab0dc8acce1b54547a28da7652a4375fc6c47cb90901db6a45ee5c87"
+    },
+    {
+      "path": "src/phaxis/errors.py",
+      "bytes": 232,
+      "sha256": "0d712325b27bfb983797e7b8d9cdd499d896d011dd853a291d037fdb66ab8ca9"
+    },
+    {
+      "path": "src/phaxis/evaluation_metrics.py",
+      "bytes": 26319,
+      "sha256": "0943f76d925a36cb6b6a84a01241e66cfff00182e9d0bf52017e4545b98eceba"
+    },
+    {
+      "path": "src/phaxis/fusion.py",
+      "bytes": 12031,
+      "sha256": "b7e51e225c3421bb996362a4d605d9cbd0856424deacd07db4eda755a5f8ecfc"
+    },
+    {
+      "path": "src/phaxis/hair_attachment_assurance.py",
+      "bytes": 27989,
+      "sha256": "142cf048e9f2606153dea8d0a049e801b5e6699f4e27af0a78f1aeecb1065a31"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/__init__.py",
+      "bytes": 338,
+      "sha256": "4560038b746832cfb37be45cd762f84536e3f121cf349f2d098ffdcee6fd4471"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/candidate_bundle.py",
+      "bytes": 71826,
+      "sha256": "d85f8ea0abd7f978fe089fb7026c739eecc22d367fb33b7dc187659ac811135b"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/candidate_pool_contract.py",
+      "bytes": 6034,
+      "sha256": "1e261e9a4f3239e85854cc6e64c2a77d2daf9f3ba9b41c9d52b85db3a1d7e1f6"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/canonical_ground_truth.py",
+      "bytes": 11055,
+      "sha256": "89f9ec2173c9973a73268828bbc1aa38d784ca7410819833115668148ad0bd6e"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/decode.py",
+      "bytes": 8530,
+      "sha256": "86a7dae822172c5de606de5e221004a007614c29a762bf508a8c4d438f24162c"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/evaluation_inference.py",
+      "bytes": 27418,
+      "sha256": "77320c32b8e85c9478486ba64106bff0dda08266084a451873df43451e65b4a8"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/model.py",
+      "bytes": 6871,
+      "sha256": "95fdae081826fcc739808db7d30ebc840f161969b247df9087128e358a93cb6a"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/preprocess.py",
+      "bytes": 2308,
+      "sha256": "8c918710b4801d22ff6b4b25bf719690200630307a8912d2435f804fe2697e14"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/runtime.py",
+      "bytes": 36831,
+      "sha256": "23088e9ad14fed8001c8c2b5804d758b852f4ee0b18968642698eb17fb3f4f96"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/selection.py",
+      "bytes": 54851,
+      "sha256": "b7ae0b428f6f238a90363f7631d191fe1e61ab155b8bb2f2b6e7891142009204"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/serialization.py",
+      "bytes": 6056,
+      "sha256": "077774214e325c51a0235f0a7634b457762b6f191d0a9f96427bf51fdba0256a"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/threshold_selection.py",
+      "bytes": 10970,
+      "sha256": "84229560573670609e885fa2be44908046b33ef419250492a3b14cd07ae83c27"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/training.py",
+      "bytes": 56141,
+      "sha256": "4ca3765ffb58ee2e5e69afdeddb32db667f210cf297df8e5941ea1091d8fc0c3"
+    },
+    {
+      "path": "src/phaxis/hair_stageb/training_data.py",
+      "bytes": 53310,
+      "sha256": "488ee66f6473380f9ef05e65891bef337d3c302216e24474fb7d84fd5f1d8252"
+    },
+    {
+      "path": "src/phaxis/io.py",
+      "bytes": 1939,
+      "sha256": "e661275df60ebf52261e90470631dfb2cccb4ab2f250d1a75532a81cb3b769d7"
+    },
+    {
+      "path": "src/phaxis/local_demo.py",
+      "bytes": 4255,
+      "sha256": "79210d658220a36d27646b67322cc4b77972ea97ba24a341d2f44f141d29ad65"
+    },
+    {
+      "path": "src/phaxis/manuscript_contract.py",
+      "bytes": 4169,
+      "sha256": "216ec4f8bce2bd83e694fadad3134866d45bce5aa511bfb8a19bf4f6e3da7386"
+    },
+    {
+      "path": "src/phaxis/manuscript_values.py",
+      "bytes": 84924,
+      "sha256": "4de5d6ade2a5c737ff1a5813f7f40610e880adaec706bea440951130e244ada2"
+    },
+    {
+      "path": "src/phaxis/model_contract_binding.py",
+      "bytes": 34235,
+      "sha256": "6f3abe5363302646b651a5add7377f345205e2d77acd2a5f469fd4c5a85aea62"
+    },
+    {
+      "path": "src/phaxis/multitrait_atlas.py",
+      "bytes": 51780,
+      "sha256": "1427427fecc1a3915b296d32da4a6c397c3ba4d51bf0289aeb6f17a71067813f"
+    },
+    {
+      "path": "src/phaxis/narrative_decision.py",
+      "bytes": 10736,
+      "sha256": "b9076d922b21ee193c9b73ce1cef2392e4af40161896ba9a191c07cabf0da15c"
+    },
+    {
+      "path": "src/phaxis/offline_report.py",
+      "bytes": 11405,
+      "sha256": "911772374288fde6a50403fd84fdcb7618bd7d90b394c7f005cc44e97cd1489a"
+    },
+    {
+      "path": "src/phaxis/phenotypes.py",
+      "bytes": 11151,
+      "sha256": "1c4e93cf32757847f82b29f9ebe83dff60e61412a12a35caba08d9e5d1cdb3dd"
+    },
+    {
+      "path": "src/phaxis/public_identity.py",
+      "bytes": 5218,
+      "sha256": "289600a5cb0b36bbe2ad346f0df09803b1c0c3dfe5f837343ada16272a9c738a"
+    },
+    {
+      "path": "src/phaxis/publication_authority.py",
+      "bytes": 14982,
+      "sha256": "3dd564aaea6117c8f0a383d15a6e549da3c4f6f8feb863477297d7321f6103d2"
+    },
+    {
+      "path": "src/phaxis/publication_evidence.py",
+      "bytes": 35071,
+      "sha256": "131bab1f53d9ef9381178d6f84fce1b34fef8b84dd3d37ce1c910b95fefc560e"
+    },
+    {
+      "path": "src/phaxis/publication_style.py",
+      "bytes": 9189,
+      "sha256": "194b2732b2dbe71c7b56cc3cb14466d8b86ab4378c738a55cb0c6ab3814506f3"
+    },
+    {
+      "path": "src/phaxis/publication_titles.py",
+      "bytes": 3375,
+      "sha256": "5945e0b6346bcedce03493a0c79bdebaf98c5d6c60c95143048b2d1c5b874c29"
+    },
+    {
+      "path": "src/phaxis/release_manifest_assembler.py",
+      "bytes": 36329,
+      "sha256": "307382fc7c6adea95ed86feb09bb8394ac8bd59d426efdc54567b0c8028b5671"
+    },
+    {
+      "path": "src/phaxis/release_orchestrator.py",
+      "bytes": 256672,
+      "sha256": "f9c06919f40c942e20916af6e120d58b92a2f95e9cb3a8d2fb05e629930118cd"
+    },
+    {
+      "path": "src/phaxis/release_topology.py",
+      "bytes": 39036,
+      "sha256": "b3dacca61ce97e2452dea5ae587a142dca03f227d6374228aceb6a43dd23ac9b"
+    },
+    {
+      "path": "src/phaxis/rendering.py",
+      "bytes": 6041,
+      "sha256": "e18d645bbaab1be764f89b4a93cfd856a693ead4c43d51eb0d3851940ad11251"
+    },
+    {
+      "path": "src/phaxis/root_continuity_assurance.py",
+      "bytes": 34367,
+      "sha256": "418f4ac5e1356aa74644f99ab896017f0af215dd703b39d54a375fe219f6771c"
+    },
+    {
+      "path": "src/phaxis/root_provider/__init__.py",
+      "bytes": 794,
+      "sha256": "95c79a3c8f1b0b95006ee63ca93edbbcb303e3e5c680853f8dc71ba0315b261b"
+    },
+    {
+      "path": "src/phaxis/root_provider/bundle.py",
+      "bytes": 22348,
+      "sha256": "fe6ef8eca0bf4506366f8a82d8b42293673f3ad4b4b5ddeb15607e9dce6c8580"
+    },
+    {
+      "path": "src/phaxis/root_provider/identity.py",
+      "bytes": 7246,
+      "sha256": "7c197d53994f5e6363bb250ca11bb6e06c9015bff15bae15a8be79c042aecc84"
+    },
+    {
+      "path": "src/phaxis/root_provider/reference.py",
+      "bytes": 15341,
+      "sha256": "d1115252c5ddd9099806e6a1577bd2c9dfbac11de0d2f39b817b3328c8660f9c"
+    },
+    {
+      "path": "src/phaxis/root_provider/runtime.py",
+      "bytes": 33346,
+      "sha256": "3fa747129adf8ea648e4a96270f9bc3d827d13272755031d76ce5eb2c650054f"
+    },
+    {
+      "path": "src/phaxis/root_provider/stage_entry.py",
+      "bytes": 43189,
+      "sha256": "844b61e03a86d6da3a4079cfcf04a8c3f8cb9b2ed49340e4f42a524a4d861a7c"
+    },
+    {
+      "path": "src/phaxis/root_trait_assurance.py",
+      "bytes": 25079,
+      "sha256": "d9168927f289a0037eb847e0d01fc78bb0712eb1c439e4f83a2c1d1d4dbe0e49"
+    },
+    {
+      "path": "src/phaxis/supplementary_tables.py",
+      "bytes": 94600,
+      "sha256": "1df63f9ce4774d3717d3a43cf9bc97cad4ef064868598899bf21673ba847fc28"
+    },
+    {
+      "path": "src/phaxis/traits.py",
+      "bytes": 32749,
+      "sha256": "e2d36441f227d94d4d4eee442430fb53fc4ba0e4d4e04775e5b250d3c38733e1"
+    },
+    {
+      "path": "src/phaxis/workflow.py",
+      "bytes": 85994,
+      "sha256": "e860381acfc69e9610dee757c90bf50e1f8f47d093941733b88550f306a310f8"
+    },
+    {
+      "path": "SUPPORT.md",
+      "bytes": 399,
+      "sha256": "a48d206919c8741e67cf3aabbd079f94cf050168799e5829c0760acb6e7fef56"
+    },
+    {
+      "path": "tests/phaxis/conftest.py",
+      "bytes": 3750,
+      "sha256": "7344d4b9b213a9f95a5c2a8d2481ead245948f66c90e15edd49914c1296cd663"
+    },
+    {
+      "path": "tests/phaxis/fixtures/hair_attachment_assurance_input.json",
+      "bytes": 1676,
+      "sha256": "3c1be2ff04c1bc31f99f047408b0262649f9cc1a1c9879458ac85ced90199d29"
+    },
+    {
+      "path": "tests/phaxis/fixtures/root_continuity_assurance_input.json",
+      "bytes": 1738,
+      "sha256": "81954ef8870ef2dda35aed6934c248e8baf7cebe54a499c6c63214e618197bf1"
+    },
+    {
+      "path": "tests/phaxis/test_axial_profile_analysis.py",
+      "bytes": 9750,
+      "sha256": "049ed590982aacc9f62124a2d21b5405adb3bfa5dab0fb4b5dd8663e2f06de8b"
+    },
+    {
+      "path": "tests/phaxis/test_axial_profiles.py",
+      "bytes": 14276,
+      "sha256": "510d22e23243d6c3e30a636398ce79f0e5c6c8acedbbca9f7c56b7b8020a6b4f"
+    },
+    {
+      "path": "tests/phaxis/test_backfill_paper_first_manuscript.py",
+      "bytes": 29063,
+      "sha256": "53e46772e6e5505935757c5fb606a9e6c972715fae00fba9e172f061ac491777"
+    },
+    {
+      "path": "tests/phaxis/test_biological_analysis.py",
+      "bytes": 29447,
+      "sha256": "9484a2959468694c0aed5a13bfa8151807b926ababbc6ca864f6612a1776524d"
+    },
+    {
+      "path": "tests/phaxis/test_biological_cohorts.py",
+      "bytes": 11654,
+      "sha256": "3bd89ea07fb361492ae52055157602b007f18b4625fb1a21ab6c13fe35ced8eb"
+    },
+    {
+      "path": "tests/phaxis/test_biological_presence_metric.py",
+      "bytes": 3833,
+      "sha256": "4661084f5f089ff55b03a58808de135c50b41a6b382e90e0ee2a74d9e983c469"
+    },
+    {
+      "path": "tests/phaxis/test_clean_install_verification.py",
+      "bytes": 40567,
+      "sha256": "91db33f059d18309fd6f5e91a983d8b76e2dd0f214beac83b069f4657c9609b5"
+    },
+    {
+      "path": "tests/phaxis/test_cli_contract.py",
+      "bytes": 18310,
+      "sha256": "acd9c2da52bc67efd7e7e9b82896b1f121721fe06afb05f8dbf056f2f0a81055"
+    },
+    {
+      "path": "tests/phaxis/test_cohort_axial_profiles.py",
+      "bytes": 14461,
+      "sha256": "12a097ebd5dc13c0f8667b9ab4a203681b8ae8316dfe30ca24e7c7e568861261"
+    },
+    {
+      "path": "tests/phaxis/test_compile_manuscript.py",
+      "bytes": 19368,
+      "sha256": "ed3ec58115a1d988b08332c90ebccb1beab00f7e7d0acf3dd9c832e76bc15c85"
+    },
+    {
+      "path": "tests/phaxis/test_contract_validation.py",
+      "bytes": 4037,
+      "sha256": "9339b70337c2349ad41156e0d9a9bcd83b2bed6a1651e77cbb76de76083ea291"
+    },
+    {
+      "path": "tests/phaxis/test_direct_benchmark_provider.py",
+      "bytes": 15194,
+      "sha256": "3b439710c3882aea9c441af6a725b07af901584e8ecfc5ade2de6b221386f66e"
+    },
+    {
+      "path": "tests/phaxis/test_distal_axis_profile_figure.py",
+      "bytes": 4024,
+      "sha256": "c914f19aa8b9f65bfcb852e1e28e29f7d6725e51bc2f8c4e0ef940306bad519a"
+    },
+    {
+      "path": "tests/phaxis/test_double_anonymous_producer_chain.py",
+      "bytes": 6706,
+      "sha256": "c2824cfe1a74e150d23ce30251134ecaf44244c25d6d2846be280905d819625d"
+    },
+    {
+      "path": "tests/phaxis/test_double_anonymous_render_visual.py",
+      "bytes": 12530,
+      "sha256": "e243f517fcf3f4e2e74ca97856c48d30dfe345d9f818226a6acb8a5d68909a94"
+    },
+    {
+      "path": "tests/phaxis/test_editorial_story_contract.py",
+      "bytes": 6802,
+      "sha256": "2bbd35387366d3d63a8532e56da99803361e46da6082f639574e59c8c1ec3f08"
+    },
+    {
+      "path": "tests/phaxis/test_evaluation_metrics.py",
+      "bytes": 7076,
+      "sha256": "80a88c1cdaefd9fb2fe8cd78bb4b00720806ad120538395130d1ef151fc4f9a0"
+    },
+    {
+      "path": "tests/phaxis/test_exact_cohort_review_overlay_export.py",
+      "bytes": 16849,
+      "sha256": "3205077f053c0a6ca4a4e36722e284509d1d85475a223282365624f8608828e1"
+    },
+    {
+      "path": "tests/phaxis/test_figure_title_contract.py",
+      "bytes": 7592,
+      "sha256": "b772d7c9fd0f086ed55a880b2fc9febae673e3e5cdbad8b6b1e116f3403e1fb7"
+    },
+    {
+      "path": "tests/phaxis/test_full_workflow_benchmark.py",
+      "bytes": 15479,
+      "sha256": "52f1e1f236f5ded1a0e509c9622eba46eb6ae209a997c0f3ec9df105d60c7425"
+    },
+    {
+      "path": "tests/phaxis/test_fusion_contract.py",
+      "bytes": 9252,
+      "sha256": "56d98c5865bcb6aa6213a441fa9934e3314923817d1836ef7e63f730f5131541"
+    },
+    {
+      "path": "tests/phaxis/test_h11_raw_median_amendment_audit.py",
+      "bytes": 8738,
+      "sha256": "e3cbc529eb1736e5ab570e5b55b40e3d78eda244bcbc240ebcaea03181bd1830"
+    },
+    {
+      "path": "tests/phaxis/test_hair_attachment_assurance.py",
+      "bytes": 11131,
+      "sha256": "5007fa4659c08b404aaed5f877641261dc2fb3e6b880b8180023b78216aa345a"
+    },
+    {
+      "path": "tests/phaxis/test_handover_manifest_producers.py",
+      "bytes": 46866,
+      "sha256": "75a9c9c1b2b2ab9e2e81e30fbe9d2af40943ecdae8269423b87771848a619dab"
+    },
+    {
+      "path": "tests/phaxis/test_handover_package.py",
+      "bytes": 29091,
+      "sha256": "5153b9997201012bce7219edf735748c6bf5c09aa0e863402e13258b7fea69ee"
+    },
+    {
+      "path": "tests/phaxis/test_historical_biological_presence_comparison.py",
+      "bytes": 1726,
+      "sha256": "9207e6c39f7ce75e9a1882c853fdfb35a97fc40ce3e5b1a7983ad76278400b19"
+    },
+    {
+      "path": "tests/phaxis/test_io_contract.py",
+      "bytes": 1445,
+      "sha256": "d43cfcf5c076aa9380d90f2bad24ff7dae4d9e73fc8218bada9f33b3e7a143d7"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_anonymity_gate.py",
+      "bytes": 12715,
+      "sha256": "ee2d8090bcd6ad655beaf5437ac32bc970760d7c2fd9e90ae32b311319b3252c"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_artifact_table_count.py",
+      "bytes": 1053,
+      "sha256": "a86441dedf41c9b1c1541e9d7ad895465e0a123925dd4d98b601bb72e3e2ed0d"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_evidence_manifest.py",
+      "bytes": 67524,
+      "sha256": "7e99f3452e5fd2b177ede132a75af9df39440c2162337941ce12f45c54e7c1a9"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_figure_suite.py",
+      "bytes": 119647,
+      "sha256": "57c57655575b2786c52e78f94307625342012df32d6f305ba194528e8bbfff99"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_measurement_assurance_contract.py",
+      "bytes": 4240,
+      "sha256": "5d6de9732e19b067591a003f9ef1ba6386ba9519af41207e956ac216b7263016"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_reference_registry.py",
+      "bytes": 3605,
+      "sha256": "446eb10ebae99362aeff67a3e2e1a57904aa39328cfe4fab277411d9d4bd8996"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_trait_table.py",
+      "bytes": 12267,
+      "sha256": "8a8194960594f456d4b2ba4d1d9b977f208c8c57d37c1fd0b2bb692daed8a96d"
+    },
+    {
+      "path": "tests/phaxis/test_manuscript_values.py",
+      "bytes": 129747,
+      "sha256": "13c5740ce8daf29f2bf9366c26ed19242bea3ac44f4da5712de5377abae62a62"
+    },
+    {
+      "path": "tests/phaxis/test_measurement_assurance_components.py",
+      "bytes": 16984,
+      "sha256": "31439cf93dd7197434aa382e2004055917c27b57fa0eb04f346738e5cf4a9880"
+    },
+    {
+      "path": "tests/phaxis/test_model_contract_promotion.py",
+      "bytes": 44566,
+      "sha256": "9c1da95ac8842a7432c251175e487b7f6ffbcf8e9a3c980ced0b59b72d541f64"
+    },
+    {
+      "path": "tests/phaxis/test_multitrait_atlas.py",
+      "bytes": 28503,
+      "sha256": "4630a174d3a4dd5574ff3cf32e0181e08be9e30bbad9741e638a4302ea75b76d"
+    },
+    {
+      "path": "tests/phaxis/test_offline_supply_chain_orchestrator.py",
+      "bytes": 7824,
+      "sha256": "9661120957b0c4e981272b817ebbc28ddcabd1ebab27a1c3a2688c713bc7b65e"
+    },
+    {
+      "path": "tests/phaxis/test_paper_first_biology_artifacts.py",
+      "bytes": 41445,
+      "sha256": "9e810f5592576d85df3ab3c847e54c83ee90a4ef8474e869d352307826145c33"
+    },
+    {
+      "path": "tests/phaxis/test_paper_first_figure5_renderer.py",
+      "bytes": 13491,
+      "sha256": "deac3f2fff5356b060db99dd0f32a6e2f9edf73980a9c7e9362d9206a7667274"
+    },
+    {
+      "path": "tests/phaxis/test_paper_first_figures_1_3_4.py",
+      "bytes": 19346,
+      "sha256": "67e7c433e2f17d84e81a871aaa60c3e2f8a2d28db4ade5484b2889be179609d7"
+    },
+    {
+      "path": "tests/phaxis/test_phenotype_catalog.py",
+      "bytes": 6496,
+      "sha256": "6869435cba4ae573502e4a30df10fc8342546e5c8f0d1bef0c6d84807e2374a9"
+    },
+    {
+      "path": "tests/phaxis/test_phenotype_contract.py",
+      "bytes": 7221,
+      "sha256": "a1fb00a55a3afb0286d1e1aee288e8541cbeaf8c2e5da862d25a895896de314f"
+    },
+    {
+      "path": "tests/phaxis/test_public_identity.py",
+      "bytes": 12191,
+      "sha256": "b0351f7b697a0d682d41c77e76cf7f617ff9893a55b3f7c6b5168ddf66bac428"
+    },
+    {
+      "path": "tests/phaxis/test_publication_figure_input_evidence.py",
+      "bytes": 67861,
+      "sha256": "caf8a447c8aaa31ed7b62ac3b859f8c4a93b58bd5e54a7551f9d62969466470a"
+    },
+    {
+      "path": "tests/phaxis/test_publication_missing_results_matrix.py",
+      "bytes": 22670,
+      "sha256": "21786e719dfe43015070fea2093b0ee116abf1fb4da80ced564c3eb9e0f2aca2"
+    },
+    {
+      "path": "tests/phaxis/test_publication_style.py",
+      "bytes": 1855,
+      "sha256": "1aa14a65fb3d2a4b11290f2ee72ed55c593f4ebffec6d2371ce43a6f633eb90a"
+    },
+    {
+      "path": "tests/phaxis/test_qcdev_root_inputs.py",
+      "bytes": 7735,
+      "sha256": "e2af2175323532315f5fe2f85fa601f069a7f7d7c5aeb3d8a5cc9d47ccb80391"
+    },
+    {
+      "path": "tests/phaxis/test_release_derived_producers.py",
+      "bytes": 31934,
+      "sha256": "6525355916e8403fa2fd4572104fc6f7eb5777d733883b02c27f925a5461a0f6"
+    },
+    {
+      "path": "tests/phaxis/test_release_manifest_assembler.py",
+      "bytes": 46702,
+      "sha256": "8eace9fc127732e1920542c1a03076412a62435775c8fc992ba35fa4dccb690b"
+    },
+    {
+      "path": "tests/phaxis/test_release_manuscript_dag.py",
+      "bytes": 23388,
+      "sha256": "a3e7eb26a75227415d0813e728e93ed9bc8833d056e7925a01894a55146b4e2c"
+    },
+    {
+      "path": "tests/phaxis/test_release_materialization_producers.py",
+      "bytes": 23833,
+      "sha256": "f1e6444e7db64901e6582cf13055a244fc5e33595cda9d1a7d697c4eff046b90"
+    },
+    {
+      "path": "tests/phaxis/test_release_orchestrator.py",
+      "bytes": 186987,
+      "sha256": "19d4997469ee6ef75f4a4220e2299f0c263504ddae6ffc8fb98ff1d99885bdc5"
+    },
+    {
+      "path": "tests/phaxis/test_release_topology.py",
+      "bytes": 9749,
+      "sha256": "86bd23c687319799435c56266a0afe15e38542b9dad9aa42a32118466981a4d8"
+    },
+    {
+      "path": "tests/phaxis/test_rendering_contract.py",
+      "bytes": 3236,
+      "sha256": "4527a817e525f40c2269a9b06ae7380008a5b2b110283621838d7d1d46a4db32"
+    },
+    {
+      "path": "tests/phaxis/test_root_continuity_assurance.py",
+      "bytes": 12947,
+      "sha256": "8bfef5d23983dcc5444416fff5c106e0b23e66519011e5807291634c23bd18d3"
+    },
+    {
+      "path": "tests/phaxis/test_root_provider_bundle.py",
+      "bytes": 2255,
+      "sha256": "e019147293d5353745be0deb37337b965d14ec5f71243a4de5dd92fed8c6c2f5"
+    },
+    {
+      "path": "tests/phaxis/test_root_provider_runtime.py",
+      "bytes": 25198,
+      "sha256": "23f98282bdc77d3417dbfb80280022d830655f7af972d1402749ab0ca2b6a45c"
+    },
+    {
+      "path": "tests/phaxis/test_root_trait_assurance.py",
+      "bytes": 8477,
+      "sha256": "7b8b16c06b0fdb087585eefcb9a1857b8442bb9a1b5fb413fe1d80a83b18fb19"
+    },
+    {
+      "path": "tests/phaxis/test_same_hardware_benchmark_receipt.py",
+      "bytes": 9643,
+      "sha256": "c31a395370d8302f710f3e484882ace17e722bde038c689cffe4d3cf573b20be"
+    },
+    {
+      "path": "tests/phaxis/test_source_release_builder.py",
+      "bytes": 119757,
+      "sha256": "ca5815d829091d655d3c7b8a78befe678b381beb0fb067980682701eef25ec6f"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_amp_amendment.py",
+      "bytes": 2679,
+      "sha256": "491c7a22dadf1c4c220c9832a1d8afaced057180f4d68c73c717d0f41ee03e6d"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_candidate_bundle.py",
+      "bytes": 80227,
+      "sha256": "7eb77792e6f4879115935277c2eaab47073f72f78b7e2b285bf5cc84bd03c880"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_candidate_decoder_contract.py",
+      "bytes": 3700,
+      "sha256": "855cf373ec9df3cc6256601ed610c5328af4cf2436db6eb4146f4b247824e796"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_cpu_contract.py",
+      "bytes": 21510,
+      "sha256": "fd6fa1a4074944985ed714751aa06ddaafd11b840f072b05b443cee9b1197f77"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_formal_evaluator.py",
+      "bytes": 5205,
+      "sha256": "b37a990c27e02e6145082f6e7d7e8bebd63a55234752ea99828fa9c07a487d0a"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_shared_input_benchmark.py",
+      "bytes": 2796,
+      "sha256": "d66d03e2bfaee7d906bd69f438ffdc88d5a0d4f32a6f2d4eb002de95b07c98f5"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_threshold_selection.py",
+      "bytes": 4509,
+      "sha256": "2f3fad6ef02ef0821f8479611202e160d3922ed2b04e76376fbc5563d0632599"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_train399_contract.py",
+      "bytes": 24886,
+      "sha256": "fa75216bf873f418334fca4b73476344dee1085a9cfa55aab8d6e66115fc39c2"
+    },
+    {
+      "path": "tests/phaxis/test_stageb_train399_gpu_queue.py",
+      "bytes": 12607,
+      "sha256": "f052911160dc61de32cd35d36cd11648c4b880d0133cdf8271fdb72e048db5e3"
+    },
+    {
+      "path": "tests/phaxis/test_submission_docx_builder.py",
+      "bytes": 24461,
+      "sha256": "3ce7d418dade16183f05f7e78038dcbc7d497ac4c73a87027a478ea6ad78f7da"
+    },
+    {
+      "path": "tests/phaxis/test_supplementary_docx_builder.py",
+      "bytes": 24198,
+      "sha256": "12a35030a5305e44e096eae64f455ae489a1e99067cd7446c5cf1953b673684e"
+    },
+    {
+      "path": "tests/phaxis/test_supplementary_manuscript.py",
+      "bytes": 11217,
+      "sha256": "33fe66c8f9d5c8329960b2503e5c333bf1f9095a823635196795575c9f29e86c"
+    },
+    {
+      "path": "tests/phaxis/test_supplementary_table_data_bundle.py",
+      "bytes": 37891,
+      "sha256": "eaa17f26f2f5a710a546ce958b4a987ffa7dc3af290e5e4901a72eb9be77095e"
+    },
+    {
+      "path": "tests/phaxis/test_train399_evaluation_contract.py",
+      "bytes": 4667,
+      "sha256": "2784073a5cd3eab86568385974b95c5897889c41a3d2f6d4da18bca04786cdce"
+    },
+    {
+      "path": "tests/phaxis/test_trait_export_user_journeys.py",
+      "bytes": 8774,
+      "sha256": "f9e0da917ea48c42d2f8eab7d7c34d03720e3f60983aacfda2dd579fadaee686"
+    },
+    {
+      "path": "tests/phaxis/test_traits_export.py",
+      "bytes": 9187,
+      "sha256": "25839965d7272bbe767c131129db4f1705df8bf54e1f6babce699f7a12e8d61c"
+    },
+    {
+      "path": "tests/phaxis/test_workflow.py",
+      "bytes": 29915,
+      "sha256": "75a4aa752458d7986772f689a5135583b2d9844980aa0b4619faa2d21b80c919"
+    },
+    {
+      "path": "tests/release/test_local_release.py",
+      "bytes": 3089,
+      "sha256": "0551bdd23b144437373802e21a27835cbd3a0144d04f92e34bde13928f9f1fa3"
+    },
+    {
+      "path": "THIRD_PARTY_LICENSES.json",
+      "bytes": 9867,
+      "sha256": "8b9c3cee312b41f3db32363fccd65480231285594b46bb087c07fd80786340c1"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 3771,
+      "sha256": "e604bb8bca1249ea4735647ff967c57fb456fc627531c7b47d6aaa37c0915e28"
+    },
+    {
+      "path": "workflow/Snakefile",
+      "bytes": 259,
+      "sha256": "9263c2799df5b0656194bc4892e503ae73c076e16fa1dc2dd11b589a6e1169c7"
+    }
+  ],
+  "tree_identity_sha256": "b7f345252bb0e92cfa1b2a3b68330f39255b72f7d845bc2ecab7b1f16c243031"
+}

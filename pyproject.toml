@@ -1,0 +1,112 @@
+[build-system]
+requires = ["setuptools>=77", "wheel>=0.45"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phaxis"
+version = "1.0.0"
+description = "Reproducible Arabidopsis primary-root and root-hair phenotyping"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "src/phaxis/_vendor/tomli/LICENSE.txt"]
+keywords = ["Arabidopsis", "plant phenomics", "primary root", "root hairs", "microscopy"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "numpy>=1.26,<3",
+  "packaging>=24,<26",
+  "scipy>=1.11,<2",
+]
+
+[project.optional-dependencies]
+visualization = ["opencv-python-headless>=4.9,<6", "Pillow>=10,<13"]
+inference = [
+  "opencv-python-headless>=4.9,<6",
+  "Pillow>=10,<13",
+  "tifffile>=2024.8,<2027",
+  "timm>=1.0.28,<2",
+  "torch>=2.6,<3",
+  "torchvision>=0.21,<1",
+]
+deployment = [
+  "imageio>=2.35,<3",
+  "joblib>=1.4,<2",
+  "matplotlib>=3.8,<4",
+  "opencv-python-headless>=4.9,<6",
+  "pandas>=2.2,<4",
+  "Pillow>=10,<13",
+  "scikit-image>=0.24,<0.27",
+  "scikit-learn>=1.5,<2",
+  "statsmodels>=0.14,<1",
+  "tifffile>=2024.8,<2027",
+  "timm>=1.0.28,<2",
+  "torch>=2.6,<3",
+  "torchvision>=0.21,<1",
+]
+analysis = [
+  "matplotlib>=3.8,<4",
+  "opencv-python-headless>=4.9,<6",
+  "pandas>=2.2,<4",
+  "Pillow>=10,<13",
+  "scikit-image>=0.24,<0.27",
+  "statsmodels>=0.14,<1",
+  "tifffile>=2024.8,<2027",
+]
+publication = [
+  "Pillow>=10,<13",
+  "python-docx>=1.1,<2",
+]
+test = [
+  "matplotlib>=3.8,<4",
+  "opencv-python-headless>=4.9,<6",
+  "pandas>=2.2,<4",
+  "Pillow>=10,<13",
+  "python-docx>=1.1,<2",
+  "pytest>=8,<10",
+  "scikit-image>=0.24,<0.27",
+  "statsmodels>=0.14,<1",
+  "tifffile>=2024.8,<2027",
+  "timm>=1.0.28,<2",
+  "torch>=2.6,<3",
+  "torchvision>=0.21,<1",
+]
+build = ["build>=1.2,<2", "twine>=6,<7"]
+
+docs = ["mkdocs-material>=9.5,<10"]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1", "mypy>=1.15,<2", "pip-audit>=2.9,<3"]
+
+[project.scripts]
+phaxis = "phaxis.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/707728642li/PHAxis"
+Repository = "https://github.com/707728642li/PHAxis"
+Issues = "https://github.com/707728642li/PHAxis/issues"
+Documentation = "https://github.com/707728642li/PHAxis/tree/main/docs"
+Changelog = "https://github.com/707728642li/PHAxis/blob/main/CHANGELOG.md"
+
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = false
+
+[tool.setuptools.package-data]
+"phaxis._vendor.tomli" = ["LICENSE.txt", "py.typed"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["phaxis", "phaxis.*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers -p no:cacheprovider"
+testpaths = ["tests/release"]
+pythonpath = ["src"]

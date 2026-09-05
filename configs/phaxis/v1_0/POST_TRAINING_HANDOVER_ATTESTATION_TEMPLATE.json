@@ -1,0 +1,35 @@
+{
+  "approval_reference": "REQUIRED_APPROVAL_REFERENCE",
+  "attestation_identity_sha256": "COMPUTE_AFTER_AUTHOR_VERIFICATION",
+  "authority_name": "REQUIRED_AUTHORITY_NAME",
+  "authorized_materialisation_roles": [
+    "dataset_manifest",
+    "image_manifest",
+    "model_source_manifest",
+    "model_asset_manifest",
+    "benchmark_manifest"
+  ],
+  "blind_images_used": 0,
+  "historical_or_provisional_backfill_used": false,
+  "license_basis_by_materialisation_role": {
+    "benchmark_manifest": "REQUIRED_LICENSE_BASIS",
+    "dataset_manifest": "REQUIRED_LICENSE_BASIS",
+    "image_manifest": "REQUIRED_LICENSE_BASIS",
+    "model_asset_manifest": "REQUIRED_LICENSE_BASIS",
+    "model_source_manifest": "REQUIRED_LICENSE_BASIS"
+  },
+  "product": "PHAxis",
+  "product_version": "1.0.0",
+  "root_cap_region_statistics_included": false,
+  "schema_version": "PHAxis-handover-scope-license-attestation-1.0",
+  "scope_attestation": {
+    "all_legally_deliverable_manual_annotations_included": false,
+    "annotation_notes_provenance_hashes_preserved": false,
+    "biological283_includes_temperature_and_rhd6_design": false,
+    "blind_and_final_partitions_excluded": false,
+    "frozen_v1_untouched": false,
+    "image_assembly_excluded": false,
+    "training_and_validation_annotations_may_be_mixed": false
+  },
+  "status": "BLOCKED_TEMPLATE_NOT_AUTHORITY"
+}

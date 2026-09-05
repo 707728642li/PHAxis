@@ -1,0 +1,319 @@
+{
+  "artifact_specific_license_review_required": true,
+  "dependencies": [
+    {
+      "license_expression": "MIT",
+      "name": "build",
+      "project_url": "https://pypi.org/project/build/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "build>=1.2,<2",
+      "scopes": [
+        "build"
+      ]
+    },
+    {
+      "license_expression": "BSD-2-Clause",
+      "name": "imageio",
+      "project_url": "https://pypi.org/project/imageio/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "imageio>=2.35,<3",
+      "scopes": [
+        "deployment"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "joblib",
+      "project_url": "https://pypi.org/project/joblib/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "joblib>=1.4,<2",
+      "scopes": [
+        "deployment"
+      ]
+    },
+    {
+      "license_expression": "PSF-2.0",
+      "name": "matplotlib",
+      "project_url": "https://pypi.org/project/matplotlib/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "matplotlib>=3.8,<4",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "numpy",
+      "project_url": "https://pypi.org/project/numpy/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "numpy>=1.26,<3",
+      "scopes": [
+        "core"
+      ]
+    },
+    {
+      "license_expression": "LicenseRef-opencv-python-headless-wheel-multiple",
+      "license_note": "Upstream reports the wrapper as MIT and OpenCV as Apache-2.0; published wheels also bundle FFmpeg under LGPL-2.1 and may contain additional artifact-specific notices. Preserve the wheel's LICENSE-3RD-PARTY.txt and audit the exact locked artifact.",
+      "name": "opencv-python-headless",
+      "project_url": "https://pypi.org/project/opencv-python-headless/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "opencv-python-headless>=4.9,<6",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "inference",
+        "test",
+        "visualization"
+      ]
+    },
+    {
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "name": "packaging",
+      "project_url": "https://pypi.org/project/packaging/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "packaging>=24,<26",
+      "scopes": [
+        "core"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "pandas",
+      "project_url": "https://pypi.org/project/pandas/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "pandas>=2.2,<4",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "MIT-CMU",
+      "name": "Pillow",
+      "project_url": "https://pypi.org/project/Pillow/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "Pillow>=10,<13",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "inference",
+        "publication",
+        "test",
+        "visualization"
+      ]
+    },
+    {
+      "license_expression": "MIT",
+      "name": "pytest",
+      "project_url": "https://pypi.org/project/pytest/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "pytest>=8,<10",
+      "scopes": [
+        "test"
+      ]
+    },
+    {
+      "license_expression": "MIT",
+      "name": "python-docx",
+      "project_url": "https://pypi.org/project/python-docx/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "python-docx>=1.1,<2",
+      "scopes": [
+        "publication",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "scikit-image",
+      "project_url": "https://pypi.org/project/scikit-image/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "scikit-image>=0.24,<0.27",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "scikit-learn",
+      "project_url": "https://pypi.org/project/scikit-learn/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "scikit-learn>=1.5,<2",
+      "scopes": [
+        "deployment"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "scipy",
+      "project_url": "https://pypi.org/project/scipy/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "scipy>=1.11,<2",
+      "scopes": [
+        "core"
+      ]
+    },
+    {
+      "license_expression": "MIT",
+      "name": "setuptools",
+      "project_url": "https://pypi.org/project/setuptools/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "setuptools>=77",
+      "scopes": [
+        "build-system"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "statsmodels",
+      "project_url": "https://pypi.org/project/statsmodels/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "statsmodels>=0.14,<1",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "tifffile",
+      "project_url": "https://pypi.org/project/tifffile/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "tifffile>=2024.8,<2027",
+      "scopes": [
+        "analysis",
+        "deployment",
+        "inference",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "Apache-2.0",
+      "name": "timm",
+      "project_url": "https://pypi.org/project/timm/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "timm>=1.0.28,<2",
+      "scopes": [
+        "deployment",
+        "inference",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "torch",
+      "project_url": "https://pypi.org/project/torch/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "torch>=2.6,<3",
+      "scopes": [
+        "deployment",
+        "inference",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "BSD-3-Clause",
+      "name": "torchvision",
+      "project_url": "https://pypi.org/project/torchvision/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "torchvision>=0.21,<1",
+      "scopes": [
+        "deployment",
+        "inference",
+        "test"
+      ]
+    },
+    {
+      "license_expression": "Apache-2.0",
+      "name": "twine",
+      "project_url": "https://pypi.org/project/twine/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "twine>=6,<7",
+      "scopes": [
+        "build"
+      ]
+    },
+    {
+      "license_expression": "MIT",
+      "name": "wheel",
+      "project_url": "https://pypi.org/project/wheel/",
+      "relationship": "declared_direct_dependency",
+      "requirement": "wheel>=0.45",
+      "scopes": [
+        "build-system"
+      ]
+    }
+  ],
+  "dependency_count": 22,
+  "exact_resolved_artifacts_authority": "offline dependency materialization receipt and wheelhouse hashes",
+  "inventory_identity_sha256": "1366c45cc51fd1edcc0b0704d57dc3b66bdaf9a8b8373905e29c02fd9a62bc2c",
+  "inventory_scope": "declared_direct_dependencies_build_requirements_and_vendored_components",
+  "product": "PHAxis",
+  "product_version": "1.0.0",
+  "resolved_transitive_dependency_claimed": false,
+  "schema_version": "PHAxis-third-party-license-inventory-1.0",
+  "status": "complete_declared_direct_dependency_inventory",
+  "vendored_component_count": 1,
+  "vendored_components": [
+    {
+      "license_expression": "MIT",
+      "license_text_path": "src/phaxis/_vendor/tomli/LICENSE.txt",
+      "license_text_sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "name": "tomli",
+      "package_path": "src/phaxis/_vendor/tomli",
+      "project_url": "https://pypi.org/project/tomli/2.4.0/",
+      "purl": "pkg:pypi/tomli@2.4.0",
+      "relationship": "vendored_source_no_site_fallback",
+      "runtime_scope": "python_version < '3.11' including isolated no-site verification",
+      "source_authority": "Tomli 2.4.0 pure-Python distribution file set",
+      "source_bytes_unmodified": true,
+      "source_file_count": 6,
+      "source_files": [
+        {
+          "bytes": 1072,
+          "path": "src/phaxis/_vendor/tomli/LICENSE.txt",
+          "role": "license_text",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "bytes": 314,
+          "path": "src/phaxis/_vendor/tomli/__init__.py",
+          "role": "vendored_source",
+          "sha256": "6a1b438c6240d8cff0595bc6a73c78609b56c6b581c7aa84f861f9f946281020"
+        },
+        {
+          "bytes": 25958,
+          "path": "src/phaxis/_vendor/tomli/_parser.py",
+          "role": "vendored_source",
+          "sha256": "b717804cb137cc7c99faeb215ed61fad9dcba08b3b273405d96d8a2f583024f8"
+        },
+        {
+          "bytes": 3396,
+          "path": "src/phaxis/_vendor/tomli/_re.py",
+          "role": "vendored_source",
+          "sha256": "a12359fe294523a72112e434d58452a14c9d050affa2417f9927474e4166bfdd"
+        },
+        {
+          "bytes": 254,
+          "path": "src/phaxis/_vendor/tomli/_types.py",
+          "role": "vendored_source",
+          "sha256": "f864c6d9552a929c7032ace654ee05ef26ca75d21b027b801d77e65907138b74"
+        },
+        {
+          "bytes": 26,
+          "path": "src/phaxis/_vendor/tomli/py.typed",
+          "role": "typing_marker",
+          "sha256": "f0f8f2675695a10a5156fb7bd66bafbaae6a13e8d315990af862c792175e6e67"
+        }
+      ],
+      "source_tree_identity_sha256": "fac9caf30b9ef1c8a09ddfcd0e1ff00fa8c992177ee3958887dbae7bebf87723",
+      "version": "2.4.0"
+    }
+  ]
+}

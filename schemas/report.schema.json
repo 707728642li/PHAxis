@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PHAxis offline report 1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "software_version",
+    "tables",
+    "input_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "PHAxis-offline-report-1.0"
+    },
+    "software_version": {
+      "const": "1.0.0"
+    },
+    "tables": {
+      "type": "object"
+    },
+    "input_sha256": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# Preserve byte-identical manifest closure on every platform.
+* text=auto eol=lf
+*.py text eol=lf
+*.pyi text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.cff text eol=lf
+*.csv text eol=lf
+*.tsv text eol=lf
+*.ps1 text eol=lf
+*.sh text eol=lf
+*.bat text eol=lf
+*.cmd text eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.tif -text
+*.tiff -text
+*.pt -text
+*.pth -text
+*.ckpt -text
+*.onnx -text
+*.engine -text
+*.whl -text

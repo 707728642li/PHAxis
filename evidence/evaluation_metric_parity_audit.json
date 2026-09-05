@@ -1,0 +1,18 @@
+{
+  "blind_images_used": 0,
+  "evaluate_image_maximum_absolute_numeric_difference": 0.0,
+  "prf_cases": 204,
+  "prf_maximum_absolute_numeric_difference": 0.0,
+  "production_evaluator_external_code_dependency": false,
+  "random_geometry_cases": 1000,
+  "random_seed": 20260828,
+  "reference": {
+    "analysis_py_sha256": "c0e8ae4f1081d6599dd53cf7243bd5ed1d0c217830f8cf5ecd4e85e9877e86ee",
+    "evaluate_py_sha256": "3d8d9201bf85ef6ead178b665d66a19dc0d8f3fc587adcd62d0ee97161cc03f2",
+    "geometry_py_sha256": "ea901fbc8f9974f0456a16491d06dd6a2fed185e026c85fe23e7ec75cdf7eff0"
+  },
+  "schema_version": "PHAxis-RHAxiscc-evaluation-metric-parity-audit-1.0",
+  "status": "passed",
+  "strict_presence_cases": 3000,
+  "strict_presence_mismatches": 0
+}

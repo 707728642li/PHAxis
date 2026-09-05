@@ -1,0 +1,53 @@
+{
+  "authors": [
+    {
+      "affiliation": "REQUIRED_AUTHOR_AFFILIATION",
+      "display_name": "REQUIRED_AUTHOR_DISPLAY_NAME",
+      "email": "REQUIRED_AUTHOR_EMAIL",
+      "family_names": "REQUIRED_AUTHOR_FAMILY_NAMES",
+      "given_names": "REQUIRED_AUTHOR_GIVEN_NAMES",
+      "orcid": null
+    }
+  ],
+  "distribution": "phaxis",
+  "maintainers": [
+    {
+      "affiliation": "REQUIRED_MAINTAINER_AFFILIATION",
+      "display_name": "REQUIRED_MAINTAINER_DISPLAY_NAME",
+      "email": "REQUIRED_MAINTAINER_EMAIL",
+      "family_names": "REQUIRED_MAINTAINER_FAMILY_NAMES",
+      "given_names": "REQUIRED_MAINTAINER_GIVEN_NAMES",
+      "orcid": null
+    }
+  ],
+  "metadata_identity_sha256": "COMPUTE_AFTER_AUTHOR_VERIFICATION",
+  "product": "PHAxis",
+  "product_version": "1.0.0",
+  "project_urls": {
+    "Documentation": "REQUIRED_HTTPS_DOCUMENTATION_URL",
+    "Homepage": "REQUIRED_HTTPS_HOMEPAGE",
+    "Issues": "REQUIRED_HTTPS_ISSUES_URL",
+    "Repository": "REQUIRED_HTTPS_GITHUB_REPOSITORY"
+  },
+  "release_coordinates": {
+    "github_release_tag": "v1.0.0",
+    "github_release_url": "REQUIRED_HTTPS_GITHUB_RELEASE_URL",
+    "github_repository_url": "REQUIRED_HTTPS_GITHUB_REPOSITORY",
+    "pypi_project": "phaxis",
+    "pypi_project_url": "https://pypi.org/project/phaxis/1.0.0/",
+    "pypi_version": "1.0.0",
+    "release_date": "REQUIRED_RELEASE_DATE_YYYY_MM_DD",
+    "release_doi": "REQUIRED_RELEASE_DOI"
+  },
+  "rights": {
+    "annotations_included": false,
+    "images_included": false,
+    "license_file_sha256": "REQUIRED_LICENSE_FILE_SHA256",
+    "model_weights_included": false,
+    "separate_asset_rights_not_conferred": true,
+    "source_license_spdx": "Apache-2.0",
+    "source_release_authorized": false
+  },
+  "schema_version": "PHAxis-release-human-metadata-1.3",
+  "status": "BLOCKED_TEMPLATE_NOT_AUTHORITY"
+}

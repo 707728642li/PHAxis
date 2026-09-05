@@ -1,0 +1,11 @@
+Bootstrap: docker
+From: python:3.12-slim
+
+%files
+    . /opt/phaxis
+%post
+    pip install /opt/phaxis
+%runscript
+    exec phaxis "$@"
+%test
+    phaxis --version

@@ -1,0 +1,20 @@
+# Local environments and generated Python state
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+demo-results/
+site/
+
+# Packaging and local analysis outputs
+build/
+dist/
+*.egg-info/
+analysis-output/
+workflow_state.json

@@ -1,0 +1,503 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://phaxis.org/schema/image-traits/1.0.0",
+  "title": "PHAxis 1.0.0 canonical image-trait record",
+  "description": "Typed representation of one CSV row after null and numeric parsing. Every canonical column is required; unavailable measurements use null.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "nullableNumber": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "nullableNonnegativeNumber": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "nullableNonnegativeInteger": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "nullableFraction": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "nullableBoolean": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": "PHAxis-image-traits-1.0.0"
+    },
+    "product_version": {
+      "const": "1.0.0"
+    },
+    "model_bundle_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "root_expert_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hair_identity_count_expert_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hair_length_expert_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_image_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "prediction_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "root_lock_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "stageb_detection_identity_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "measurement_tier": {
+      "enum": [
+        "automatic_unreviewed",
+        "manual_reviewed",
+        "manual_revised",
+        "manual_review_required",
+        "manual_excluded_acquisition",
+        "review_only"
+      ]
+    },
+    "formal_statistics_eligible": {
+      "type": "boolean"
+    },
+    "automatic_measurement_fail_closed": {
+      "type": "boolean"
+    },
+    "exclusion_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scale_status": {
+      "enum": [
+        "detected",
+        "metadata_calibrated",
+        "fail_closed"
+      ]
+    },
+    "physical_units_valid": {
+      "type": "boolean"
+    },
+    "um_per_px": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-unit": "um_per_px",
+      "x-role": "calibration"
+    },
+    "scale_value_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-unit": "um",
+      "x-role": "calibration"
+    },
+    "scale_length_px": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-unit": "px",
+      "x-role": "calibration"
+    },
+    "root_cap_region_output": {
+      "const": false
+    },
+    "root_cap_area_used": {
+      "const": false
+    },
+    "root_cap_point_x_px": {
+      "$ref": "#/$defs/nullableNumber",
+      "x-role": "distal_root_cap_point_geometry"
+    },
+    "root_cap_point_y_px": {
+      "$ref": "#/$defs/nullableNumber",
+      "x-role": "distal_root_cap_point_geometry"
+    },
+    "root_cap_point_border_distance_px": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-role": "quality_control"
+    },
+    "root_cap_point_border_visible": {
+      "$ref": "#/$defs/nullableBoolean",
+      "x-role": "quality_control"
+    },
+    "shootward_endpoint_x_px": {
+      "$ref": "#/$defs/nullableNumber",
+      "x-role": "visible_endpoint_geometry"
+    },
+    "shootward_endpoint_y_px": {
+      "$ref": "#/$defs/nullableNumber",
+      "x-role": "visible_endpoint_geometry"
+    },
+    "shootward_endpoint_border_distance_px": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-role": "quality_control"
+    },
+    "shootward_endpoint_border_visible": {
+      "$ref": "#/$defs/nullableBoolean",
+      "x-role": "quality_control"
+    },
+    "root_orientation_deg": {
+      "$ref": "#/$defs/nullableNumber",
+      "x-role": "acquisition_geometry",
+      "x-counted-biological-trait": false
+    },
+    "visible_root_axis_length_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R01",
+      "x-unit": "um"
+    },
+    "root_axis_chord_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R02",
+      "x-unit": "um"
+    },
+    "root_centerline_chord_tortuosity": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R03",
+      "x-unit": "ratio"
+    },
+    "root_straightness": {
+      "$ref": "#/$defs/nullableFraction",
+      "x-trait-id": "R04",
+      "x-unit": "ratio"
+    },
+    "root_projected_area_um2": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R05",
+      "x-unit": "um2"
+    },
+    "root_projected_area_um2_per_root_mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R06",
+      "x-unit": "um2_per_mm"
+    },
+    "median_root_width_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R07",
+      "x-unit": "um"
+    },
+    "root_width_p10_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R08",
+      "x-unit": "um"
+    },
+    "root_width_q25_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R09",
+      "x-unit": "um"
+    },
+    "root_width_q75_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R10",
+      "x-unit": "um"
+    },
+    "root_width_p90_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R11",
+      "x-unit": "um"
+    },
+    "root_width_cv": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R12",
+      "x-unit": "ratio"
+    },
+    "root_width_tip_third_median_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R13",
+      "x-unit": "um"
+    },
+    "root_width_middle_third_median_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R14",
+      "x-unit": "um"
+    },
+    "root_width_shootward_third_median_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R15",
+      "x-unit": "um"
+    },
+    "root_width_shootward_to_tip_ratio": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R16",
+      "x-unit": "ratio"
+    },
+    "root_width_axial_slope_um_per_mm": {
+      "$ref": "#/$defs/nullableNumber",
+      "x-trait-id": "R17",
+      "x-unit": "um_per_mm"
+    },
+    "root_centerline_curvature_median_rad_per_mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R18",
+      "x-unit": "rad_per_mm"
+    },
+    "root_centerline_curvature_p95_rad_per_mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "R19",
+      "x-unit": "rad_per_mm"
+    },
+    "hair_count": {
+      "$ref": "#/$defs/nullableNonnegativeInteger",
+      "x-trait-id": "H01",
+      "x-unit": "count"
+    },
+    "mean_hair_length_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H02",
+      "x-unit": "um"
+    },
+    "median_hair_length_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H03",
+      "x-unit": "um"
+    },
+    "total_hair_length_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H04",
+      "x-unit": "um"
+    },
+    "hair_density_per_mm_visible_root": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H05",
+      "x-unit": "count_per_mm"
+    },
+    "first_hair_distance_from_distal_point_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H06",
+      "x-unit": "um"
+    },
+    "first_hair_ge40um_distance_from_distal_point_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H07",
+      "x-unit": "um"
+    },
+    "local_hair_count_1_4mm": {
+      "$ref": "#/$defs/nullableNonnegativeInteger",
+      "x-trait-id": "H08",
+      "x-unit": "count"
+    },
+    "local_hair_density_per_mm_1_4mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H09",
+      "x-unit": "count_per_mm"
+    },
+    "local_mean_hair_length_um_1_4mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H10",
+      "x-unit": "um"
+    },
+    "local_median_hair_length_um_1_4mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H11",
+      "x-unit": "um"
+    },
+    "local_total_hair_length_um_per_root_mm_1_4mm": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H12",
+      "x-unit": "um_per_mm"
+    },
+    "visible_hair_attachment_span_um_descriptive_right_censored": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-trait-id": "H13",
+      "x-unit": "um",
+      "x-censoring": "right_censored_descriptive"
+    },
+    "hair_length_measurement_hair_count": {
+      "$ref": "#/$defs/nullableNonnegativeInteger",
+      "x-role": "measurement_support"
+    },
+    "hair_length_measurement_fraction": {
+      "$ref": "#/$defs/nullableFraction",
+      "x-role": "measurement_support"
+    },
+    "hair_length_semantics": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-role": "measurement_support"
+    },
+    "total_hair_length_is_partial": {
+      "$ref": "#/$defs/nullableBoolean",
+      "x-role": "measurement_support"
+    },
+    "distal_window_1_4mm_eligible": {
+      "type": "boolean",
+      "x-role": "measurement_support"
+    },
+    "attachment_axis_valid_fraction": {
+      "$ref": "#/$defs/nullableFraction",
+      "x-role": "measurement_support"
+    },
+    "whole_hair_zone_confirmatory_allowed": {
+      "const": false
+    },
+    "root_cap_point_to_axis_bridge_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-role": "quality_control"
+    },
+    "axis_endpoint_count": {
+      "$ref": "#/$defs/nullableNonnegativeInteger",
+      "x-role": "quality_control"
+    },
+    "axis_reference_radius_px": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-role": "quality_control"
+    },
+    "width_samples": {
+      "$ref": "#/$defs/nullableNonnegativeInteger",
+      "x-role": "measurement_support"
+    },
+    "width_end_exclusion_um": {
+      "$ref": "#/$defs/nullableNonnegativeNumber",
+      "x-role": "measurement_support"
+    },
+    "root_axis_source": {
+      "type": "string",
+      "minLength": 1,
+      "x-role": "provenance"
+    },
+    "root_global_width_source": {
+      "type": "string",
+      "minLength": 1,
+      "x-role": "provenance"
+    },
+    "root_continuity_status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-role": "quality_control"
+    },
+    "root_continuity_applied": {
+      "$ref": "#/$defs/nullableBoolean",
+      "x-role": "quality_control"
+    },
+    "condition_metadata_used_for_routing": {
+      "const": false
+    },
+    "canonical_annotations_read_during_inference": {
+      "const": false
+    },
+    "blind_images_used": {
+      "const": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "product_version",
+    "model_bundle_id",
+    "root_expert_id",
+    "hair_identity_count_expert_id",
+    "hair_length_expert_id",
+    "task_id",
+    "source_image_sha256",
+    "prediction_sha256",
+    "root_lock_sha256",
+    "stageb_detection_identity_sha256",
+    "measurement_tier",
+    "formal_statistics_eligible",
+    "automatic_measurement_fail_closed",
+    "exclusion_reason",
+    "scale_status",
+    "physical_units_valid",
+    "um_per_px",
+    "scale_value_um",
+    "scale_length_px",
+    "root_cap_region_output",
+    "root_cap_area_used",
+    "root_cap_point_x_px",
+    "root_cap_point_y_px",
+    "root_cap_point_border_distance_px",
+    "root_cap_point_border_visible",
+    "shootward_endpoint_x_px",
+    "shootward_endpoint_y_px",
+    "shootward_endpoint_border_distance_px",
+    "shootward_endpoint_border_visible",
+    "root_orientation_deg",
+    "visible_root_axis_length_um",
+    "root_axis_chord_um",
+    "root_centerline_chord_tortuosity",
+    "root_straightness",
+    "root_projected_area_um2",
+    "root_projected_area_um2_per_root_mm",
+    "median_root_width_um",
+    "root_width_p10_um",
+    "root_width_q25_um",
+    "root_width_q75_um",
+    "root_width_p90_um",
+    "root_width_cv",
+    "root_width_tip_third_median_um",
+    "root_width_middle_third_median_um",
+    "root_width_shootward_third_median_um",
+    "root_width_shootward_to_tip_ratio",
+    "root_width_axial_slope_um_per_mm",
+    "root_centerline_curvature_median_rad_per_mm",
+    "root_centerline_curvature_p95_rad_per_mm",
+    "hair_count",
+    "mean_hair_length_um",
+    "median_hair_length_um",
+    "total_hair_length_um",
+    "hair_density_per_mm_visible_root",
+    "first_hair_distance_from_distal_point_um",
+    "first_hair_ge40um_distance_from_distal_point_um",
+    "local_hair_count_1_4mm",
+    "local_hair_density_per_mm_1_4mm",
+    "local_mean_hair_length_um_1_4mm",
+    "local_median_hair_length_um_1_4mm",
+    "local_total_hair_length_um_per_root_mm_1_4mm",
+    "visible_hair_attachment_span_um_descriptive_right_censored",
+    "hair_length_measurement_hair_count",
+    "hair_length_measurement_fraction",
+    "hair_length_semantics",
+    "total_hair_length_is_partial",
+    "distal_window_1_4mm_eligible",
+    "attachment_axis_valid_fraction",
+    "whole_hair_zone_confirmatory_allowed",
+    "root_cap_point_to_axis_bridge_um",
+    "axis_endpoint_count",
+    "axis_reference_radius_px",
+    "width_samples",
+    "width_end_exclusion_um",
+    "root_axis_source",
+    "root_global_width_source",
+    "root_continuity_status",
+    "root_continuity_applied",
+    "condition_metadata_used_for_routing",
+    "canonical_annotations_read_during_inference",
+    "blind_images_used"
+  ]
+}

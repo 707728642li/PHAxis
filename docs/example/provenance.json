@@ -1,0 +1,13 @@
+{
+  "input_sha256": {
+    "detailed_root_statistics.csv": "33cb09aaab4e813afa85db299d4e4fa54fda1ff42215f358a4727a47f3f57900",
+    "hair_instances.csv": "4aa18293f4a54dff76b8f16435863de20a3d84038209cc4451ad7f401dce2dd0",
+    "image_traits.csv": "6612d865c4b8995b9544f8f4a9aa04b79720e0bf07d9e4376c1d81c7487c616a",
+    "traits.csv": "a35fd9e7f7817fe08209d95a0b2868ef0abab06c46ce0ec65cb94c3643938752"
+  },
+  "operation": "read_only_trait_report",
+  "software": "PHAxis",
+  "source_paths_included": false,
+  "telemetry": false,
+  "version": "1.0.0"
+}

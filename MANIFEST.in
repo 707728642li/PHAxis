@@ -1,0 +1,19 @@
+include LICENSE NOTICE README.md README_CN.md pyproject.toml
+include *.md *.cff *.json *.yml *.toml *.ini .gitignore .gitattributes
+recursive-include src *.py *.txt py.typed
+recursive-include configs *.json *.txt
+recursive-include docs *.md *.svg *.png *.html *.json *.csv
+recursive-include examples *.py *.md *.json *.csv
+recursive-include scripts *.py *.ps1
+recursive-include tests *.py *.json
+recursive-include schemas *.json
+recursive-include containers *
+recursive-include workflow *
+recursive-include benchmarks *.md *.json
+recursive-include .github *.yml *.md
+recursive-include evidence *.json
+global-exclude *.pt *.pth *.ckpt *.onnx *.engine *.joblib *.pkl *.pickle
+global-exclude *.tif *.tiff *.jpg *.jpeg *.pyc
+prune build
+prune dist
+prune .git

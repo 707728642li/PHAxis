@@ -1,0 +1,89 @@
+{
+  "schema_version": "PHAxis-biological-analysis-contract-1.0",
+  "status": "locked_transition_contract_before_final_PHAxis_effect_model_run",
+  "created_date": "2026-08-28",
+  "analysis_role": "biology-facing exploratory deployment study",
+  "preregistration_claimed": false,
+  "known_prior_information": {
+    "Hybrid_Max_biological_effects_already_seen": true,
+    "RHAxiscc_predecessor_biological_effects_already_seen": true,
+    "PHAxis_effects_inspected_before_contract": "not_asserted",
+    "reason": "This is a transparent software-transition lock, not a retroactive preregistration."
+  },
+  "expected_cohort_counts": {
+    "human_curated443": 443,
+    "biological_full": 283,
+    "human_curated_overlap": 22,
+    "biological_clean": 261
+  },
+  "cohort_policy": {
+    "primary": "all biological images byte-SHA-disjoint from HumanCurated443",
+    "primary_name": "clean261",
+    "sensitivity": "all 283 biological images with overlap explicitly retained",
+    "overlap_definition": "intersection of independently recomputed image SHA-256 digests",
+    "exclude_HumanCurated_train_and_val_equally": true,
+    "legacy_RHAxiscc_overlap_id_list_is_authoritative": false,
+    "phenotype_outlier_exclusion": "none",
+    "extreme_acquisition_failures": "use only prephenotype QC and PHAxis fail-closed gates"
+  },
+  "primary_model_scope": {
+    "study_role": "rhd6_factorial_8d_primary",
+    "experiment_key": "D15_8d",
+    "constructs": [
+      "RHD6-EV",
+      "RHD6-OE"
+    ],
+    "temperature_c": [
+      22,
+      30
+    ],
+    "claim_scope": "within-experiment exploratory association"
+  },
+  "endpoints": {
+    "primary": [
+      "local_hair_count_1_4mm",
+      "local_median_hair_length_um_1_4mm",
+      "first_hair_ge40um_distance_from_distal_point_um",
+      "median_root_width_um",
+      "visible_root_axis_length_um"
+    ],
+    "whole_visible_hair_zone_confirmatory_allowed": false,
+    "root_cap_region_statistics_allowed": false,
+    "root_cap_point_statistics_allowed": true,
+    "root_hair_identity_count_expert": "PHAxis-StageB-strict-train399-five-seed-selected",
+    "endpoint_complete_length_expert": "Hybrid-Max one-to-one associated curves"
+  },
+  "statistical_model_transition": {
+    "reuse_predecessor_implementation_allowed": true,
+    "factorial_model_restricted_to_primary_scope": true,
+    "formal_statistics_eligible_gate_required": true,
+    "endpoint_observability_gates_required": true,
+    "clean261_is_primary": true,
+    "full283_is_sensitivity": true,
+    "all_six_groups_modelled_as_one_factorial": false,
+    "WT_temperature_analysis": "within-experiment contrasts only; developmental day stratified",
+    "effect_sizes_and_confidence_intervals_required": true,
+    "multiplicity": "Benjamini-Hochberg within the declared exploratory test family",
+    "p_value_status": "exploratory_model_based_not_plate_randomization_confirmatory"
+  },
+  "design_identifiability": {
+    "authoritative_source": "canonical_unit_manifest batch_id and source_group",
+    "filename_regex_plate_parsing_allowed": false,
+    "acquisition_batch_is_biological_plate": false,
+    "biological_plate_id_available": false,
+    "plate_treatment_confounding": "cannot be resolved without authoritative biological plate/randomization metadata",
+    "causal_treatment_claim_allowed": false,
+    "WT_vs_RHD6_global_genotype_test_allowed": false,
+    "reason": "WT and RHD6 constructs occupy different experiment and study-role strata."
+  },
+  "reporting": {
+    "clean_and_full_results_both_required": true,
+    "batch_condition_cross_table_required": true,
+    "exact_denominators_required": true,
+    "missingness_and_fail_closed_counts_required": true,
+    "negative_and_nonidentifiable_results_required": true,
+    "six_condition_atlas_status": "descriptive",
+    "independent_accuracy_claim_allowed": false,
+    "blind_images_used": 0
+  }
+}

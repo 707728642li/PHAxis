@@ -1,0 +1,14 @@
+name: Bug report
+description: Reproducible software defect
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Version, command and minimal synthetic reproduction
+      description: Do not include private images, credentials or workstation paths.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed output

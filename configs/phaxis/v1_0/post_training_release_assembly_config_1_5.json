@@ -1,0 +1,357 @@
+{
+  "author_metadata_template": "configs/phaxis/v1_0/POST_TRAINING_RELEASE_AUTHOR_METADATA_TEMPLATE.json",
+  "authorities": {
+    "all500_decisions": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "data/rhaxis_arabidopsis_human_curated443_v1_0/manifests/filter_decisions_all500.csv"
+    },
+    "all500_notes": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "data/rhaxis_arabidopsis_human_curated443_v1_0/README_CN.md"
+    },
+    "author_release_attestation": {
+      "authority_class": "author_metadata",
+      "deferred_authority": {
+        "document_schema_version": "PHAxis-handover-scope-license-attestation-1.0",
+        "final_status": "approved_for_formal_handover",
+        "first_consumer_stage": "handover_dataset_manifest",
+        "human_authority_id": "phaxis-1.0.0-handover-scope-license-attestation",
+        "identity_field": "attestation_identity_sha256",
+        "schema_version": "PHAxis-deferred-human-authority-contract-1.0",
+        "status_field": "status",
+        "target_path": "{run_dir}/human_authorities/POST_TRAINING_HANDOVER_ATTESTATION.json"
+      },
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/POST_TRAINING_HANDOVER_ATTESTATION_TEMPLATE.json"
+    },
+    "author_verified_manuscript_metadata": {
+      "authority_class": "author_metadata",
+      "deferred_authority": {
+        "document_schema_version": "PHAxis-manuscript-human-metadata-1.0",
+        "final_status": "complete_author_verified_external_metadata",
+        "first_consumer_stage": "values",
+        "human_authority_id": "phaxis-1.0.0-manuscript-human-metadata",
+        "identity_field": "human_metadata_identity_sha256",
+        "schema_version": "PHAxis-deferred-human-authority-contract-1.0",
+        "status_field": "status",
+        "target_path": "{run_dir}/human_authorities/POST_TRAINING_MANUSCRIPT_METADATA.json"
+      },
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/POST_TRAINING_MANUSCRIPT_METADATA_TEMPLATE.json"
+    },
+    "biological_image_root": {
+      "authority_class": "immutable_raw_data",
+      "kind": "directory",
+      "path": "data/rhaxis_six_condition_images_by_batch_v2"
+    },
+    "canonical443_dataset": {
+      "authority_class": "immutable_raw_data",
+      "kind": "directory",
+      "path": "data/rhaxis_arabidopsis_human_curated443_v1_0"
+    },
+    "canonical_integrity_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "data/rhaxis_arabidopsis_human_curated443_v1_0/manifests/integrity_sha256.csv"
+    },
+    "dataset_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "data/rhaxis_arabidopsis_human_curated443_v1_0/manifests/dataset_manifest.csv"
+    },
+    "dataset_audit": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/phaxis_stageb_train399_dataset_audit_run1/dataset_audit.json"
+    },
+    "frozen_v1_read_only_contract": {
+      "authority_class": "frozen_read_only_asset",
+      "kind": "file",
+      "path": "models/phaxis_root_provider_v1_0_20260828_run3/hybrid_candidate/model/contracts/frozen_v1_read_only.json"
+    },
+    "frozen_v1_read_only_assets": {
+      "authority_class": "frozen_read_only_asset",
+      "kind": "directory",
+      "path": "models/phaxis_root_provider_v1_0_20260828_run3/legacy_project"
+    },
+    "frozen_historical_oof_pickle": {
+      "authority_class": "frozen_read_only_asset",
+      "kind": "file",
+      "path": "outputs/rhaxiscc_handover_independent_validation_20260827/reports/oof_b1/oof_raw.pkl"
+    },
+    "frozen_root_bundle": {
+      "authority_class": "frozen_read_only_asset",
+      "kind": "directory",
+      "path": "models/phaxis_root_provider_v1_0_20260828_run3"
+    },
+    "locked_val_ids": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/locked_qcdevelopment44_ids.txt"
+    },
+    "immutable_overlap_audit": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/phaxis_v1_0_bio283_overlap_recomputed_run1/biological283_hash_audit.csv"
+    },
+    "manual500_image_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "data/rhaxis_assisted_review500_stitched_tiff_v1/tiff_staging_manifest.csv"
+    },
+    "master_manuscript": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "docs/phaxis/PHAXIS_MANUSCRIPT_MASTER_DRAFT_20260830.md"
+    },
+    "submission_title_metadata": {
+      "authority_class": "author_metadata",
+      "deferred_authority": {
+        "document_schema_version": "PHAxis-submission-title-metadata-2.0",
+        "final_status": "complete_author_verified_submission_metadata",
+        "first_consumer_stage": "submission_docx",
+        "human_authority_id": "phaxis-1.0.0-submission-title-metadata",
+        "identity_field": "metadata_identity_sha256",
+        "schema_version": "PHAxis-deferred-human-authority-contract-1.0",
+        "status_field": "status",
+        "target_path": "{run_dir}/human_authorities/SUBMISSION_TITLE_METADATA.json"
+      },
+      "kind": "file",
+      "path": "manuscript/phaxis_v1_0/SUBMISSION_TITLE_METADATA_TEMPLATE_2_0.json"
+    },
+    "supplement_master": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "docs/phaxis/PHAXIS_SUPPLEMENTARY_MASTER_DRAFT_20260830.md"
+    },
+    "pending_official_contract": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/model_contract.json"
+    },
+    "qcdev_hybrid_predictions": {
+      "authority_class": "frozen_read_only_asset",
+      "kind": "directory",
+      "path": "outputs/phaxis_v1_0_qcdev44_fusion_run3_final_contract/predictions"
+    },
+    "qcdev_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/phaxis_stageb_train399_qcdev44_manifest_20260828/manifest_all.csv"
+    },
+    "raw_analysis_metadata": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_nextgen_hybrid_max_axis_ridge_review_workspace_full283_run8_final_auto/analysis_metadata.csv"
+    },
+    "raw_production_metadata": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_nextgen_hybrid_max_axis_ridge_review_workspace_full283_run8_final_auto/analysis_metadata.csv"
+    },
+    "raw_review_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_nextgen_hybrid_max_axis_ridge_review_workspace_full283_run8_final_auto/review_manifest.csv"
+    },
+    "raw_study_design": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_six_condition_study_design_v1_run2_final/canonical_unit_manifest.csv"
+    },
+    "release_author_metadata": {
+      "authority_class": "author_metadata",
+      "deferred_authority": {
+        "document_schema_version": "PHAxis-release-human-metadata-1.3",
+        "final_status": "author_verified_release_authority",
+        "first_consumer_stage": "source_release",
+        "human_authority_id": "phaxis-1.0.0-release-author-metadata",
+        "identity_field": "metadata_identity_sha256",
+        "schema_version": "PHAxis-deferred-human-authority-contract-1.0",
+        "status_field": "status",
+        "target_path": "{run_dir}/human_authorities/POST_TRAINING_RELEASE_AUTHOR_METADATA.json"
+      },
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/POST_TRAINING_RELEASE_AUTHOR_METADATA_TEMPLATE.json"
+    },
+    "root_acquisition_gate": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/acquisition_gate_mahidol_i_reference_v1/gate.json"
+    },
+    "root_canonical_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_six_condition_study_design_v1_run2_final/canonical_unit_manifest.csv"
+    },
+    "root_deployment_lock": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_six_condition_nextgen_deployment_v1_run1/deployment_manifest_lock.json"
+    },
+    "root_deployment_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_six_condition_nextgen_deployment_v1_run1/deployment_manifest.csv"
+    },
+    "root_deployment_metadata": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_six_condition_v1_inputs_full283_run2_measured_gate/deployment_metadata.csv"
+    },
+    "root_raw_input_manifest": {
+      "authority_class": "immutable_raw_data",
+      "kind": "file",
+      "path": "outputs/rhaxis_six_condition_v1_inputs_full283_run2_measured_gate/v1_prepare_input_manifest.csv"
+    },
+    "root_reference_registry": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "outputs/phaxis_root_provider_reference283_run1/reference_registry.json"
+    },
+    "seed_2026082801_checkpoint": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082801/last.pt"
+    },
+    "seed_2026082801_receipt": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082801/training_receipt_resume_001.json"
+    },
+    "seed_2026082802_checkpoint": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082802/last.pt"
+    },
+    "seed_2026082802_receipt": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082802/training_receipt.json"
+    },
+    "seed_2026082803_checkpoint": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082803/last.pt"
+    },
+    "seed_2026082803_receipt": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082803/training_receipt_resume_001.json"
+    },
+    "seed_2026082804_checkpoint": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082804/last.pt"
+    },
+    "seed_2026082804_receipt": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082804/training_receipt_resume_001.json"
+    },
+    "seed_2026082805_checkpoint": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082805/last.pt"
+    },
+    "seed_2026082805_receipt": {
+      "authority_class": "completed_training_authority",
+      "kind": "file",
+      "path": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082805/training_receipt_resume_001.json"
+    },
+    "split_manifest": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/rhaxis_nextgen/splits/qc_development_v1_0/split_manifest.csv"
+    },
+    "static_analysis_contract": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/biological_analysis_contract.json"
+    },
+    "static_axial_profile_contract": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/axial_profile_contract.json"
+    },
+    "static_biological_model_spec": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/biological_model_spec.json"
+    },
+    "static_profile_analysis_contract": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/axial_profile_analysis_contract.json"
+    },
+    "static_trait_contract": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "configs/phaxis/v1_0/trait_contract.json"
+    },
+    "release_authority_registry": {
+      "authority_class": "static_contract",
+      "kind": "file",
+      "path": "release/RELEASE_AUTHORITY_REGISTRY.json"
+    }
+  },
+  "manifest_fields": {
+    "blind_images_used": 0,
+    "canonical_annotations_read": false,
+    "condition_metadata_used_for_routing": false,
+    "dataset_audit_input": "dataset_audit",
+    "frozen_v1_inputs": [
+      "frozen_v1_read_only_contract"
+    ],
+    "frozen_v1_read_only": true,
+    "locked_val_ids_input": "locked_val_ids",
+    "product": "PHAxis",
+    "product_version": "1.0.0",
+    "qcdev_manifest_input": "qcdev_manifest",
+    "root_cap_region_statistics_included": false,
+    "run_id": "PHAxis-1.0.0-post-training-formal-release"
+  },
+  "output_root": "outputs/phaxis_post_training_formal_release_run1_5",
+  "schema_version": "PHAxis-post-training-release-assembly-config-1.0",
+  "stage_contract_template": "configs/phaxis/v1_0/post_training_release_stage_contract_1_5.json",
+  "training_members": [
+    {
+      "checkpoint": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082801/last.pt",
+      "checkpoint_input": "seed_2026082801_checkpoint",
+      "completion_receipt": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082801/training_receipt_resume_001.json",
+      "completion_receipt_input": "seed_2026082801_receipt",
+      "seed": 2026082801
+    },
+    {
+      "checkpoint": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082802/last.pt",
+      "checkpoint_input": "seed_2026082802_checkpoint",
+      "completion_receipt": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082802/training_receipt.json",
+      "completion_receipt_input": "seed_2026082802_receipt",
+      "seed": 2026082802
+    },
+    {
+      "checkpoint": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082803/last.pt",
+      "checkpoint_input": "seed_2026082803_checkpoint",
+      "completion_receipt": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082803/training_receipt_resume_001.json",
+      "completion_receipt_input": "seed_2026082803_receipt",
+      "seed": 2026082803
+    },
+    {
+      "checkpoint": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082804/last.pt",
+      "checkpoint_input": "seed_2026082804_checkpoint",
+      "completion_receipt": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082804/training_receipt_resume_001.json",
+      "completion_receipt_input": "seed_2026082804_receipt",
+      "seed": 2026082804
+    },
+    {
+      "checkpoint": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082805/last.pt",
+      "checkpoint_input": "seed_2026082805_checkpoint",
+      "completion_receipt": "models/phaxis_stageb_train399_v1_0_20260828/seed_2026082805/training_receipt_resume_001.json",
+      "completion_receipt_input": "seed_2026082805_receipt",
+      "seed": 2026082805
+    }
+  ],
+  "workspace": "../../.."
+}

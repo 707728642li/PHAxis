@@ -1,0 +1,432 @@
+{
+  "schema_version": "PHAxis-trait-contract-1.0.0",
+  "product": "PHAxis",
+  "product_version": "1.0.0",
+  "row_unit": "one visible primary root per source image",
+  "canonical_table": "image_traits.csv",
+  "plant_facing_catalog": {
+    "path": "docs/phaxis/TRAIT_CONTRACT_CN.md",
+    "languages": [
+      "zh-CN",
+      "en"
+    ],
+    "handover_copy": "PHENOTYPE_CAPABILITIES_CN.md",
+    "handover_copy_semantics": "byte-identical copy of the catalog path at handover build time; never an independently maintained catalog"
+  },
+  "counts": {
+    "nonredundant_biological_numeric_fields": 32,
+    "primary_root_fields": 19,
+    "root_hair_fields": 13,
+    "root_cap_region_fields": 0,
+    "distal_root_cap_point_geometry_fields": 2
+  },
+  "invariants": {
+    "root_cap_region_output": false,
+    "root_cap_area_used": false,
+    "whole_hair_zone_confirmatory_allowed": false,
+    "condition_metadata_used_for_routing": false,
+    "canonical_annotations_read_during_inference": false,
+    "blind_images_used": 0,
+    "identity_expert": "PHAxis Stage-B strict train399-only five-seed ensemble at the bound selected operating point",
+    "length_expert": "PHAxis geometry engine endpoint-complete centrelines one-to-one matched to Stage-B identities",
+    "maximum_identity_length_base_match_um": 20.0,
+    "maximum_attachment_boundary_error_um": 40.0,
+    "distal_window_um": [
+      1000.0,
+      4000.0
+    ],
+    "first_long_hair_minimum_length_um": 40.0
+  },
+  "primary_root_traits": [
+    {
+      "id": "R01",
+      "field": "visible_root_axis_length_um",
+      "display_name_cn": "可见主根轴长度",
+      "display_name_en": "Visible primary-root axis length",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.visible_root_axis_length_um"
+    },
+    {
+      "id": "R02",
+      "field": "root_axis_chord_um",
+      "display_name_cn": "主根端点弦长",
+      "display_name_en": "Root-axis endpoint chord length",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_axis_chord_um"
+    },
+    {
+      "id": "R03",
+      "field": "root_centerline_chord_tortuosity",
+      "display_name_cn": "主根曲折度",
+      "display_name_en": "Root centreline-to-chord tortuosity",
+      "unit": "ratio",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_centerline_chord_tortuosity"
+    },
+    {
+      "id": "R04",
+      "field": "root_straightness",
+      "display_name_cn": "主根直线度",
+      "display_name_en": "Root straightness",
+      "unit": "ratio",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_straightness"
+    },
+    {
+      "id": "R05",
+      "field": "root_projected_area_um2",
+      "display_name_cn": "主根二维投影面积",
+      "display_name_en": "Primary-root-body projected area",
+      "unit": "um2",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_projected_area_um2"
+    },
+    {
+      "id": "R06",
+      "field": "root_projected_area_um2_per_root_mm",
+      "display_name_cn": "单位根长投影面积",
+      "display_name_en": "Projected area per millimetre visible root",
+      "unit": "um2_per_mm",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_projected_area_um2_per_root_mm"
+    },
+    {
+      "id": "R07",
+      "field": "median_root_width_um",
+      "display_name_cn": "主根中位宽度",
+      "display_name_en": "Median apparent primary-root width",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.median_root_width_um"
+    },
+    {
+      "id": "R08",
+      "field": "root_width_p10_um",
+      "display_name_cn": "主根宽度 P10",
+      "display_name_en": "Apparent primary-root width P10",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_p10_um"
+    },
+    {
+      "id": "R09",
+      "field": "root_width_q25_um",
+      "display_name_cn": "主根宽度 Q25",
+      "display_name_en": "Apparent primary-root width Q25",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_q25_um"
+    },
+    {
+      "id": "R10",
+      "field": "root_width_q75_um",
+      "display_name_cn": "主根宽度 Q75",
+      "display_name_en": "Apparent primary-root width Q75",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_q75_um"
+    },
+    {
+      "id": "R11",
+      "field": "root_width_p90_um",
+      "display_name_cn": "主根宽度 P90",
+      "display_name_en": "Apparent primary-root width P90",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_p90_um"
+    },
+    {
+      "id": "R12",
+      "field": "root_width_cv",
+      "display_name_cn": "主根宽度变异系数",
+      "display_name_en": "Primary-root width coefficient of variation",
+      "unit": "ratio",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_cv"
+    },
+    {
+      "id": "R13",
+      "field": "root_width_tip_third_median_um",
+      "display_name_cn": "distal 三分之一中位宽度",
+      "display_name_en": "Distal-third median apparent root width",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_tip_third_median_um"
+    },
+    {
+      "id": "R14",
+      "field": "root_width_middle_third_median_um",
+      "display_name_cn": "中段三分之一中位宽度",
+      "display_name_en": "Middle-third median apparent root width",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_middle_third_median_um"
+    },
+    {
+      "id": "R15",
+      "field": "root_width_shootward_third_median_um",
+      "display_name_cn": "shootward 三分之一中位宽度",
+      "display_name_en": "Shootward-third median apparent root width",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_shootward_third_median_um"
+    },
+    {
+      "id": "R16",
+      "field": "root_width_shootward_to_tip_ratio",
+      "display_name_cn": "shootward/distal 宽度比",
+      "display_name_en": "Shootward-to-distal apparent-width ratio",
+      "unit": "ratio",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_shootward_to_tip_ratio"
+    },
+    {
+      "id": "R17",
+      "field": "root_width_axial_slope_um_per_mm",
+      "display_name_cn": "主根轴向宽度斜率",
+      "display_name_en": "Axial apparent-root-width slope",
+      "unit": "um_per_mm",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_width_axial_slope_um_per_mm"
+    },
+    {
+      "id": "R18",
+      "field": "root_centerline_curvature_median_rad_per_mm",
+      "display_name_cn": "主根中位曲率",
+      "display_name_en": "Median primary-root centreline curvature",
+      "unit": "rad_per_mm",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_centerline_curvature_median_rad_per_mm"
+    },
+    {
+      "id": "R19",
+      "field": "root_centerline_curvature_p95_rad_per_mm",
+      "display_name_cn": "主根曲率 P95",
+      "display_name_en": "Primary-root centreline curvature P95",
+      "unit": "rad_per_mm",
+      "type": "number_or_null",
+      "source": "detailed_root_statistics.root_centerline_curvature_p95_rad_per_mm"
+    }
+  ],
+  "root_hair_traits": [
+    {
+      "id": "H01",
+      "field": "hair_count",
+      "display_name_cn": "根毛数量",
+      "display_name_en": "Visible root-hair identity count",
+      "unit": "count",
+      "type": "integer_or_null",
+      "source": "count(identity_hairs)",
+      "identity_geometry": "PHAxis Stage-B strict train399 selected expert"
+    },
+    {
+      "id": "H02",
+      "field": "mean_hair_length_um",
+      "display_name_cn": "平均根毛长度",
+      "display_name_en": "Conditional mean endpoint-complete hair length",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "mean(polyline_length(length_hairs))"
+    },
+    {
+      "id": "H03",
+      "field": "median_hair_length_um",
+      "display_name_cn": "中位根毛长度",
+      "display_name_en": "Conditional median endpoint-complete hair length",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "median(polyline_length(length_hairs))"
+    },
+    {
+      "id": "H04",
+      "field": "total_hair_length_um",
+      "display_name_cn": "已测根毛总长度",
+      "display_name_en": "Measured endpoint-complete hair-length total",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "0 when H01=0; null when H01>0 and no endpoint-complete length is observed; otherwise sum(polyline_length(length_hairs))",
+      "censoring": "partial measured-subset total when total_hair_length_is_partial is true"
+    },
+    {
+      "id": "H05",
+      "field": "hair_density_per_mm_visible_root",
+      "display_name_cn": "每毫米可见主根的根毛密度",
+      "display_name_en": "Visible-hair density per millimetre visible root",
+      "unit": "count_per_mm",
+      "type": "number_or_null",
+      "source": "hair_count / (visible_root_axis_length_um / 1000)"
+    },
+    {
+      "id": "H06",
+      "field": "first_hair_distance_from_distal_point_um",
+      "display_name_cn": "第一根可识别根毛距 distal point 距离",
+      "display_name_en": "Distance from distal point to first identifiable hair",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "min(identity_hairs.root_axis_distance_from_tip_um where root_attachment_valid)"
+    },
+    {
+      "id": "H07",
+      "field": "first_hair_ge40um_distance_from_distal_point_um",
+      "display_name_cn": "第一根长度≥40 µm根毛距 distal point 距离",
+      "display_name_en": "Distance from distal point to first >=40 um endpoint-complete hair",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "minimum Stage B attachment distance among one-to-one matched length_hairs with length >=40 um"
+    },
+    {
+      "id": "H08",
+      "field": "local_hair_count_1_4mm",
+      "display_name_cn": "distal 1--4 mm 窗口根毛数",
+      "display_name_en": "Root-hair identity count in the distal [1,4) mm window",
+      "unit": "count",
+      "type": "integer_or_null",
+      "source": "count valid Stage B attachments in [1000,4000) um"
+    },
+    {
+      "id": "H09",
+      "field": "local_hair_density_per_mm_1_4mm",
+      "display_name_cn": "distal 1--4 mm 窗口根毛密度",
+      "display_name_en": "Root-hair identity density in the distal [1,4) mm window",
+      "unit": "count_per_mm",
+      "type": "number_or_null",
+      "source": "local_hair_count_1_4mm / 3"
+    },
+    {
+      "id": "H10",
+      "field": "local_mean_hair_length_um_1_4mm",
+      "display_name_cn": "1--4 mm 窗口平均根毛长度",
+      "display_name_en": "Conditional mean hair length in the distal [1,4) mm window",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "mean length_hairs matched to Stage B identities attached in [1000,4000) um"
+    },
+    {
+      "id": "H11",
+      "field": "local_median_hair_length_um_1_4mm",
+      "display_name_cn": "1--4 mm 窗口中位根毛长度",
+      "display_name_en": "Conditional median hair length in the distal [1,4) mm window",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "median length_hairs matched to Stage B identities attached in [1000,4000) um"
+    },
+    {
+      "id": "H12",
+      "field": "local_total_hair_length_um_per_root_mm_1_4mm",
+      "display_name_cn": "1--4 mm 单位根长已测总长度",
+      "display_name_en": "Measured hair-length total per root mm in the distal [1,4) mm window",
+      "unit": "um_per_mm",
+      "type": "number_or_null",
+      "source": "null when the window is ineligible; 0 when H08=0; null when H08>0 and no local endpoint-complete length is observed; otherwise sum matched length_hairs in [1000,4000) um / 3"
+    },
+    {
+      "id": "H13",
+      "field": "visible_hair_attachment_span_um_descriptive_right_censored",
+      "display_name_cn": "可见根毛附着跨度",
+      "display_name_en": "Visible attachment span (descriptive, right-censored)",
+      "unit": "um",
+      "type": "number_or_null",
+      "source": "max-min valid Stage B attachment distances",
+      "censoring": "right-censored descriptive value"
+    }
+  ],
+  "compatibility_aliases": {
+    "effective_measured_root_length_um": "visible_root_axis_length_um",
+    "main_root_length_um": "visible_root_axis_length_um",
+    "root_area_um2": "root_projected_area_um2",
+    "main_root_width_um": "median_root_width_um"
+  },
+  "legacy_json_to_canonical": {
+    "phenotypes.identity_tier.hair_density_per_mm": "hair_density_per_mm_visible_root",
+    "phenotypes.identity_tier.first_hair_distance_from_tip_um": "first_hair_distance_from_distal_point_um",
+    "phenotypes.identity_tier.hair_zone_length_um": "visible_hair_attachment_span_um_descriptive_right_censored"
+  },
+  "excluded_from_biological_trait_count": {
+    "coordinate_and_acquisition_geometry": [
+      "root_cap_point_x_px",
+      "root_cap_point_y_px",
+      "shootward_endpoint_x_px",
+      "shootward_endpoint_y_px",
+      "root_orientation_deg"
+    ],
+    "metadata_provenance_and_source": [
+      "task_id",
+      "measurement_tier",
+      "reviewer_id",
+      "review_status",
+      "experiment_key",
+      "condition_code",
+      "study_role",
+      "developmental_day",
+      "genotype_or_construct",
+      "temperature_c",
+      "statistics_schema_version",
+      "measurement_definition",
+      "root_axis_source",
+      "root_global_width_source",
+      "root_global_width_reference_applied",
+      "axis_method"
+    ],
+    "quality_control_and_measurement_support": [
+      "exclusion_reason",
+      "automatic_formal_phenotype_eligible",
+      "qc_disposition",
+      "formal_statistics_eligible",
+      "root_cap_area_used",
+      "root_cap_point_border_distance_px",
+      "root_cap_point_border_visible",
+      "shootward_endpoint_border_distance_px",
+      "shootward_endpoint_border_visible",
+      "root_cap_point_to_axis_bridge_um",
+      "axis_skeleton_pixels",
+      "axis_endpoint_count",
+      "axis_reference_radius_px",
+      "width_end_exclusion_um",
+      "width_samples",
+      "hair_length_measurement_hair_count",
+      "hair_length_measurement_fraction",
+      "hair_length_semantics",
+      "total_hair_length_is_partial",
+      "distal_window_1_4mm_eligible",
+      "attachment_axis_valid_fraction",
+      "whole_hair_zone_confirmatory_allowed"
+    ]
+  },
+  "length_link_contract": {
+    "identity_key": "identity_hairs[*].source_instance_id",
+    "length_to_identity_key": "length_hairs[*].identity_source_instance_id",
+    "identity_to_length_key": "identity_hairs[*].length_measurement_source_instance_id",
+    "formal_length_geometry": "length_hairs[*].points_xy",
+    "forbidden_formal_length_geometry": "identity_hairs[*].points_xy",
+    "stageb_predicted_length_role": "diagnostic_only",
+    "cardinality": "one-to-zero-or-one in both directions",
+    "unmatched_identity_length": null
+  },
+  "null_semantics": {
+    "unobservable_or_ineligible": null,
+    "zero": "a measured biological zero, never a missing-value replacement",
+    "window_ineligible": "H08 through H12 are null",
+    "zero_global_identities": "H01=0, H02=null, H03=null, H04=0, hair_length_measurement_fraction=null, attachment_axis_valid_fraction=null, total_hair_length_is_partial=false",
+    "window_eligible_zero_identities": "H08=0, H09=0, H10=null, H11=null, H12=0",
+    "positive_identities_without_endpoint_complete_lengths": "H02=null, H03=null, H04=null with partial=true; when H08>0 but no local endpoint-complete length is observed, H10=null, H11=null, H12=null",
+    "partial_endpoint_complete_lengths": "H04 and H12 are numeric measured-subset totals only when at least one corresponding endpoint-complete curve is observed; partial=true records incomplete global support",
+    "zero_denominator_length_support": "hair_length_measurement_fraction is null when H01=0, never 1.0",
+    "attachment_support": "attachment_axis_valid_fraction is null when H01=0; when H01>0 it is finite within [0,1] and cross-checks the identity table, never an empty-set 1.0",
+    "scale_fail_closed": "all physical-unit biological fields are null"
+  },
+  "legacy_export_audit": {
+    "traits_csv_columns": 39,
+    "detailed_root_statistics_csv_columns": 59,
+    "overlapping_columns": 19,
+    "union_columns": 79,
+    "union_partition": {
+      "biological_traits": 32,
+      "compatibility_aliases": 4,
+      "coordinate_and_acquisition_geometry": 5,
+      "metadata_provenance_and_source": 16,
+      "quality_control_and_measurement_support": 22
+    }
+  }
+}

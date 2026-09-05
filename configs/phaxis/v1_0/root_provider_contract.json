@@ -1,0 +1,54 @@
+{
+  "schema_version": "PHAxis-root-provider-contract-1.0",
+  "product": "PHAxis V1.0",
+  "provider_id": "PHAXIS-V1.0-FROZEN-V1-V20-Q8-HYBRID-ROOT-20260828",
+  "root_algorithm": "Frozen V1/V20.12 + Q8 + final Hybrid-Max continuity and width-reference chain",
+  "locked_artifacts": {
+    "v1_runtime_config_sha256": "1711f038bbf1a6cf5d156596e71616a5a0a353154d56e8fb1bcffe1777997fe7",
+    "v12_root_checkpoint_sha256": "d242a4e50c88c658a0ac081c6e38f4dd8dfcfbfacd9bdb763fb769da2e90f3db",
+    "v20_final_overlay_config_sha256": "09a97a09e3b9833ac634ff9a1eb3dec009eda9637224623f7789da7fbd1d7dad",
+    "v20_readonly_adapter_sha256": "ca51b6e2f4acd3959d2db0f94559bbd0aa643709581925b8fd50a9ece6b127bb",
+    "hybrid_reuse_package_identity_sha256": "51133b022f89e4d611e14ec288f13b2f545ce15e375ab4a654df34e74418e679"
+  },
+  "identity_only_training_contract": {
+    "purpose": "deployment-time verification of training provenance without packaging or opening HumanCurated443 labels/images",
+    "dataset_identity_sha256": "1f80f9b9602fd82cf45d57886800981e6c7d657ebec0eb2f2fcabe28e52ac905",
+    "split_identity_sha256": "7cb3367432fefbf5fb425b830b813fb37bdf8de692be06372f5687d4e476fad7",
+    "split_lock_sha256": "8f77896c2e093ffddfa87520b4e9c7aed170bde2773c48e76c34ef2aaf968d69",
+    "human_training_payload_required_at_deployment": false,
+    "canonical_annotations_read_during_deployment": false
+  },
+  "mandatory_semantics": {
+    "v20_prepared_radii_fallback_preserved": true,
+    "v20_polygon_projection_preserved": true,
+    "v20_polygon_uncross_preserved": true,
+    "full_legacy_hair_branch_bundled_for_root_attachment_events": true,
+    "root_cap_region_output": false,
+    "root_cap_point_only": true,
+    "blind_images_used": 0
+  },
+  "known_reference283_special_routes": {
+    "prepared_radii_fallback_task_ids": [
+      "RHSCU-b6fd7e83d179c1d7",
+      "RHSCU-bc9223e70e962f9b"
+    ],
+    "attachment_supported_axis_extension_task_ids": [
+      "RHSCU-0d193f9385dd74c3",
+      "RHSCU-2f3c3176231f6c18",
+      "RHSCU-515656f8396c3f3d",
+      "RHSCU-9573d9023e984790",
+      "RHSCU-c3ac8864cc19bc3c",
+      "RHSCU-c98152b2f2c6acdf",
+      "RHSCU-eddd43f4ce0d1529"
+    ]
+  },
+  "acceptance_gates": {
+    "v12_strip_root_mask_sha256_exact": "283/283",
+    "v20_root_polygon_sha256_exact": "283/283",
+    "final_hybrid_root_mask_sha256_exact": "283/283",
+    "fresh_portable_raw_image_rerun_required_before_public_equivalence_claim": true
+  },
+  "historical_v1_modified": false,
+  "canonical_annotations_read_during_deployment": false,
+  "blind_images_used": 0
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "PHAxis-distal-axis-profile-contract-1.0.0",
+  "product": "PHAxis",
+  "product_version": "1.0.0",
+  "coordinate_origin": "distal_root_cap_point",
+  "distance_direction": "distal_to_shootward_along_locked_root_axis",
+  "bins_um": [
+    [0.0, 1000.0],
+    [1000.0, 2000.0],
+    [2000.0, 3000.0],
+    [3000.0, 4000.0],
+    [4000.0, 5000.0]
+  ],
+  "interval_semantics": "left_closed_right_open",
+  "eligibility": "formal_statistics_eligible_and_visible_root_axis_length_um_at_least_bin_end",
+  "identity_source": "Stage-B identities with valid attachment to the locked Hybrid root axis",
+  "length_source": "one-to-one matched Hybrid endpoint-complete centreline only",
+  "stageb_two_point_vector_used_as_length": false,
+  "zero_identity_length_support_fraction": null,
+  "root_cap_region_output": false,
+  "condition_metadata_used_for_model_routing": false,
+  "canonical_annotations_read": false,
+  "blind_images_used": 0,
+  "interpretation": "derived spatial profile; bins do not increase the 32 nonredundant image-level phenotype count"
+}

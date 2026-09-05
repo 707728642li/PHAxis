@@ -1,0 +1,108 @@
+{
+  "schema_version": "PHAxis-StageB-train399-AMP-backward-amendment-1.0",
+  "status": "applied_before_authoritative_seed3_optimizer_trajectory",
+  "created_utc": "2026-08-29T01:47:00Z",
+  "reason": "Deterministic seed 2026082803 produced finite FP32 losses but FP16 heatmap-head gradient overflow at epoch 1 global step 6 under loss scale 1024.",
+  "superseded_failed_attempt": {
+    "seed": 2026082803,
+    "completed_epoch": 0,
+    "global_step_at_failure": 6,
+    "failure_receipt": "failed_attempts/seed_2026082803_amp_overflow_20260829T013208Z/training_failure.json",
+    "failure_receipt_sha256": "1286a94109053993ba4f3b4af8f4aad042c6a3d693bf1411f0406353c38ed5ce",
+    "authoritative_checkpoint_created": false,
+    "blind_images_used": 0
+  },
+  "root_cause": {
+    "failure_class": "fp16_scaled_backward_overflow",
+    "loss_was_finite": true,
+    "loss_total": 39.887332916259766,
+    "nonfinite_parameter_groups": [
+      "heads.base_hm.body.1.weight[nonfinite=20/64]",
+      "heads.tip_hm.body.1.weight[nonfinite=9/64]"
+    ],
+    "oom": false,
+    "data_or_target_nonfinite": false,
+    "gpu_preflight_passed": true
+  },
+  "amended_numeric_policy": {
+    "contract_policy_string": "fail_closed_no_optimizer_step_skip",
+    "interpretation": "A scaled-backward overflow may be retried on the identical retained forward graph after GradScaler backoff; the batch and optimizer update are never skipped, and exhaustion remains a hard failure.",
+    "initial_scale": 1024.0,
+    "backoff_factor": 0.5,
+    "maximum_backward_retries_per_batch": 16,
+    "same_forward_graph_replayed": true,
+    "forward_recomputed": false,
+    "batchnorm_buffers_updated_again": false,
+    "rng_or_data_order_advanced": false,
+    "optimizer_step_before_finite_unscaled_gradient": false,
+    "optimizer_steps_skipped_due_nonfinite_gradients": 0,
+    "failure_after_retry_exhaustion": true
+  },
+  "unchanged_scientific_contract": {
+    "training_images": 399,
+    "excluded_qcdevelopment_images": 44,
+    "family_key_overlap": 0,
+    "epochs": 60,
+    "steps_per_epoch": 399,
+    "global_steps_per_seed": 23940,
+    "batch_size": 8,
+    "crops_per_image": 8,
+    "architecture_changed": false,
+    "loss_objective_changed": false,
+    "augmentation_or_sampler_changed": false,
+    "validation_used_for_gradient_early_stopping_or_retry": false,
+    "blind_images_used": 0,
+    "pyRootHair_called_or_copied": false
+  },
+  "legacy_zero_retry_normalization": {
+    "seeds": [
+      2026082801,
+      2026082802
+    ],
+    "completed_epochs": [
+      60,
+      60
+    ],
+    "completed_global_steps": [
+      23940,
+      23940
+    ],
+    "final_scaler_scale": [
+      1024.0,
+      1024.0
+    ],
+    "scaler_growth_tracker": [
+      23940,
+      23940
+    ],
+    "retry_event_field_present": [
+      false,
+      false
+    ],
+    "normalized_amp_backward_retry_count": [
+      0,
+      0
+    ],
+    "justification": "The pre-amendment loop raised immediately after any nonfinite unscaled gradient. Successful completion with an unchanged scale therefore proves the amended policy's zero-retry path for both members."
+  },
+  "authoritative_seed3_restart": {
+    "queue_id": "20260829T014058697Z_pending-single-gpu_gpu1_pid15004",
+    "physical_gpu": 1,
+    "cuda_visible_devices": "1",
+    "internal_device": "cuda:0",
+    "launch_mode": "fresh",
+    "failed_and_restart_initialization_file_sha256": "d27dd4bd5b29512bc847470d48b3d15f396bfbf8ae0e0579caf65d112d7b7fc0",
+    "initialization_identity_sha256": "93fd71d8d10013512dcd5dbfff1d97be6262b6daec1d08438d0eaf9b990519f8",
+    "initial_complete_model_state_sha256": "1dd78b3a8779ce4f08a7a18c3000258744ed3ced941779b8ac5885e9d5ff4ded",
+    "deterministic_initialization_reproduced": true
+  },
+  "implementation": {
+    "training_source": "../../src/phaxis/hair_stageb/training.py",
+    "training_source_sha256": "4ca3765ffb58ee2e5e69afdeddb32db667f210cf297df8e5941ea1091d8fc0c3",
+    "finite_path_gradient_identity_tested": true,
+    "same_graph_backoff_tested": true,
+    "retry_exhaustion_fail_closed_tested": true,
+    "candidate_retry_tamper_gate_tested": true,
+    "targeted_cpu_regression": "42 passed"
+  }
+}

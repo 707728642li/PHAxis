@@ -1,0 +1,19 @@
+{
+  "software": "PHAxis",
+  "version": "1.0.0",
+  "date": "2026-09-05",
+  "mode": "local_preparation_only",
+  "upload_authorized": false,
+  "bioconda_in_scope": false,
+  "formal_release_allowed": false,
+  "baseline_tree_identity": "20dc701b606280dacc8bfe7fc56d1d8d1f9a5387e05eca7d35e7b687444cac6b",
+  "model_contract_identity": "1b260e05341ece496e228bd073d48945bbe10832e5f71ed77f0e63c41847b910",
+  "pending": [
+    "author-confirmed metadata and asset rights",
+    "repository and documentation URLs",
+    "public release authorization",
+    "remote CI and TestPyPI",
+    "full model-capsule clean installation"
+  ],
+  "note": "Local test results are not a formal source-release gate receipt. Original sealed baseline is retained separately."
+}

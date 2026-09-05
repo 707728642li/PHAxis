@@ -1,0 +1,41 @@
+{
+  "schema_version": "PHAxis-primary-root-continuity-assurance-input-1.0",
+  "source_units": [
+    "fixture-root-001"
+  ],
+  "reference_authority_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+  "prediction_authority_identity_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+  "metric_config": {
+    "support_tolerance_um": 5.0,
+    "sampling_step_um": 2.0
+  },
+  "records": [
+    {
+      "pair_type": "primary_root_continuity",
+      "source_unit": "fixture-root-001",
+      "source_image_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "coordinate_space": "physical_um_xy",
+      "reference_axis_definition": "ordered visible primary-root axis recomputed from the canonical vector-derived root polygon and annotated distal/root-cap point",
+      "prediction_axis_definition": "connected primary-axis components skeletonized from the sealed final fused predicted root foreground delivered to trait extraction; no evaluator-side interpolation, bridging, or gap completion",
+      "reference_axis_artifact_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "prediction_axis_artifact_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "reference_axis_xy_um": [
+        [0.0, 0.0],
+        [100.0, 0.0]
+      ],
+      "predicted_axis_components_xy_um": [
+        [
+          [0.0, 0.0],
+          [45.0, 0.0]
+        ],
+        [
+          [55.0, 0.0],
+          [100.0, 0.0]
+        ]
+      ]
+    }
+  ],
+  "independent_accuracy_claim_allowed": false,
+  "blind_images_used": 0,
+  "input_contract_identity_sha256": "dca9120bef619e3d489ae44513c6ddfc45f8b5dc89a76e2b848970bb5cef2d0a"
+}

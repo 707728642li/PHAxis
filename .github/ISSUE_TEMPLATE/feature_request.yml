@@ -1,0 +1,9 @@
+name: Feature request
+description: Propose a user-facing improvement
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Scientific use case and proposed result
+    validations:
+      required: true

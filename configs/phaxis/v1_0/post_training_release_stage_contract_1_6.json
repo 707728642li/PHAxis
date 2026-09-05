@@ -1,0 +1,4779 @@
+{
+  "schema_version": "PHAxis-post-training-release-stage-contract-template-1.0",
+  "stage_count": 61,
+  "stages": [
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/candidate_manifest/candidate_manifest.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_stageb_train399_candidate_bundle.py",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--dataset-audit",
+        "{external:dataset_audit}",
+        "--output",
+        "{run_dir}/candidate_manifest/candidate_manifest.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "external": "dataset_audit"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        },
+        {
+          "external": "seed_2026082801_receipt"
+        },
+        {
+          "external": "seed_2026082802_receipt"
+        },
+        {
+          "external": "seed_2026082803_receipt"
+        },
+        {
+          "external": "seed_2026082804_receipt"
+        },
+        {
+          "external": "seed_2026082805_receipt"
+        }
+      ],
+      "name": "candidate_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "candidate_manifest_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:candidate_manifest}",
+        "status": "candidate_gate_passed_not_promoted",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/production_manifest/output/summary.json"
+        },
+        {
+          "kind": "file",
+          "name": "manifest_all",
+          "path": "{run_dir}/production_manifest/output/manifest_all.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_production_manifest.py",
+        "--analysis-metadata",
+        "{external:raw_analysis_metadata}",
+        "--review-manifest",
+        "{external:raw_review_manifest}",
+        "--root-input-manifest",
+        "{external:root_raw_input_manifest}",
+        "--output",
+        "{run_dir}/production_manifest/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "external": "raw_analysis_metadata"
+        },
+        {
+          "external": "raw_review_manifest"
+        },
+        {
+          "external": "root_raw_input_manifest"
+        }
+      ],
+      "name": "production_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:production_manifest}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/direct_benchmark_provider_descriptor/provider.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_direct_benchmark_provider_descriptor.py",
+        "--project-root",
+        "{workspace}",
+        "--physical-gpu",
+        "0",
+        "--output",
+        "{run_dir}/direct_benchmark_provider_descriptor/provider.json",
+        "--assemble"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        }
+      ],
+      "name": "direct_benchmark_provider_descriptor",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "descriptor_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:direct_benchmark_provider_descriptor}",
+        "status": "ready_hash_locked_direct_execution",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/release_case_prelocks/output/receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/release_case_prelocks/output"
+        },
+        {
+          "kind": "file",
+          "name": "overlay_case_plan",
+          "path": "{run_dir}/release_case_prelocks/output/overlay_case_plan.csv"
+        },
+        {
+          "kind": "file",
+          "name": "figure1_case_selection",
+          "path": "{run_dir}/release_case_prelocks/output/figure1_case_selection.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_release_case_prelocks.py",
+        "--application-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--output",
+        "{run_dir}/release_case_prelocks/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        }
+      ],
+      "name": "release_case_prelocks",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "case_prelock_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:release_case_prelocks}",
+        "status": "completed_result_independent_exact283_case_prelocks",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/qcdev_candidate_pool/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "candidate_pools",
+          "path": "{run_dir}/qcdev_candidate_pool/output/candidate_pools"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_stageb_train399_qcdev44_candidate_pool.py",
+        "--manifest",
+        "{external:qcdev_manifest}",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--output",
+        "{run_dir}/qcdev_candidate_pool/output",
+        "--device",
+        "cuda:0"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "gpu": {
+        "cuda_visible_devices": "1",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          1
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "external": "qcdev_manifest"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "qcdev_candidate_pool",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:qcdev_candidate_pool}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/selection/selection_receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "selected_model_metadata",
+          "path": "{run_dir}/selection/selected_model_metadata.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/select_stageb_train399_operating_point.py",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--candidate-pool",
+        "{run_dir}/qcdev_candidate_pool/output",
+        "--dataset-root",
+        "{external:canonical443_dataset}",
+        "--dataset-manifest",
+        "{external:dataset_manifest}",
+        "--split-manifest",
+        "{external:split_manifest}",
+        "--selection-receipt",
+        "{run_dir}/selection/selection_receipt.json",
+        "--selected-model-metadata",
+        "{run_dir}/selection/selected_model_metadata.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_candidate_pool"
+        },
+        {
+          "external": "canonical443_dataset"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "split_manifest"
+        }
+      ],
+      "name": "selection",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "selection_receipt_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:selection}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/qcdev_evaluation_inference/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "detections",
+          "path": "{run_dir}/qcdev_evaluation_inference/output/detections"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_stageb_evaluation_inference.py",
+        "--manifest",
+        "{external:qcdev_manifest}",
+        "--locked-val-ids",
+        "{external:locked_val_ids}",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--selected-model-metadata",
+        "{run_dir}/selection/selected_model_metadata.json",
+        "--selection-receipt",
+        "{run_dir}/selection/selection_receipt.json",
+        "--output",
+        "{run_dir}/qcdev_evaluation_inference/output",
+        "--device",
+        "cuda:0"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "gpu": {
+        "cuda_visible_devices": "1",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          1
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "external": "qcdev_manifest"
+        },
+        {
+          "external": "locked_val_ids"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "qcdev_evaluation_inference",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:qcdev_evaluation_inference}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/qcdev_evaluation/evaluation.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/evaluate_stageb_train399_qcdev44.py",
+        "--detections",
+        "{run_dir}/qcdev_evaluation_inference/output/detections",
+        "--evaluation-inference-summary",
+        "{run_dir}/qcdev_evaluation_inference/output/summary.json",
+        "--hybrid-predictions",
+        "{external:qcdev_hybrid_predictions}",
+        "--dataset-root",
+        "{external:canonical443_dataset}",
+        "--dataset-manifest",
+        "{external:dataset_manifest}",
+        "--split-manifest",
+        "{external:split_manifest}",
+        "--locked-val-ids",
+        "{external:locked_val_ids}",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--selected-model-metadata",
+        "{run_dir}/selection/selected_model_metadata.json",
+        "--selection-receipt",
+        "{run_dir}/selection/selection_receipt.json",
+        "--output",
+        "{run_dir}/qcdev_evaluation/evaluation.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation_inference"
+        },
+        {
+          "external": "canonical443_dataset"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "split_manifest"
+        },
+        {
+          "external": "locked_val_ids"
+        },
+        {
+          "external": "qcdev_hybrid_predictions"
+        }
+      ],
+      "name": "qcdev_evaluation",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:qcdev_evaluation}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/root_provider_exact283/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_root_provider.py",
+        "--project",
+        "{workspace}",
+        "--bundle",
+        "{external:frozen_root_bundle}",
+        "--acquisition-gate",
+        "{external:root_acquisition_gate}",
+        "--deployment-metadata",
+        "{external:root_deployment_metadata}",
+        "--canonical-manifest",
+        "{external:root_canonical_manifest}",
+        "--deployment-manifest",
+        "{external:root_deployment_manifest}",
+        "--deployment-lock",
+        "{external:root_deployment_lock}",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--v1-physical-gpu",
+        "1",
+        "--q8-physical-gpu",
+        "1",
+        "--strict-physical-gpu",
+        "--execute",
+        "--input-manifest",
+        "{external:root_raw_input_manifest}",
+        "--reference-registry",
+        "{external:root_reference_registry}",
+        "--output",
+        "{run_dir}/root_provider_exact283/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "1",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          1
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "external": "frozen_root_bundle"
+        },
+        {
+          "external": "root_acquisition_gate"
+        },
+        {
+          "external": "root_deployment_metadata"
+        },
+        {
+          "external": "root_canonical_manifest"
+        },
+        {
+          "external": "root_deployment_manifest"
+        },
+        {
+          "external": "root_deployment_lock"
+        },
+        {
+          "external": "biological_image_root"
+        },
+        {
+          "external": "root_raw_input_manifest"
+        },
+        {
+          "external": "root_reference_registry"
+        }
+      ],
+      "name": "root_provider_exact283",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:root_provider_exact283}",
+        "status": "pass_exact_283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/root_bundle_materialization/output/verification.json"
+        },
+        {
+          "kind": "directory",
+          "name": "bundle",
+          "path": "{run_dir}/root_bundle_materialization/output/bundle"
+        },
+        {
+          "kind": "file",
+          "name": "bundle_manifest",
+          "path": "{run_dir}/root_bundle_materialization/output/bundle/root_provider_bundle.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/materialize_verified_root_provider_bundle.py",
+        "--source-bundle",
+        "{external:frozen_root_bundle}",
+        "--output",
+        "{run_dir}/root_bundle_materialization/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "external": "frozen_root_bundle"
+        }
+      ],
+      "name": "root_bundle_materialization",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:root_bundle_materialization}",
+        "status": "pass",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/proposal/proposal.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/promote_model_contract.py",
+        "--current-model-contract",
+        "{external:pending_official_contract}",
+        "--train399-candidate",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--train399-selection",
+        "{run_dir}/selection/selection_receipt.json",
+        "--train399-evaluation",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--root-exact283",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--output",
+        "{run_dir}/proposal/proposal.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "external": "pending_official_contract"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "proposal",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "model_contract_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:proposal}",
+        "status": "passed_proposal_not_official",
+        "status_field": "formal_release_status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/authority_pin/authority_pin.json"
+        }
+      ],
+      "command": null,
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        }
+      ],
+      "name": "authority_pin",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "authority_pin_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:authority_pin}",
+        "status": "sealed_unapplied_proposal_for_production",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_analysis_workflow_manifest.py",
+        "--project",
+        "{workspace}",
+        "--bundle",
+        "{external:frozen_root_bundle}",
+        "--root-input-manifest",
+        "{external:root_raw_input_manifest}",
+        "--acquisition-gate",
+        "{external:root_acquisition_gate}",
+        "--deployment-metadata",
+        "{external:root_deployment_metadata}",
+        "--canonical-manifest",
+        "{external:root_canonical_manifest}",
+        "--deployment-manifest",
+        "{external:root_deployment_manifest}",
+        "--deployment-lock",
+        "{external:root_deployment_lock}",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--reference-registry",
+        "{external:root_reference_registry}",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--stageb-input-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--selected-model-metadata",
+        "{run_dir}/selection/selected_model_metadata.json",
+        "--selection-receipt",
+        "{run_dir}/selection/selection_receipt.json",
+        "--traits-metadata",
+        "{external:raw_production_metadata}",
+        "--profile-contract",
+        "{external:static_axial_profile_contract}",
+        "--v1-physical-gpu",
+        "0",
+        "--q8-physical-gpu",
+        "0",
+        "--stageb-physical-gpu",
+        "0",
+        "--stageb-internal-device",
+        "cuda:0",
+        "--output",
+        "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        },
+        {
+          "external": "frozen_root_bundle"
+        },
+        {
+          "external": "root_acquisition_gate"
+        },
+        {
+          "external": "root_deployment_metadata"
+        },
+        {
+          "external": "root_canonical_manifest"
+        },
+        {
+          "external": "root_deployment_manifest"
+        },
+        {
+          "external": "root_deployment_lock"
+        },
+        {
+          "external": "biological_image_root"
+        },
+        {
+          "external": "root_raw_input_manifest"
+        },
+        {
+          "external": "root_reference_registry"
+        },
+        {
+          "external": "raw_production_metadata"
+        },
+        {
+          "external": "static_axial_profile_contract"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "analysis_workflow_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:analysis_workflow_manifest}",
+        "status": "ready_hash_locked_full_workflow",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/clean_install_sample_manifest/output/receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/clean_install_sample_manifest/output"
+        },
+        {
+          "kind": "file",
+          "name": "example_manifest",
+          "path": "{run_dir}/clean_install_sample_manifest/output/release_example_manifest.json"
+        },
+        {
+          "kind": "file",
+          "name": "sample_input",
+          "path": "{run_dir}/clean_install_sample_manifest/output/inputs/sample_source_image.ome.tif"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_clean_install_sample_manifest.py",
+        "--analysis-workflow-manifest",
+        "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json",
+        "--case-selection",
+        "{run_dir}/release_case_prelocks/output/figure1_case_selection.json",
+        "--output",
+        "{run_dir}/clean_install_sample_manifest/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "analysis_workflow_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "release_case_prelocks"
+        }
+      ],
+      "name": "clean_install_sample_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "sample_input_suite_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:clean_install_sample_manifest}",
+        "status": "completed_real_nonblind_release_example_manifest",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/qcdev_root_inputs/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/qcdev_root_inputs/output"
+        },
+        {
+          "kind": "file",
+          "name": "root_input_manifest",
+          "path": "{run_dir}/qcdev_root_inputs/output/root_input_manifest.csv"
+        },
+        {
+          "kind": "file",
+          "name": "deployment_metadata",
+          "path": "{run_dir}/qcdev_root_inputs/output/deployment_metadata.csv"
+        },
+        {
+          "kind": "file",
+          "name": "canonical_unit_manifest",
+          "path": "{run_dir}/qcdev_root_inputs/output/canonical_unit_manifest.csv"
+        },
+        {
+          "kind": "file",
+          "name": "deployment_manifest",
+          "path": "{run_dir}/qcdev_root_inputs/output/deployment_manifest.csv"
+        },
+        {
+          "kind": "file",
+          "name": "deployment_lock",
+          "path": "{run_dir}/qcdev_root_inputs/output/deployment_manifest_lock.json"
+        },
+        {
+          "kind": "file",
+          "name": "acquisition_gate",
+          "path": "{run_dir}/qcdev_root_inputs/output/acquisition_gate.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_qcdev44_root_provider_inputs.py",
+        "--manifest",
+        "{external:qcdev_manifest}",
+        "--dataset-root",
+        "{external:canonical443_dataset}",
+        "--dataset-manifest",
+        "{external:dataset_manifest}",
+        "--locked-val-ids",
+        "{external:locked_val_ids}",
+        "--output",
+        "{run_dir}/qcdev_root_inputs/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "external": "qcdev_manifest"
+        },
+        {
+          "external": "canonical443_dataset"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "locked_val_ids"
+        }
+      ],
+      "name": "qcdev_root_inputs",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "summary_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:qcdev_root_inputs}",
+        "status": "completed_locked_exact44_label_free_source_contract",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/qcdev_root_provider/output/pipeline_state.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/qcdev_root_provider/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_root_provider.py",
+        "--project",
+        "{workspace}",
+        "--bundle",
+        "{external:frozen_root_bundle}",
+        "--input-manifest",
+        "{run_dir}/qcdev_root_inputs/output/root_input_manifest.csv",
+        "--acquisition-gate",
+        "{run_dir}/qcdev_root_inputs/output/acquisition_gate.json",
+        "--deployment-metadata",
+        "{run_dir}/qcdev_root_inputs/output/deployment_metadata.csv",
+        "--canonical-manifest",
+        "{run_dir}/qcdev_root_inputs/output/canonical_unit_manifest.csv",
+        "--deployment-manifest",
+        "{run_dir}/qcdev_root_inputs/output/deployment_manifest.csv",
+        "--deployment-lock",
+        "{run_dir}/qcdev_root_inputs/output/deployment_manifest_lock.json",
+        "--image-root",
+        "{external:canonical443_dataset}",
+        "--v1-physical-gpu",
+        "1",
+        "--q8-physical-gpu",
+        "1",
+        "--strict-physical-gpu",
+        "--output",
+        "{run_dir}/qcdev_root_provider/output",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "1",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          1
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_root_inputs"
+        },
+        {
+          "external": "frozen_root_bundle"
+        },
+        {
+          "external": "canonical443_dataset"
+        }
+      ],
+      "name": "qcdev_root_provider",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:qcdev_root_provider}",
+        "status": "completed_uncompared",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/qcdev_fusion/output/fusion_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/qcdev_fusion/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_cli.py",
+        "fuse",
+        "--root-predictions",
+        "{run_dir}/qcdev_root_provider/output/hybrid/predictions",
+        "--root-artifacts",
+        "{run_dir}/qcdev_root_provider/output/hybrid",
+        "--hair-detections",
+        "{run_dir}/qcdev_evaluation_inference/output/detections",
+        "--model-contract",
+        "{run_dir}/authority_pin/authority_pin.json",
+        "--output",
+        "{run_dir}/qcdev_fusion/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation_inference"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_root_provider"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        }
+      ],
+      "name": "qcdev_fusion",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:qcdev_fusion}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/production_stageb_exact283/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "detections",
+          "path": "{run_dir}/production_stageb_exact283/output/detections"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_stageb_inference.py",
+        "--manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--output",
+        "{run_dir}/production_stageb_exact283/output",
+        "--device",
+        "cuda:0",
+        "--model-contract-proposal",
+        "{run_dir}/authority_pin/authority_pin.json",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--selected-model-metadata",
+        "{run_dir}/selection/selected_model_metadata.json",
+        "--selection-receipt",
+        "{run_dir}/selection/selection_receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "gpu": {
+        "cuda_visible_devices": "1",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          1
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "production_stageb_exact283",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "summary_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:production_stageb_exact283}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/fusion_exact283/output/fusion_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/fusion_exact283/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_cli.py",
+        "fuse",
+        "--root-predictions",
+        "{run_dir}/root_provider_exact283/output/hybrid/predictions",
+        "--root-artifacts",
+        "{run_dir}/root_provider_exact283/output/hybrid",
+        "--hair-detections",
+        "{run_dir}/production_stageb_exact283/output/detections",
+        "--model-contract",
+        "{run_dir}/authority_pin/authority_pin.json",
+        "--output",
+        "{run_dir}/fusion_exact283/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_stageb_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        }
+      ],
+      "name": "fusion_exact283",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "summary_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:fusion_exact283}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/figure1_geometry_materialization/output/receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/figure1_geometry_materialization/output"
+        },
+        {
+          "kind": "file",
+          "name": "figure1_image",
+          "path": "{run_dir}/figure1_geometry_materialization/output/figure1_source_image.tif"
+        },
+        {
+          "kind": "file",
+          "name": "figure1_geometry",
+          "path": "{run_dir}/figure1_geometry_materialization/output/figure1_geometry.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/materialize_figure1_geometry.py",
+        "--case-selection",
+        "{run_dir}/release_case_prelocks/output/figure1_case_selection.json",
+        "--application-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--fusion-root",
+        "{run_dir}/fusion_exact283/output",
+        "--output",
+        "{run_dir}/figure1_geometry_materialization/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "release_case_prelocks"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        }
+      ],
+      "name": "figure1_geometry_materialization",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "figure1_geometry_materialization_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:figure1_geometry_materialization}",
+        "status": "completed_from_preselected_case_and_final_prediction",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/traits_exact283/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/traits_exact283/output"
+        },
+        {
+          "kind": "file",
+          "name": "traits",
+          "path": "{run_dir}/traits_exact283/output/traits.csv"
+        },
+        {
+          "kind": "file",
+          "name": "hair_instances",
+          "path": "{run_dir}/traits_exact283/output/hair_instances.csv"
+        },
+        {
+          "kind": "file",
+          "name": "image_traits",
+          "path": "{run_dir}/traits_exact283/output/image_traits.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/export_traits.py",
+        "--predictions",
+        "{run_dir}/fusion_exact283/output/predictions",
+        "--metadata",
+        "{external:raw_production_metadata}",
+        "--model-contract-proposal",
+        "{run_dir}/authority_pin/authority_pin.json",
+        "--output",
+        "{run_dir}/traits_exact283/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        },
+        {
+          "external": "raw_production_metadata"
+        },
+        {
+          "external": "static_trait_contract"
+        }
+      ],
+      "name": "traits_exact283",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "export_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:traits_exact283}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/cohorts_exact283/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/cohorts_exact283/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_biological_cohorts.py",
+        "--trait-export",
+        "{run_dir}/traits_exact283/output",
+        "--analysis-metadata",
+        "{external:raw_analysis_metadata}",
+        "--design-manifest",
+        "{external:raw_study_design}",
+        "--overlap-audit",
+        "{external:immutable_overlap_audit}",
+        "--analysis-contract",
+        "{external:static_analysis_contract}",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--output",
+        "{run_dir}/cohorts_exact283/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "external": "raw_analysis_metadata"
+        },
+        {
+          "external": "raw_study_design"
+        },
+        {
+          "external": "immutable_overlap_audit"
+        },
+        {
+          "external": "static_analysis_contract"
+        }
+      ],
+      "name": "cohorts_exact283",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:cohorts_exact283}",
+        "status": "completed_without_fitting_biological_effect_models",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/biological_analysis/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/biological_analysis/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/analyze_biological_cohorts.py",
+        "--cohorts",
+        "{run_dir}/cohorts_exact283/output",
+        "--analysis-contract",
+        "{external:static_analysis_contract}",
+        "--model-spec",
+        "{external:static_biological_model_spec}",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--output",
+        "{run_dir}/biological_analysis/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "external": "static_analysis_contract"
+        },
+        {
+          "external": "static_biological_model_spec"
+        }
+      ],
+      "name": "biological_analysis",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:biological_analysis}",
+        "status": "completed_exploratory_clean_primary_full_sensitivity",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/profiles_exact283/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/profiles_exact283/output"
+        },
+        {
+          "kind": "file",
+          "name": "profiles",
+          "path": "{run_dir}/profiles_exact283/output/distal_axis_profiles.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/export_distal_axis_profiles.py",
+        "--traits",
+        "{run_dir}/traits_exact283/output/traits.csv",
+        "--hair-instances",
+        "{run_dir}/traits_exact283/output/hair_instances.csv",
+        "--contract",
+        "{external:static_axial_profile_contract}",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--traits-summary",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--output",
+        "{run_dir}/profiles_exact283/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "external": "static_axial_profile_contract"
+        }
+      ],
+      "name": "profiles_exact283",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:profiles_exact283}",
+        "status": "completed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/profile_analysis/output/summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/profile_analysis/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/analyze_distal_axis_profiles.py",
+        "--primary-profiles",
+        "{run_dir}/profiles_exact283/output",
+        "--sensitivity-profiles",
+        "{run_dir}/profiles_exact283/output",
+        "--contract",
+        "{external:static_profile_analysis_contract}",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--output",
+        "{run_dir}/profile_analysis/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "external": "static_profile_analysis_contract"
+        }
+      ],
+      "name": "profile_analysis",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:profile_analysis}",
+        "status": "completed_exploratory_source_unit_profile_summaries",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/historical_oof_evidence/output/historical_development_receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "per_image",
+          "path": "{run_dir}/historical_oof_evidence/output/per_image_sufficient_statistics.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_historical_oof443_publication_evidence.py",
+        "--oof-pickle",
+        "{external:frozen_historical_oof_pickle}",
+        "--dataset-manifest",
+        "{external:dataset_manifest}",
+        "--split-manifest",
+        "{external:split_manifest}",
+        "--trusted-local-oof-pickle",
+        "--output",
+        "{run_dir}/historical_oof_evidence/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "external": "frozen_historical_oof_pickle"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "split_manifest"
+        }
+      ],
+      "name": "historical_oof_evidence",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:historical_oof_evidence}",
+        "status": "completed_locked_historical_oof443_development",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/measurement_assurance/output/measurement_assurance_receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/measurement_assurance/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_measurement_assurance_evidence.py",
+        "--train399-evaluation",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--qcdev-stageb-summary",
+        "{run_dir}/qcdev_evaluation_inference/output/summary.json",
+        "--qcdev-fusion-summary",
+        "{run_dir}/qcdev_fusion/output/fusion_summary.json",
+        "--qcdev-fusion-root",
+        "{run_dir}/qcdev_fusion/output",
+        "--application-fusion-summary",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--application-fusion-root",
+        "{run_dir}/fusion_exact283/output",
+        "--dataset-root",
+        "{external:canonical443_dataset}",
+        "--dataset-manifest",
+        "{external:dataset_manifest}",
+        "--split-manifest",
+        "{external:split_manifest}",
+        "--clean-traits",
+        "{run_dir}/cohorts_exact283/output/clean261/traits.csv",
+        "--cohorts-receipt",
+        "{run_dir}/cohorts_exact283/output/summary.json",
+        "--root-exact283-receipt",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--output",
+        "{run_dir}/measurement_assurance/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation_inference"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_fusion"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "external": "canonical443_dataset"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "split_manifest"
+        },
+        {
+          "external": "static_trait_contract"
+        }
+      ],
+      "name": "measurement_assurance",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:measurement_assurance}",
+        "status": "completed_locked_qc_development_assurance",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/overlay_evidence/output/overlay_selection_receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "selection",
+          "path": "{run_dir}/overlay_evidence/output/overlay_selection.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_condition_blinded_overlay_evidence.py",
+        "--case-plan",
+        "{run_dir}/release_case_prelocks/output/overlay_case_plan.csv",
+        "--application-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--full-traits",
+        "{run_dir}/traits_exact283/output/traits.csv",
+        "--fusion-root",
+        "{run_dir}/fusion_exact283/output",
+        "--output",
+        "{run_dir}/overlay_evidence/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "release_case_prelocks"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        }
+      ],
+      "name": "overlay_evidence",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:overlay_evidence}",
+        "status": "completed_locked_preselected_acquisition_challenge_gallery",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_phaxis_production/benchmark/runtime_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "workflow",
+          "path": "{run_dir}/benchmark_phaxis_production/workflow"
+        },
+        {
+          "kind": "directory",
+          "name": "benchmark",
+          "path": "{run_dir}/benchmark_phaxis_production/benchmark"
+        },
+        {
+          "kind": "file",
+          "name": "gpu_telemetry",
+          "path": "{run_dir}/benchmark_phaxis_production/benchmark/gpu_telemetry.json"
+        },
+        {
+          "kind": "file",
+          "name": "hardware_preflight",
+          "path": "{run_dir}/benchmark_phaxis_production/benchmark/hardware_preflight.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_external_direct_benchmark.py",
+        "--project-root",
+        "{workspace}",
+        "--producer-interface",
+        "{run_dir}/direct_benchmark_provider_descriptor/provider.json",
+        "--mode",
+        "phaxis_production",
+        "--source-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--analysis-manifest",
+        "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json",
+        "--workflow-output",
+        "{run_dir}/benchmark_phaxis_production/workflow",
+        "--output",
+        "{run_dir}/benchmark_phaxis_production/benchmark",
+        "--cuda-visible-devices",
+        "0",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "0",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          0
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "direct_benchmark_provider_descriptor"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "analysis_workflow_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        },
+        {
+          "external": "biological_image_root"
+        }
+      ],
+      "name": "benchmark_phaxis_production",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_phaxis_production}",
+        "status": "completed_direct_full283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_frozen_v1_production/benchmark/runtime_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "workflow",
+          "path": "{run_dir}/benchmark_frozen_v1_production/workflow"
+        },
+        {
+          "kind": "directory",
+          "name": "benchmark",
+          "path": "{run_dir}/benchmark_frozen_v1_production/benchmark"
+        },
+        {
+          "kind": "file",
+          "name": "gpu_telemetry",
+          "path": "{run_dir}/benchmark_frozen_v1_production/benchmark/gpu_telemetry.json"
+        },
+        {
+          "kind": "file",
+          "name": "hardware_preflight",
+          "path": "{run_dir}/benchmark_frozen_v1_production/benchmark/hardware_preflight.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_external_direct_benchmark.py",
+        "--project-root",
+        "{workspace}",
+        "--producer-interface",
+        "{run_dir}/direct_benchmark_provider_descriptor/provider.json",
+        "--mode",
+        "frozen_v1_production",
+        "--source-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--analysis-manifest",
+        "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json",
+        "--workflow-output",
+        "{run_dir}/benchmark_frozen_v1_production/workflow",
+        "--output",
+        "{run_dir}/benchmark_frozen_v1_production/benchmark",
+        "--cuda-visible-devices",
+        "0",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "0",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          0
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "direct_benchmark_provider_descriptor"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "analysis_workflow_manifest"
+        },
+        {
+          "external": "biological_image_root"
+        },
+        {
+          "external": "frozen_v1_read_only_assets"
+        }
+      ],
+      "name": "benchmark_frozen_v1_production",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_frozen_v1_production}",
+        "status": "completed_direct_full283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_phaxis_sequential/benchmark/runtime_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "workflow",
+          "path": "{run_dir}/benchmark_phaxis_sequential/workflow"
+        },
+        {
+          "kind": "directory",
+          "name": "benchmark",
+          "path": "{run_dir}/benchmark_phaxis_sequential/benchmark"
+        },
+        {
+          "kind": "file",
+          "name": "gpu_telemetry",
+          "path": "{run_dir}/benchmark_phaxis_sequential/benchmark/gpu_telemetry.json"
+        },
+        {
+          "kind": "file",
+          "name": "hardware_preflight",
+          "path": "{run_dir}/benchmark_phaxis_sequential/benchmark/hardware_preflight.json"
+        },
+        {
+          "kind": "file",
+          "name": "runtime_per_image",
+          "path": "{run_dir}/benchmark_phaxis_sequential/benchmark/runtime_per_image.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_external_direct_benchmark.py",
+        "--project-root",
+        "{workspace}",
+        "--producer-interface",
+        "{run_dir}/direct_benchmark_provider_descriptor/provider.json",
+        "--mode",
+        "phaxis_sequential",
+        "--source-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--analysis-manifest",
+        "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json",
+        "--workflow-output",
+        "{run_dir}/benchmark_phaxis_sequential/workflow",
+        "--output",
+        "{run_dir}/benchmark_phaxis_sequential/benchmark",
+        "--cuda-visible-devices",
+        "0",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "0",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          0
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "direct_benchmark_provider_descriptor"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "analysis_workflow_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "authority_pin"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        },
+        {
+          "external": "biological_image_root"
+        }
+      ],
+      "name": "benchmark_phaxis_sequential",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_phaxis_sequential}",
+        "status": "completed_direct_full283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "workflow",
+          "path": "{run_dir}/benchmark_frozen_v1_sequential/workflow"
+        },
+        {
+          "kind": "directory",
+          "name": "benchmark",
+          "path": "{run_dir}/benchmark_frozen_v1_sequential/benchmark"
+        },
+        {
+          "kind": "file",
+          "name": "gpu_telemetry",
+          "path": "{run_dir}/benchmark_frozen_v1_sequential/benchmark/gpu_telemetry.json"
+        },
+        {
+          "kind": "file",
+          "name": "hardware_preflight",
+          "path": "{run_dir}/benchmark_frozen_v1_sequential/benchmark/hardware_preflight.json"
+        },
+        {
+          "kind": "file",
+          "name": "runtime_per_image",
+          "path": "{run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_per_image.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/run_external_direct_benchmark.py",
+        "--project-root",
+        "{workspace}",
+        "--producer-interface",
+        "{run_dir}/direct_benchmark_provider_descriptor/provider.json",
+        "--mode",
+        "frozen_v1_sequential",
+        "--source-manifest",
+        "{run_dir}/production_manifest/output/manifest_all.csv",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--analysis-manifest",
+        "{run_dir}/analysis_workflow_manifest/analysis_workflow_manifest.json",
+        "--workflow-output",
+        "{run_dir}/benchmark_frozen_v1_sequential/workflow",
+        "--output",
+        "{run_dir}/benchmark_frozen_v1_sequential/benchmark",
+        "--cuda-visible-devices",
+        "0",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "0",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          0
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "direct_benchmark_provider_descriptor"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "analysis_workflow_manifest"
+        },
+        {
+          "external": "biological_image_root"
+        },
+        {
+          "external": "frozen_v1_read_only_assets"
+        }
+      ],
+      "name": "benchmark_frozen_v1_sequential",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_frozen_v1_sequential}",
+        "status": "completed_direct_full283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_production_comparison/comparison.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/benchmark_full_workflow.py",
+        "--compare-benchmarks",
+        "--phaxis-summary",
+        "{run_dir}/benchmark_phaxis_production/benchmark/runtime_summary.json",
+        "--baseline-receipt",
+        "{run_dir}/benchmark_frozen_v1_production/benchmark/runtime_summary.json",
+        "--output",
+        "{run_dir}/benchmark_production_comparison/comparison.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_production"
+        }
+      ],
+      "name": "benchmark_production_comparison",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_production_comparison}",
+        "status": "comparable_direct_full283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_sequential_comparison/comparison.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/benchmark_full_workflow.py",
+        "--compare-benchmarks",
+        "--phaxis-summary",
+        "{run_dir}/benchmark_phaxis_sequential/benchmark/runtime_summary.json",
+        "--baseline-receipt",
+        "{run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_summary.json",
+        "--output",
+        "{run_dir}/benchmark_sequential_comparison/comparison.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_sequential"
+        }
+      ],
+      "name": "benchmark_sequential_comparison",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_sequential_comparison}",
+        "status": "comparable_direct_full283",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_same_hardware/receipt.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/benchmark_full_workflow.py",
+        "--aggregate-same-hardware",
+        "--phaxis-production-summary",
+        "{run_dir}/benchmark_phaxis_production/benchmark/runtime_summary.json",
+        "--phaxis-sequential-summary",
+        "{run_dir}/benchmark_phaxis_sequential/benchmark/runtime_summary.json",
+        "--frozen-v1-production-summary",
+        "{run_dir}/benchmark_frozen_v1_production/benchmark/runtime_summary.json",
+        "--frozen-v1-sequential-summary",
+        "{run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_summary.json",
+        "--production-comparison",
+        "{run_dir}/benchmark_production_comparison/comparison.json",
+        "--sequential-comparison",
+        "{run_dir}/benchmark_sequential_comparison/comparison.json",
+        "--publish-receipt",
+        "--output",
+        "{run_dir}/benchmark_same_hardware/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_production_comparison"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_sequential_comparison"
+        }
+      ],
+      "name": "benchmark_same_hardware",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_same_hardware}",
+        "status": "passed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/benchmark_artifact_inventory/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "inventory",
+          "path": "{run_dir}/benchmark_artifact_inventory/inventory.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_benchmark_artifact_inventory.py",
+        "--project-root",
+        "{workspace}",
+        "--artifact",
+        "phaxis_production_summary=model/benchmark/phaxis_production_summary.json={run_dir}/benchmark_phaxis_production/benchmark/runtime_summary.json",
+        "--artifact",
+        "v1_production_summary=model/benchmark/v1_production_summary.json={run_dir}/benchmark_frozen_v1_production/benchmark/runtime_summary.json",
+        "--artifact",
+        "phaxis_sequential_summary=model/benchmark/phaxis_sequential_summary.json={run_dir}/benchmark_phaxis_sequential/benchmark/runtime_summary.json",
+        "--artifact",
+        "v1_sequential_summary=model/benchmark/v1_sequential_summary.json={run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_summary.json",
+        "--artifact",
+        "production_comparison_receipt=model/benchmark/production_comparison_receipt.json={run_dir}/benchmark_production_comparison/comparison.json",
+        "--artifact",
+        "sequential_comparison_receipt=model/benchmark/sequential_comparison_receipt.json={run_dir}/benchmark_sequential_comparison/comparison.json",
+        "--artifact",
+        "same_hardware_receipt=model/benchmark/same_hardware_receipt.json={run_dir}/benchmark_same_hardware/receipt.json",
+        "--artifact",
+        "per_image_latency_csv=model/benchmark/phaxis_sequential_runtime_per_image.csv={run_dir}/benchmark_phaxis_sequential/benchmark/runtime_per_image.csv",
+        "--artifact",
+        "per_image_latency_csv=model/benchmark/v1_sequential_runtime_per_image.csv={run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_per_image.csv",
+        "--artifact",
+        "gpu_telemetry=model/benchmark/phaxis_production_gpu_telemetry.json={run_dir}/benchmark_phaxis_production/benchmark/gpu_telemetry.json",
+        "--artifact",
+        "hardware_preflight=model/benchmark/phaxis_production_hardware_preflight.json={run_dir}/benchmark_phaxis_production/benchmark/hardware_preflight.json",
+        "--artifact",
+        "gpu_telemetry=model/benchmark/v1_production_gpu_telemetry.json={run_dir}/benchmark_frozen_v1_production/benchmark/gpu_telemetry.json",
+        "--artifact",
+        "hardware_preflight=model/benchmark/v1_production_hardware_preflight.json={run_dir}/benchmark_frozen_v1_production/benchmark/hardware_preflight.json",
+        "--artifact",
+        "gpu_telemetry=model/benchmark/phaxis_sequential_gpu_telemetry.json={run_dir}/benchmark_phaxis_sequential/benchmark/gpu_telemetry.json",
+        "--artifact",
+        "hardware_preflight=model/benchmark/phaxis_sequential_hardware_preflight.json={run_dir}/benchmark_phaxis_sequential/benchmark/hardware_preflight.json",
+        "--artifact",
+        "gpu_telemetry=model/benchmark/v1_sequential_gpu_telemetry.json={run_dir}/benchmark_frozen_v1_sequential/benchmark/gpu_telemetry.json",
+        "--artifact",
+        "hardware_preflight=model/benchmark/v1_sequential_hardware_preflight.json={run_dir}/benchmark_frozen_v1_sequential/benchmark/hardware_preflight.json",
+        "--output",
+        "{run_dir}/benchmark_artifact_inventory/inventory.csv",
+        "--receipt",
+        "{run_dir}/benchmark_artifact_inventory/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_production_comparison"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_sequential_comparison"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_same_hardware"
+        }
+      ],
+      "name": "benchmark_artifact_inventory",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:benchmark_artifact_inventory}",
+        "status": "completed_explicit_benchmark_inventory",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/figure_inputs/output/assembly_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/figure_inputs/output"
+        },
+        {
+          "kind": "file",
+          "name": "manifest",
+          "path": "{run_dir}/figure_inputs/output/figure_inputs.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_publication_figure_inputs.py",
+        "--mode",
+        "final",
+        "--output",
+        "{run_dir}/figure_inputs/output",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--train399-selection",
+        "{run_dir}/selection/selection_receipt.json",
+        "--split-manifest",
+        "{external:split_manifest}",
+        "--trait-contract",
+        "{external:static_trait_contract}",
+        "--figure1-image",
+        "{run_dir}/figure1_geometry_materialization/output/figure1_source_image.tif",
+        "--figure1-geometry",
+        "{run_dir}/figure1_geometry_materialization/output/figure1_geometry.json",
+        "--historical-development-receipt",
+        "{run_dir}/historical_oof_evidence/output/historical_development_receipt.json",
+        "--historical-oof-per-image",
+        "{run_dir}/historical_oof_evidence/output/per_image_sufficient_statistics.csv",
+        "--measurement-assurance-receipt",
+        "{run_dir}/measurement_assurance/output/measurement_assurance_receipt.json",
+        "--assurance-metrics",
+        "{run_dir}/measurement_assurance/output/assurance_metrics.csv",
+        "--assurance-pairs",
+        "{run_dir}/measurement_assurance/output/assurance_pairs.csv",
+        "--assurance-support",
+        "{run_dir}/measurement_assurance/output/assurance_support.csv",
+        "--assurance-topology",
+        "{run_dir}/measurement_assurance/output/assurance_topology.csv",
+        "--overlay-index-receipt",
+        "{run_dir}/overlay_evidence/output/overlay_selection_receipt.json",
+        "--overlay-selection",
+        "{run_dir}/overlay_evidence/output/overlay_selection.csv",
+        "--clean-traits",
+        "{run_dir}/cohorts_exact283/output/clean261/traits.csv",
+        "--full-traits",
+        "{run_dir}/traits_exact283/output/traits.csv",
+        "--full-image-traits",
+        "{run_dir}/traits_exact283/output/image_traits.csv",
+        "--analysis-primary-table",
+        "{run_dir}/biological_analysis/output/tables/primary_clean_exploratory_factorial_tests.csv",
+        "--analysis-sensitivity-table",
+        "{run_dir}/biological_analysis/output/tables/full283_sensitivity_factorial_tests.csv",
+        "--profile-analysis-summary",
+        "{run_dir}/profile_analysis/output/summary.json",
+        "--profile-analysis-table",
+        "{run_dir}/profile_analysis/output/distal_axis_profile_group_summaries.csv",
+        "--sensitivity-profiles-summary",
+        "{run_dir}/profiles_exact283/output/summary.json",
+        "--runtime-latency-summary",
+        "{run_dir}/benchmark_phaxis_sequential/benchmark/runtime_summary.json",
+        "--runtime-per-image",
+        "{run_dir}/benchmark_phaxis_sequential/benchmark/runtime_per_image.csv",
+        "--runtime-production-summary",
+        "{run_dir}/benchmark_phaxis_production/benchmark/runtime_summary.json",
+        "--runtime-latency-comparison",
+        "{run_dir}/benchmark_sequential_comparison/comparison.json",
+        "--runtime-production-comparison",
+        "{run_dir}/benchmark_production_comparison/comparison.json",
+        "--baseline-runtime-latency-summary",
+        "{run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_summary.json",
+        "--baseline-runtime-per-image",
+        "{run_dir}/benchmark_frozen_v1_sequential/benchmark/runtime_per_image.csv",
+        "--baseline-runtime-production-summary",
+        "{run_dir}/benchmark_frozen_v1_production/benchmark/runtime_summary.json",
+        "--train399-candidate",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--dataset-manifest",
+        "{external:dataset_manifest}",
+        "--image-traits-schema",
+        "{workspace}/configs/phaxis/v1_0/image_traits.schema.json",
+        "--benchmark-same-hardware",
+        "{run_dir}/benchmark_same_hardware/receipt.json",
+        "--benchmark-artifact-inventory",
+        "{run_dir}/benchmark_artifact_inventory/inventory.csv",
+        "--training-receipt",
+        "2026082801={external:seed_2026082801_receipt}",
+        "--training-receipt",
+        "2026082802={external:seed_2026082802_receipt}",
+        "--training-receipt",
+        "2026082803={external:seed_2026082803_receipt}",
+        "--training-receipt",
+        "2026082804={external:seed_2026082804_receipt}",
+        "--training-receipt",
+        "2026082805={external:seed_2026082805_receipt}",
+        "--train399-evaluation",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--root-exact283",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--stageb",
+        "{run_dir}/production_stageb_exact283/output/summary.json",
+        "--fusion",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--traits",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--cohorts",
+        "{run_dir}/cohorts_exact283/output/summary.json",
+        "--analysis",
+        "{run_dir}/biological_analysis/output/summary.json",
+        "--profiles",
+        "{run_dir}/profiles_exact283/output/summary.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_stageb_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "figure1_geometry_materialization"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "biological_analysis"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profile_analysis"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "historical_oof_evidence"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "measurement_assurance"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "overlay_evidence"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_production"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_phaxis_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_frozen_v1_sequential"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_production_comparison"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_sequential_comparison"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_same_hardware"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_artifact_inventory"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "split_manifest"
+        },
+        {
+          "external": "static_trait_contract"
+        },
+        {
+          "external": "seed_2026082801_receipt"
+        },
+        {
+          "external": "seed_2026082802_receipt"
+        },
+        {
+          "external": "seed_2026082803_receipt"
+        },
+        {
+          "external": "seed_2026082804_receipt"
+        },
+        {
+          "external": "seed_2026082805_receipt"
+        }
+      ],
+      "name": "figure_inputs",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:figure_inputs}",
+        "status": "completed_final",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/figures/output/figure_assembly_summary.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/figures/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_publication_figures.py",
+        "--mode",
+        "final",
+        "--figure-inputs",
+        "{run_dir}/figure_inputs/output/figure_inputs.json",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--output",
+        "{run_dir}/figures/output",
+        "--train399-evaluation",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--root-exact283",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--stageb",
+        "{run_dir}/production_stageb_exact283/output/summary.json",
+        "--fusion",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--traits",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--cohorts",
+        "{run_dir}/cohorts_exact283/output/summary.json",
+        "--analysis",
+        "{run_dir}/biological_analysis/output/summary.json",
+        "--profiles",
+        "{run_dir}/profiles_exact283/output/summary.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "figure_inputs"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_stageb_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "biological_analysis"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        }
+      ],
+      "name": "figures",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:figures}",
+        "status": "final_sealed_strict_train399_only",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/evidence/evidence.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_manuscript_evidence_manifest.py",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--train399-candidate",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--train399-selection",
+        "{run_dir}/selection/selection_receipt.json",
+        "--train399-evaluation",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--root-exact283",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--figure-inputs",
+        "{run_dir}/figure_inputs/output/figure_inputs.json",
+        "--stageb-summary",
+        "{run_dir}/production_stageb_exact283/output/summary.json",
+        "--fusion-summary",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--traits-summary",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--cohorts-summary",
+        "{run_dir}/cohorts_exact283/output/summary.json",
+        "--analysis-summary",
+        "{run_dir}/biological_analysis/output/summary.json",
+        "--profiles-summary",
+        "{run_dir}/profiles_exact283/output/summary.json",
+        "--figures-summary",
+        "{run_dir}/figures/output/figure_assembly_summary.json",
+        "--output",
+        "{run_dir}/evidence/evidence.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_stageb_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "biological_analysis"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "figure_inputs"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        }
+      ],
+      "name": "evidence",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "manifest_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:evidence}",
+        "status": "passed_formal_evidence_graph",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/official_apply/application_receipt.json"
+        }
+      ],
+      "cas": {
+        "expected_sha256": "{external_sha256:pending_official_contract}",
+        "path": "{external:pending_official_contract}"
+      },
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/promote_model_contract.py",
+        "--current-model-contract",
+        "{external:pending_official_contract}",
+        "--proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--expected-current-sha256",
+        "{external_sha256:pending_official_contract}",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--stageb-summary",
+        "{run_dir}/production_stageb_exact283/output/summary.json",
+        "--fusion-summary",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--traits-summary",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--manuscript-evidence-manifest",
+        "{run_dir}/evidence/evidence.json",
+        "--output",
+        "{run_dir}/official_apply/application_receipt.json",
+        "--apply"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_stageb_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "evidence"
+        },
+        {
+          "external": "pending_official_contract"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "official_apply",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "application_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:official_apply}",
+        "status": "applied",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/source_release/output/SOURCE_MANIFEST.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/source_release/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_source_release.py",
+        "--project-root",
+        "{workspace}",
+        "--root-provider-exact283-receipt",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--train399-candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--train399-selection-receipt",
+        "{run_dir}/selection/selection_receipt.json",
+        "--train399-evaluation-receipt",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--final-fusion-summary",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--final-traits-summary",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--release-human-metadata",
+        "{external:release_author_metadata}",
+        "--output",
+        "{run_dir}/source_release/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "external": "release_author_metadata"
+        }
+      ],
+      "name": "source_release",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:source_release}",
+        "status": "formal",
+        "status_field": "release_mode"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/distributions/dist/distribution_receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/distributions/dist"
+        },
+        {
+          "kind": "file",
+          "name": "wheel",
+          "path": "{run_dir}/distributions/dist/phaxis-1.0.0-py3-none-any.whl"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_release_distributions.py",
+        "--source-release-root",
+        "{run_dir}/source_release/output",
+        "--source-release-manifest",
+        "{run_dir}/source_release/output/SOURCE_MANIFEST.json",
+        "--output",
+        "{run_dir}/distributions/dist",
+        "--python",
+        "{python}"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        }
+      ],
+      "name": "distributions",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:distributions}",
+        "status": "completed_wheel_sdist_verified",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/offline_dependencies/output/receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/offline_dependencies/output"
+        },
+        {
+          "kind": "file",
+          "name": "dependency_lock",
+          "path": "{run_dir}/offline_dependencies/output/requirements.lock.txt"
+        },
+        {
+          "kind": "directory",
+          "name": "wheelhouse",
+          "path": "{run_dir}/offline_dependencies/output/wheelhouse"
+        },
+        {
+          "kind": "file",
+          "name": "resolved_sbom",
+          "path": "{run_dir}/offline_dependencies/output/SBOM.resolved.cdx.json"
+        },
+        {
+          "kind": "file",
+          "name": "resolved_license_inventory",
+          "path": "{run_dir}/offline_dependencies/output/THIRD_PARTY_LICENSES.resolved.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/materialize_offline_dependencies.py",
+        "--formal-wheel",
+        "{run_dir}/distributions/dist/phaxis-1.0.0-py3-none-any.whl",
+        "--python",
+        "{python}",
+        "--output",
+        "{run_dir}/offline_dependencies/output",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "distributions"
+        }
+      ],
+      "name": "offline_dependencies",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "dependency_materialization_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:offline_dependencies}",
+        "status": "completed_locked_cp312_win_amd64",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover_dataset_manifest/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "manifest",
+          "path": "{run_dir}/handover_dataset_manifest/manifest.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_handover_dataset_manifest.py",
+        "--project-root",
+        "{workspace}",
+        "--manual-image-manifest",
+        "{external:manual500_image_manifest}",
+        "--all500-decisions",
+        "{external:all500_decisions}",
+        "--canonical-dataset-root",
+        "{external:canonical443_dataset}",
+        "--canonical-dataset-manifest",
+        "{external:dataset_manifest}",
+        "--canonical-integrity-manifest",
+        "{external:canonical_integrity_manifest}",
+        "--all500-notes",
+        "{external:all500_notes}",
+        "--release-attestation",
+        "{external:author_release_attestation}",
+        "--output",
+        "{run_dir}/handover_dataset_manifest/manifest.csv",
+        "--receipt",
+        "{run_dir}/handover_dataset_manifest/receipt.json",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "external": "manual500_image_manifest"
+        },
+        {
+          "external": "all500_decisions"
+        },
+        {
+          "external": "canonical443_dataset"
+        },
+        {
+          "external": "dataset_manifest"
+        },
+        {
+          "external": "canonical_integrity_manifest"
+        },
+        {
+          "external": "all500_notes"
+        },
+        {
+          "external": "author_release_attestation"
+        }
+      ],
+      "name": "handover_dataset_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover_dataset_manifest}",
+        "status": "created",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover_image_manifest/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "manifest",
+          "path": "{run_dir}/handover_image_manifest/manifest.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_handover_image_manifest.py",
+        "--project-root",
+        "{workspace}",
+        "--deployment-manifest",
+        "{external:root_deployment_manifest}",
+        "--deployment-lock",
+        "{external:root_deployment_lock}",
+        "--image-root",
+        "{external:biological_image_root}",
+        "--release-attestation",
+        "{external:author_release_attestation}",
+        "--output",
+        "{run_dir}/handover_image_manifest/manifest.csv",
+        "--receipt",
+        "{run_dir}/handover_image_manifest/receipt.json",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_manifest"
+        },
+        {
+          "external": "root_deployment_manifest"
+        },
+        {
+          "external": "root_deployment_lock"
+        },
+        {
+          "external": "biological_image_root"
+        },
+        {
+          "external": "author_release_attestation"
+        }
+      ],
+      "name": "handover_image_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover_image_manifest}",
+        "status": "created",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover_model_source_manifest/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "manifest",
+          "path": "{run_dir}/handover_model_source_manifest/manifest.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_handover_model_source_manifest.py",
+        "--project-root",
+        "{workspace}",
+        "--source-release-root",
+        "{run_dir}/source_release/output",
+        "--source-release-manifest",
+        "{run_dir}/source_release/output/SOURCE_MANIFEST.json",
+        "--release-attestation",
+        "{external:author_release_attestation}",
+        "--output",
+        "{run_dir}/handover_model_source_manifest/manifest.csv",
+        "--receipt",
+        "{run_dir}/handover_model_source_manifest/receipt.json",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        },
+        {
+          "external": "author_release_attestation"
+        }
+      ],
+      "name": "handover_model_source_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover_model_source_manifest}",
+        "status": "created",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover_model_asset_manifest/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "manifest",
+          "path": "{run_dir}/handover_model_asset_manifest/manifest.csv"
+        },
+        {
+          "kind": "file",
+          "name": "bundle_manifest",
+          "path": "{run_dir}/handover_model_asset_manifest/MODEL_BUNDLE_MANIFEST.json"
+        },
+        {
+          "kind": "directory",
+          "name": "portable_capsule",
+          "path": "{run_dir}/handover_model_asset_manifest/portable_capsule"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_handover_model_asset_manifest.py",
+        "--project-root",
+        "{workspace}",
+        "--applied-model-contract",
+        "{external:pending_official_contract}",
+        "--candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--root-provider-bundle-root",
+        "{run_dir}/root_bundle_materialization/output/bundle",
+        "--root-provider-bundle-manifest",
+        "{run_dir}/root_bundle_materialization/output/bundle/root_provider_bundle.json",
+        "--root-provider-verification-receipt",
+        "{run_dir}/root_bundle_materialization/output/verification.json",
+        "--release-example-root",
+        "{run_dir}/clean_install_sample_manifest/output",
+        "--bundle-manifest-output",
+        "{run_dir}/handover_model_asset_manifest/MODEL_BUNDLE_MANIFEST.json",
+        "--portable-capsule-output",
+        "{run_dir}/handover_model_asset_manifest/portable_capsule",
+        "--release-attestation",
+        "{external:author_release_attestation}",
+        "--output",
+        "{run_dir}/handover_model_asset_manifest/manifest.csv",
+        "--receipt",
+        "{run_dir}/handover_model_asset_manifest/receipt.json",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_bundle_materialization"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "clean_install_sample_manifest"
+        },
+        {
+          "external": "pending_official_contract"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        },
+        {
+          "external": "author_release_attestation"
+        }
+      ],
+      "name": "handover_model_asset_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover_model_asset_manifest}",
+        "status": "created",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/clean_install_expected_identity/output/receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/clean_install_expected_identity/output"
+        },
+        {
+          "kind": "file",
+          "name": "expected_identity",
+          "path": "{run_dir}/clean_install_expected_identity/output/expected_identity.json"
+        },
+        {
+          "kind": "directory",
+          "name": "reference_analysis",
+          "path": "{run_dir}/clean_install_expected_identity/output/reference_analysis"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_clean_install_expected_identity.py",
+        "--example-manifest",
+        "{run_dir}/handover_model_asset_manifest/portable_capsule/model/examples/clean_install/release_example_manifest.json",
+        "--portable-capsule-root",
+        "{run_dir}/handover_model_asset_manifest/portable_capsule",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--applied-model-contract",
+        "{external:pending_official_contract}",
+        "--model-bundle-manifest",
+        "{run_dir}/handover_model_asset_manifest/MODEL_BUNDLE_MANIFEST.json",
+        "--source-release-root",
+        "{run_dir}/source_release/output",
+        "--formal-wheel",
+        "{run_dir}/distributions/dist/phaxis-1.0.0-py3-none-any.whl",
+        "--python",
+        "{python}",
+        "--physical-gpu",
+        "0",
+        "--cuda-visible-devices",
+        "0",
+        "--output",
+        "{run_dir}/clean_install_expected_identity/output",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "0",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          0
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "clean_install_sample_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "distributions"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_model_asset_manifest"
+        },
+        {
+          "external": "pending_official_contract"
+        }
+      ],
+      "name": "clean_install_expected_identity",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "reference_output_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:clean_install_expected_identity}",
+        "status": "completed_fresh_real_nonblind_reference",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover_benchmark_manifest/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "manifest",
+          "path": "{run_dir}/handover_benchmark_manifest/manifest.csv"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_handover_benchmark_manifest.py",
+        "--project-root",
+        "{workspace}",
+        "--same-hardware-receipt",
+        "{run_dir}/benchmark_same_hardware/receipt.json",
+        "--artifact-inventory",
+        "{run_dir}/benchmark_artifact_inventory/inventory.csv",
+        "--release-attestation",
+        "{external:author_release_attestation}",
+        "--output",
+        "{run_dir}/handover_benchmark_manifest/manifest.csv",
+        "--receipt",
+        "{run_dir}/handover_benchmark_manifest/receipt.json",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_same_hardware"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_artifact_inventory"
+        },
+        {
+          "external": "author_release_attestation"
+        }
+      ],
+      "name": "handover_benchmark_manifest",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover_benchmark_manifest}",
+        "status": "created",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/clean_install/receipt.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_clean_install_verification.py",
+        "--project-root",
+        "{workspace}",
+        "--wheel",
+        "{run_dir}/distributions/dist/phaxis-1.0.0-py3-none-any.whl",
+        "--source-release-root",
+        "{run_dir}/source_release/output",
+        "--applied-model-contract",
+        "{external:pending_official_contract}",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--model-bundle-manifest",
+        "{run_dir}/handover_model_asset_manifest/MODEL_BUNDLE_MANIFEST.json",
+        "--portable-capsule-root",
+        "{run_dir}/handover_model_asset_manifest/portable_capsule",
+        "--example-manifest",
+        "{run_dir}/handover_model_asset_manifest/portable_capsule/model/examples/clean_install/release_example_manifest.json",
+        "--expected-example-identity",
+        "{run_dir}/clean_install_expected_identity/output/expected_identity.json",
+        "--dependency-lock",
+        "{run_dir}/offline_dependencies/output/requirements.lock.txt",
+        "--wheelhouse",
+        "{run_dir}/offline_dependencies/output/wheelhouse",
+        "--base-python",
+        "{python}",
+        "--work-root",
+        "{run_dir}/clean_install/work",
+        "--output",
+        "{run_dir}/clean_install/receipt.json",
+        "--cuda-visible-devices",
+        "0",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {
+        "PHAXIS_REQUIRE_EXACT_PHYSICAL_GPU": "1"
+      },
+      "gpu": {
+        "cuda_visible_devices": "0",
+        "estimated_peak_memory_mib": 12288,
+        "internal_device": "cuda:0",
+        "maximum_utilization_pct": 80,
+        "physical_gpus": [
+          0
+        ],
+        "reserve_memory_mib": 2048
+      },
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "distributions"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "offline_dependencies"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "clean_install_sample_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_model_asset_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "clean_install_expected_identity"
+        },
+        {
+          "external": "pending_official_contract"
+        }
+      ],
+      "name": "clean_install",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:clean_install}",
+        "status": "completed_final_clean_install",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/values/values.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_manuscript_values.py",
+        "--master",
+        "{external:master_manuscript}",
+        "--evidence-graph",
+        "{run_dir}/evidence/evidence.json",
+        "--figure-inputs",
+        "{run_dir}/figure_inputs/output/figure_inputs.json",
+        "--figure-assembly-summary",
+        "{run_dir}/figure_inputs/output/assembly_summary.json",
+        "--model-contract-proposal",
+        "{run_dir}/proposal/proposal.json",
+        "--human-metadata",
+        "{external:author_verified_manuscript_metadata}",
+        "--model-bundle-manifest",
+        "{run_dir}/handover_model_asset_manifest/MODEL_BUNDLE_MANIFEST.json",
+        "--clean-install-receipt",
+        "{run_dir}/clean_install/receipt.json",
+        "--source-release-manifest",
+        "{run_dir}/source_release/output/SOURCE_MANIFEST.json",
+        "--evidence-artifact",
+        "model_contract_proposal={run_dir}/proposal/proposal.json",
+        "--evidence-artifact",
+        "train399_candidate={run_dir}/candidate_manifest/candidate_manifest.json",
+        "--evidence-artifact",
+        "train399_selection={run_dir}/selection/selection_receipt.json",
+        "--evidence-artifact",
+        "train399_evaluation={run_dir}/qcdev_evaluation/evaluation.json",
+        "--evidence-artifact",
+        "root_exact283={run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--evidence-artifact",
+        "stageb={run_dir}/production_stageb_exact283/output/summary.json",
+        "--evidence-artifact",
+        "fusion={run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--evidence-artifact",
+        "traits={run_dir}/traits_exact283/output/summary.json",
+        "--evidence-artifact",
+        "cohorts={run_dir}/cohorts_exact283/output/summary.json",
+        "--evidence-artifact",
+        "analysis={run_dir}/biological_analysis/output/summary.json",
+        "--evidence-artifact",
+        "profiles={run_dir}/profiles_exact283/output/summary.json",
+        "--evidence-artifact",
+        "figure_inputs={run_dir}/figure_inputs/output/figure_inputs.json",
+        "--evidence-artifact",
+        "figures={run_dir}/figures/output/figure_assembly_summary.json",
+        "--output",
+        "{run_dir}/values/values.json",
+        "--missing-human-report",
+        "{run_dir}/values/missing_human.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "proposal"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "production_stageb_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "cohorts_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "biological_analysis"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "profiles_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "evidence"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "figure_inputs"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_model_asset_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "clean_install"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        },
+        {
+          "external": "master_manuscript"
+        },
+        {
+          "external": "author_verified_manuscript_metadata"
+        }
+      ],
+      "name": "values",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "values_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:values}",
+        "status": "final_values_machine_derived_locked",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/manuscript/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "document",
+          "path": "{run_dir}/manuscript/manuscript.md"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/compile_manuscript.py",
+        "--master",
+        "{external:master_manuscript}",
+        "--evidence-graph",
+        "{run_dir}/evidence/evidence.json",
+        "--values",
+        "{run_dir}/values/values.json",
+        "--output",
+        "{run_dir}/manuscript/manuscript.md",
+        "--receipt",
+        "{run_dir}/manuscript/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "evidence"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "values"
+        },
+        {
+          "external": "master_manuscript"
+        }
+      ],
+      "name": "manuscript",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "receipt_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:manuscript}",
+        "status": "completed_strict_final_manuscript_compilation",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/supplementary_manuscript/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "document",
+          "path": "{run_dir}/supplementary_manuscript/supplementary.md"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/compile_supplementary_manuscript.py",
+        "--master",
+        "{external:supplement_master}",
+        "--main-manuscript",
+        "{run_dir}/manuscript/manuscript.md",
+        "--main-compile-receipt",
+        "{run_dir}/manuscript/receipt.json",
+        "--figure-summary",
+        "{run_dir}/figures/output/figure_assembly_summary.json",
+        "--output",
+        "{run_dir}/supplementary_manuscript/supplementary.md",
+        "--receipt",
+        "{run_dir}/supplementary_manuscript/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript"
+        },
+        {
+          "external": "supplement_master"
+        }
+      ],
+      "name": "supplementary_manuscript",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "receipt_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:supplementary_manuscript}",
+        "status": "completed_strict_final_supplementary_compilation",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/submission_docx/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "title_page",
+          "path": "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_title_page.docx"
+        },
+        {
+          "kind": "file",
+          "name": "anonymized_main",
+          "path": "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_anonymized_main.docx"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_submission_docx.py",
+        "--mode",
+        "final",
+        "--manuscript",
+        "{run_dir}/manuscript/manuscript.md",
+        "--submission-metadata",
+        "{external:submission_title_metadata}",
+        "--compile-receipt",
+        "{run_dir}/manuscript/receipt.json",
+        "--figure-summary",
+        "{run_dir}/figures/output/figure_assembly_summary.json",
+        "--title-page-output",
+        "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_title_page.docx",
+        "--anonymized-main-output",
+        "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_anonymized_main.docx",
+        "--receipt",
+        "{run_dir}/submission_docx/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript"
+        },
+        {
+          "external": "submission_title_metadata"
+        }
+      ],
+      "name": "submission_docx",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "receipt_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:submission_docx}",
+        "status": "completed_final_double_anonymous_submission_bundle",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/supplementary_docx/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "anonymized_supplement",
+          "path": "{run_dir}/supplementary_docx/PHAxis_Plant_Phenomics_anonymized_supplement.docx"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_supplementary_docx.py",
+        "--mode",
+        "final",
+        "--supplement",
+        "{run_dir}/supplementary_manuscript/supplementary.md",
+        "--main-manuscript",
+        "{run_dir}/manuscript/manuscript.md",
+        "--main-compile-receipt",
+        "{run_dir}/manuscript/receipt.json",
+        "--figure-summary",
+        "{run_dir}/figures/output/figure_assembly_summary.json",
+        "--output",
+        "{run_dir}/supplementary_docx/PHAxis_Plant_Phenomics_anonymized_supplement.docx",
+        "--receipt",
+        "{run_dir}/supplementary_docx/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "supplementary_manuscript"
+        }
+      ],
+      "name": "supplementary_docx",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "receipt_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:supplementary_docx}",
+        "status": "completed_final_anonymized_supplementary_docx",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/manuscript_artifact_qa/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "upload_manifest",
+          "path": "{run_dir}/manuscript_artifact_qa/upload-role-manifest.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/verify_manuscript_artifacts.py",
+        "--main-master",
+        "{external:master_manuscript}",
+        "--supplement-master",
+        "{external:supplement_master}",
+        "--main-manuscript",
+        "{run_dir}/manuscript/manuscript.md",
+        "--main-compile-receipt",
+        "{run_dir}/manuscript/receipt.json",
+        "--supplement-manuscript",
+        "{run_dir}/supplementary_manuscript/supplementary.md",
+        "--supplement-compile-receipt",
+        "{run_dir}/supplementary_manuscript/receipt.json",
+        "--submission-metadata",
+        "{external:submission_title_metadata}",
+        "--figure-summary",
+        "{run_dir}/figures/output/figure_assembly_summary.json",
+        "--title-page-docx",
+        "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_title_page.docx",
+        "--anonymized-main-docx",
+        "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_anonymized_main.docx",
+        "--submission-docx-receipt",
+        "{run_dir}/submission_docx/receipt.json",
+        "--anonymized-supplement-docx",
+        "{run_dir}/supplementary_docx/PHAxis_Plant_Phenomics_anonymized_supplement.docx",
+        "--supplement-docx-receipt",
+        "{run_dir}/supplementary_docx/receipt.json",
+        "--output",
+        "{run_dir}/manuscript_artifact_qa/receipt.json",
+        "--upload-manifest",
+        "{run_dir}/manuscript_artifact_qa/upload-role-manifest.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "figures"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "supplementary_manuscript"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "submission_docx"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "supplementary_docx"
+        },
+        {
+          "external": "master_manuscript"
+        },
+        {
+          "external": "supplement_master"
+        },
+        {
+          "external": "submission_title_metadata"
+        }
+      ],
+      "name": "manuscript_artifact_qa",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "qa_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:manuscript_artifact_qa}",
+        "status": "passed_double_anonymous_three_role_ooxml_closure",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/manuscript_render/output/receipt.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/manuscript_render/output"
+        },
+        {
+          "kind": "file",
+          "name": "title_page_pdf",
+          "path": "{run_dir}/manuscript_render/output/title_page/title_page.pdf"
+        },
+        {
+          "kind": "file",
+          "name": "anonymized_main_pdf",
+          "path": "{run_dir}/manuscript_render/output/anonymized_main/anonymized_main.pdf"
+        },
+        {
+          "kind": "file",
+          "name": "anonymized_supplement_pdf",
+          "path": "{run_dir}/manuscript_render/output/anonymized_supplement/anonymized_supplement.pdf"
+        },
+        {
+          "kind": "file",
+          "name": "visual_qa_template",
+          "path": "{run_dir}/manuscript_render/output/VISUAL_QA_ATTESTATION_TEMPLATE.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/render_manuscript_bundle.py",
+        "--title-page-docx",
+        "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_title_page.docx",
+        "--anonymized-main-docx",
+        "{run_dir}/submission_docx/PHAxis_Plant_Phenomics_anonymized_main.docx",
+        "--anonymized-supplement-docx",
+        "{run_dir}/supplementary_docx/PHAxis_Plant_Phenomics_anonymized_supplement.docx",
+        "--structural-qa",
+        "{run_dir}/manuscript_artifact_qa/receipt.json",
+        "--upload-manifest",
+        "{run_dir}/manuscript_artifact_qa/upload-role-manifest.json",
+        "--powershell",
+        "powershell.exe",
+        "--pdftoppm",
+        "pdftoppm",
+        "--output",
+        "{run_dir}/manuscript_render/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "submission_docx"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "supplementary_docx"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript_artifact_qa"
+        }
+      ],
+      "name": "manuscript_render",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "render_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:manuscript_render}",
+        "status": "completed_three_role_word_pdf_and_page_png_render",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/manuscript_visual_qa/receipt.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/validate_manuscript_visual_qa.py",
+        "--render-receipt",
+        "{run_dir}/manuscript_render/output/receipt.json",
+        "--structural-qa",
+        "{run_dir}/manuscript_artifact_qa/receipt.json",
+        "--template",
+        "{run_dir}/manuscript_render/output/VISUAL_QA_ATTESTATION_TEMPLATE.json",
+        "--attestation",
+        "{run_dir}/manuscript_visual_qa/VISUAL_QA_ATTESTATION.json",
+        "--output",
+        "{run_dir}/manuscript_visual_qa/receipt.json"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "manuscript_artifact_qa"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript_render"
+        }
+      ],
+      "name": "manuscript_visual_qa",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "visual_qa_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:manuscript_visual_qa}",
+        "status": "passed_author_verified_three_role_page_visual_qa",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover_contract/receipt.json"
+        },
+        {
+          "kind": "file",
+          "name": "contract",
+          "path": "{run_dir}/handover_contract/contract.json"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/assemble_handover_build_contract.py",
+        "--project-root",
+        "{workspace}",
+        "--applied-model-contract",
+        "{external:pending_official_contract}",
+        "--train399-candidate-manifest",
+        "{run_dir}/candidate_manifest/candidate_manifest.json",
+        "--train399-selection-receipt",
+        "{run_dir}/selection/selection_receipt.json",
+        "--train399-evaluation-receipt",
+        "{run_dir}/qcdev_evaluation/evaluation.json",
+        "--fresh-exact283-receipt",
+        "{run_dir}/root_provider_exact283/output/fresh_reference_audit.json",
+        "--final-fusion-receipt",
+        "{run_dir}/fusion_exact283/output/fusion_summary.json",
+        "--final-traits-receipt",
+        "{run_dir}/traits_exact283/output/summary.json",
+        "--same-hardware-benchmark-receipt",
+        "{run_dir}/benchmark_same_hardware/receipt.json",
+        "--source-release-manifest",
+        "{run_dir}/source_release/output/SOURCE_MANIFEST.json",
+        "--clean-install-receipt",
+        "{run_dir}/clean_install/receipt.json",
+        "--dataset-manifest",
+        "{run_dir}/handover_dataset_manifest/manifest.csv",
+        "--image-manifest",
+        "{run_dir}/handover_image_manifest/manifest.csv",
+        "--model-source-manifest",
+        "{run_dir}/handover_model_source_manifest/manifest.csv",
+        "--model-asset-manifest",
+        "{run_dir}/handover_model_asset_manifest/manifest.csv",
+        "--benchmark-manifest",
+        "{run_dir}/handover_benchmark_manifest/manifest.csv",
+        "--trait-contract",
+        "{external:static_trait_contract}",
+        "--checkpoint",
+        "{external:seed_2026082801_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082802_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082803_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082804_checkpoint}",
+        "--checkpoint",
+        "{external:seed_2026082805_checkpoint}",
+        "--release-attestation",
+        "{external:author_release_attestation}",
+        "--output",
+        "{run_dir}/handover_contract/contract.json",
+        "--receipt",
+        "{run_dir}/handover_contract/receipt.json",
+        "--execute"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "candidate_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "selection"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "qcdev_evaluation"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "root_provider_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "fusion_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "traits_exact283"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "benchmark_same_hardware"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "clean_install"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_dataset_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_image_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_model_source_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_model_asset_manifest"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover_benchmark_manifest"
+        },
+        {
+          "external": "pending_official_contract"
+        },
+        {
+          "external": "static_trait_contract"
+        },
+        {
+          "external": "author_release_attestation"
+        },
+        {
+          "external": "seed_2026082801_checkpoint"
+        },
+        {
+          "external": "seed_2026082802_checkpoint"
+        },
+        {
+          "external": "seed_2026082803_checkpoint"
+        },
+        {
+          "external": "seed_2026082804_checkpoint"
+        },
+        {
+          "external": "seed_2026082805_checkpoint"
+        }
+      ],
+      "name": "handover_contract",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover_contract}",
+        "status": "created",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/handover/output/BUILD_RECEIPT.json"
+        },
+        {
+          "kind": "directory",
+          "name": "output",
+          "path": "{run_dir}/handover/output"
+        }
+      ],
+      "command": [
+        "{python}",
+        "{workspace}/scripts/phaxis/build_handover_package.py",
+        "--project-root",
+        "{workspace}",
+        "--contract",
+        "{run_dir}/handover_contract/contract.json",
+        "--output",
+        "{run_dir}/handover/output"
+      ],
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "handover_contract"
+        }
+      ],
+      "name": "handover",
+      "receipt": {
+        "artifact": "receipt",
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:handover}",
+        "status": "passed",
+        "status_field": "status"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "kind": "file",
+          "name": "receipt",
+          "path": "{run_dir}/release_finalize/release_finalization.json"
+        }
+      ],
+      "command": null,
+      "cwd": "{workspace}",
+      "environment": {},
+      "inputs": [
+        {
+          "artifact": "receipt",
+          "stage": "official_apply"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "source_release"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "distributions"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "clean_install"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "values"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "supplementary_manuscript"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "submission_docx"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "supplementary_docx"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript_artifact_qa"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript_render"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "manuscript_visual_qa"
+        },
+        {
+          "artifact": "receipt",
+          "stage": "handover"
+        },
+        {
+          "external": "release_authority_registry"
+        }
+      ],
+      "name": "release_finalize",
+      "receipt": {
+        "artifact": "receipt",
+        "identity_field": "release_finalization_identity_sha256",
+        "identity_seals_complete_object": true,
+        "required_fields": {},
+        "schema_version": "{known_stage_schema:release_finalize}",
+        "status": "completed_formal_release_closure",
+        "status_field": "status"
+      },
+      "release_registry_cas": {
+        "expected_sha256": "{external_sha256:release_authority_registry}",
+        "external": "release_authority_registry",
+        "path": "{external:release_authority_registry}"
+      }
+    }
+  ],
+  "status": "explicit_real_producer_argv_contract",
+  "synthetic_commands_present": false
+}

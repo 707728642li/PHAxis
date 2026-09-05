@@ -1,0 +1,43 @@
+{
+  "schema_version": "PHAxis-hair-attachment-assurance-input-1.0",
+  "source_units": [
+    "fixture-hair-001"
+  ],
+  "annotation_authority_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+  "prediction_authority_identity_sha256": "7777777777777777777777777777777777777777777777777777777777777777",
+  "metric_config": {
+    "proxy_tolerances_um": [5.0, 10.0, 20.0],
+    "selected_proxy_tolerance_um": 20.0,
+    "formal_attachment_tolerance_um": 20.0,
+    "formal_matcher": {
+      "curve_tolerance_um": 20.0,
+      "minimum_truth_coverage": 0.25,
+      "minimum_prediction_coverage": 0.25,
+      "minimum_direction_cosine": 0.0,
+      "proximal_arc_fraction": 0.25,
+      "resample_points": 32
+    }
+  },
+  "records": [
+    {
+      "pair_type": "hair_attachment",
+      "source_unit": "fixture-hair-001",
+      "source_image_sha256": "8888888888888888888888888888888888888888888888888888888888888888",
+      "coordinate_space": "physical_um_xy",
+      "polyline_orientation": "attachment_to_visible_distal_endpoint",
+      "annotation_artifact_sha256": "9999999999999999999999999999999999999999999999999999999999999999",
+      "prediction_artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "annotated_polylines_xy_um": [
+        [[0.0, 0.0], [40.0, 0.0]],
+        [[0.0, 20.0], [40.0, 20.0]]
+      ],
+      "predicted_polylines_xy_um": [
+        [[1.0, 0.0], [39.0, 0.0]],
+        [[25.0, 20.0], [40.0, 20.0]]
+      ]
+    }
+  ],
+  "independent_accuracy_claim_allowed": false,
+  "blind_images_used": 0,
+  "input_contract_identity_sha256": "0814ba689898ef1c0d8f34d88e424219baf2e897bca5aa4b98ebdfa5b3feaf49"
+}

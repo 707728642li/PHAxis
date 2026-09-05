@@ -1,0 +1,15 @@
+PHAxis 1.0.0
+
+Copyright 2026 PHAxis contributors.
+Licensed under the Apache License, Version 2.0.
+
+Model weights and datasets are separate assets and are not included or licensed
+by this source-only distribution.
+
+Direct third-party dependency and vendored-component notices are recorded in
+THIRD_PARTY_NOTICES.md, the machine-readable license inventory is
+THIRD_PARTY_LICENSES.json, and the CycloneDX software bill of materials is
+SBOM.cdx.json. Those files distinguish the exact vendored Tomli source from
+declared dependency ranges; resolved external artifacts remain governed by
+their upstream licenses and the formal hash-locked dependency materialization
+receipt.

@@ -1,0 +1,168 @@
+{
+  "schema_version": "PHAxis-biological-model-spec-1.1",
+  "status": "locked_for_phaxis_v1_0_postresult_exploratory_analysis",
+  "analysis_name": "PHAxis RHD6 x temperature exploratory biological deployment",
+  "historical_provenance": {
+    "source_schema_version": "RHAxis-NextGen-six-condition-statistics-preregistration-1.1",
+    "source_spec_sha256": "9ec5d72d70547d43afbf8cacd690e3a0e007b4ab19cb0c672f5d09dbcbd82901",
+    "migration_scope": "PHAxis ownership, installed-source portability, and pre-final harmonization of the declared 15-effect family",
+    "model_or_inference_semantics_changed": true,
+    "semantic_harmonization": "First-hair observability is reported descriptively by condition and is not fitted inside the fixed five-endpoint by three-effect family; only conditional distance enters the 15 model effects.",
+    "phenotype_table_read_before_source_amendment": false
+  },
+  "primary_scope": {
+    "study_role": "rhd6_factorial_8d_primary",
+    "experiment_key": "D15_8d",
+    "developmental_day": 8,
+    "factors": {
+      "construct": ["RHD6-EV", "RHD6-OE"],
+      "temperature_c": [22, 30]
+    },
+    "effects": [
+      "construct_OE_minus_EV",
+      "temperature_30C_minus_22C",
+      "construct_by_temperature_interaction"
+    ]
+  },
+  "confirmatory_endpoints": [
+    {
+      "field": "local_hair_count_1_4mm",
+      "label": "Local hair count, 1-4 mm distal window",
+      "model": "negative_binomial_log_link",
+      "offset": "log_window_length_mm_equals_log_3",
+      "effect_scale": "rate_ratio"
+    },
+    {
+      "field": "local_median_hair_length_um_1_4mm",
+      "label": "Median hair length, 1-4 mm distal window",
+      "model": "HC3_OLS_log_transformed",
+      "effect_scale": "geometric_mean_ratio_and_raw_median_difference"
+    },
+    {
+      "field": "first_hair_ge40um_distance_from_distal_point_um",
+      "label": "First >=40 um hair distance from distal root-cap point",
+      "model": "HC3_OLS_log_transformed_conditional_on_observable",
+      "effect_scale": "geometric_mean_ratio_conditional_distance"
+    },
+    {
+      "field": "median_root_width_um",
+      "label": "Median main-root width",
+      "model": "HC3_OLS_log_transformed",
+      "effect_scale": "geometric_mean_ratio_and_raw_mean_difference"
+    },
+    {
+      "field": "visible_root_axis_length_um",
+      "label": "Visible point-anchored main-root length",
+      "model": "HC3_OLS_log_transformed",
+      "effect_scale": "geometric_mean_ratio_and_raw_mean_difference"
+    }
+  ],
+  "secondary_root_endpoints": [
+    "root_axis_chord_um",
+    "root_centerline_chord_tortuosity",
+    "root_straightness",
+    "root_projected_area_um2",
+    "root_projected_area_um2_per_root_mm",
+    "root_width_p10_um",
+    "root_width_q25_um",
+    "root_width_q75_um",
+    "root_width_p90_um",
+    "root_width_cv",
+    "root_width_tip_third_median_um",
+    "root_width_middle_third_median_um",
+    "root_width_shootward_third_median_um",
+    "root_width_shootward_to_tip_ratio",
+    "root_width_axial_slope_um_per_mm",
+    "root_centerline_curvature_median_rad_per_mm",
+    "root_centerline_curvature_p95_rad_per_mm"
+  ],
+  "secondary_hair_endpoints": [
+    "local_hair_density_per_mm_1_4mm",
+    "local_mean_hair_length_um_1_4mm",
+    "local_total_hair_length_um_per_root_mm_1_4mm",
+    "hair_density_per_mm_visible_root",
+    "mean_hair_length_um",
+    "median_hair_length_um",
+    "attachment_axis_valid_fraction"
+  ],
+  "eligibility": {
+    "prephenotype_qc_must_be_locked": true,
+    "phenotype_based_exclusion_allowed": false,
+    "automatic_model_gate_failures_in_confirmatory_tests": false,
+    "model_gate_failure_rate_reported_by_condition": true,
+    "fixed_distal_window_um": [1000.0, 4000.0],
+    "fixed_distal_window_requires_visible_axis_to_um": 4000.0,
+    "first_hair_minimum_centerline_length_um": 40.0,
+    "maximum_attachment_boundary_error_um": 40.0,
+    "whole_hair_zone_confirmatory_traits_allowed": false,
+    "root_cap_region_statistics_allowed": false,
+    "root_cap_point_statistics_allowed": true
+  },
+  "inference": {
+    "continuous_design_formula": "outcome ~ construct * temperature_c",
+    "heteroskedastic_covariance": "HC3",
+    "confidence_level": 0.95,
+    "factorial_cell_stratified_bootstrap_replicates": 5000,
+    "freedman_lane_permutations": 9999,
+    "random_seed": 20260823,
+    "confirmatory_multiplicity": "Benjamini-Hochberg across the fixed five-endpoint by three-effect family (15 conditional phenotype effects)",
+    "confirmatory_fdr_q": 0.05,
+    "secondary_results_status": "exploratory_with_separate_BH_FDR",
+    "phenotype_outlier_filter": "none",
+    "robust_sensitivity": "Huber_M_estimation_and_leave_one_out_sign_stability",
+    "missingness": "report_by_cell_and_analyse_endpoint-specific_available_cases",
+    "poisson_fallback_diagnostic": {
+      "only_after_nb2_nonconvergence_or_nonfinite_inference": true,
+      "criterion": "Pearson chi-square divided by residual degrees of freedom",
+      "pearson_chi2_over_df_maximum": 1.25,
+      "fallback_covariance": "HC3",
+      "fail_closed_above_threshold": true
+    }
+  },
+  "wt_temperature_scope": {
+    "study_role": "wt_temperature_block",
+    "status": "secondary_blocked_replication",
+    "primary_model": "experiment_fixed_effect_temperature_contrast",
+    "endpoint_family": [
+      "local_hair_count_1_4mm",
+      "local_median_hair_length_um_1_4mm",
+      "first_hair_ge40um_distance_from_distal_point_um",
+      "median_root_width_um",
+      "visible_root_axis_length_um"
+    ],
+    "within_experiment_estimand": "30C_over_22C_ratio_on_log_or_log_link_scale",
+    "within_experiment_models": {
+      "local_hair_count_1_4mm": "negative_binomial_log_link_with_locked_Poisson_HC3_fallback",
+      "positive_continuous_endpoints": "HC3_OLS_log_transformed",
+      "first_hair_distance": "conditional_on_observable"
+    },
+    "per_experiment_minimum_per_temperature": 3,
+    "per_endpoint_minimum_per_temperature": 3,
+    "minimum_experiments_per_day_meta_analysis": 3,
+    "meta_analysis": "random_effects_REML_with_Hartung_Knapp_interval",
+    "heterogeneity": ["tau2", "I2", "Q"],
+    "developmental_day_handling": "strict_within-day_stratification; cross-day pooled estimate forbidden",
+    "unknown_day_handling": "report_estimable_within_experiment_contrast_but_forbid_meta_analysis",
+    "insufficient_same_day_experiments": "typed_not_estimable_row_without_pooled_estimate",
+    "within_experiment_multiplicity": "Benjamini-Hochberg within each cohort across every estimated experiment-by-endpoint contrast, including unknown-day contrasts",
+    "within_day_meta_multiplicity": "Benjamini-Hochberg within each cohort across every estimated developmental-day-by-endpoint meta-analysis",
+    "clean_full_pooling_allowed": false
+  },
+  "technical_generalization_scope": {
+    "study_role": "technical_generalization_only",
+    "inferential_claims_allowed": false,
+    "outputs": ["model_gate_failure_rate", "trait_distributions", "representative_overlays"]
+  },
+  "reporting": {
+    "raw_points_required": true,
+    "effect_sizes_and_confidence_intervals_required": true,
+    "exact_sample_counts_required": true,
+    "model_failure_and_missingness_flow_required": true,
+    "white_background_statistical_figures": true,
+    "dark_geometry_overlays": true,
+    "first_hair_observability_in_fixed_effect_family": false,
+    "first_hair_observability_reporting": "descriptive n/formal_n by condition; conditional distance alone enters the fixed 15-effect family",
+    "development_dataset_accuracy_claim": "QC-dev only; not independent accuracy",
+    "blind_images_used": 0
+  }
+}

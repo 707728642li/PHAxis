@@ -1,0 +1,53 @@
+{
+  "schema_version": "PHAxis-distal-axis-profile-analysis-contract-1.0.0",
+  "locked_before_final_train399_results": true,
+  "prospective_experiment_preregistration_claimed": false,
+  "primary_cohort": "primary_clean261",
+  "sensitivity_cohort": "sensitivity_full283",
+  "primary_scope": {
+    "experiment_key": "D15_8d",
+    "study_role": "rhd6_factorial_8d_primary",
+    "condition_codes": [
+      "RHD6_EV_22C",
+      "RHD6_EV_30C",
+      "RHD6_OE_22C",
+      "RHD6_OE_30C"
+    ]
+  },
+  "unit_of_analysis": "one source image/root unit",
+  "individual_hairs_treated_as_independent_replicates": false,
+  "bins_um": [
+    [0.0, 1000.0],
+    [1000.0, 2000.0],
+    [2000.0, 3000.0],
+    [3000.0, 4000.0],
+    [4000.0, 5000.0]
+  ],
+  "group_summaries": {
+    "abundance": "arithmetic_mean_of_per_image_attached_identity_count",
+    "abundance_density": "arithmetic_mean_of_per_image_identity_density_per_mm",
+    "conditional_length": "median_of_per_image_conditional_median_hair_length_um",
+    "length_support": "sum_endpoint_complete_length_count_divided_by_sum_attached_identity_count",
+    "zero_identity_bins_contribute_to_abundance": true,
+    "zero_identity_bins_contribute_to_conditional_length": false
+  },
+  "uncertainty": {
+    "method": "percentile_bootstrap_of_source_image_units_within_condition_and_bin",
+    "replicates": 10000,
+    "random_seed": 20260828,
+    "confidence_level": 0.95,
+    "hypothesis_tests_performed": false,
+    "multiplicity_adjustment_performed": false
+  },
+  "reporting": {
+    "effect_claim": "exploratory_within_experiment_spatial_profile",
+    "causal_treatment_claim_allowed": false,
+    "biological_plate_randomization_inference_performed": false,
+    "report_eligible_image_n": true,
+    "report_length_measurable_image_n": true,
+    "report_endpoint_complete_support": true,
+    "root_cap_region_statistics_included": false,
+    "stageb_two_point_vector_used_as_length": false,
+    "blind_images_used": 0
+  }
+}

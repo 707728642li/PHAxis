@@ -1,0 +1,1038 @@
+{
+  "absolute_tolerance": 1e-12,
+  "baseline_analysis": "project:outputs/phaxis_v1_0_biological_analysis_run1_final",
+  "blind_images_used": 0,
+  "candidate_analysis": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828",
+  "canonical_annotations_read": false,
+  "implementation_sha256": {
+    "frozen_predecessor_model_spec": "9ec5d72d70547d43afbf8cacd690e3a0e007b4ab19cb0c672f5d09dbcbd82901",
+    "frozen_predecessor_numeric_source": "4b71d62a712ffda245489ba6d4d9243aa08a7c7de0d809f26e2cf1e3fdb8dfdd",
+    "historical_model_spec_source": "9ec5d72d70547d43afbf8cacd690e3a0e007b4ab19cb0c672f5d09dbcbd82901",
+    "phaxis_native_numeric_source": "42e81fc1421b887d2efdfa6fca2e057c00c562eead128eb17a1eb698cf6c1c2b",
+    "phaxis_owned_model_spec": "fa7a2b330f30ee56f7b5b5527ede9d93a34de8743651f7b9fb7adfcc25901a1a",
+    "phaxis_wrapper": "6c9fb4bdd84891653d67d8adb1592c3aaa0282566f38f7e76cee61648971de5a"
+  },
+  "locked_cohorts": "project:outputs/phaxis_v1_0_biological_cohorts_run1_final",
+  "locked_input_sha256": {
+    "cohort_lock": "861ed67acd032fada1cc346f2748660da43daaa423091e1e436bd0bcd78c238d",
+    "cohort_summary": "7344f10cabf34d5237cb28a85cf0aaae9c23c6d349358cbcea299094bc3a5a6c",
+    "primary_traits": "cbcaef83caa96faa1ce6660299b627dd3b9e96da32115dc69334114c34a06d08",
+    "sensitivity_traits": "21b0bef20b2e3172175cac203200fef3bc2610981768bcae67a16022815f61cd"
+  },
+  "production_wrapper_imports_frozen_predecessor": false,
+  "provenance_transition": {
+    "added_candidate_fields": [
+      "numerical_implementation",
+      "numerical_implementation_sha256",
+      "legacy_model_implementation_imported",
+      "model_spec_schema_version",
+      "historical_model_spec_sha256"
+    ],
+    "baseline_result_lock_schema": "PHAxis-biological-analysis-result-lock-1.0",
+    "candidate_result_lock_schema": "PHAxis-biological-analysis-result-lock-1.2",
+    "model_spec_interpretation": "PHAxis ownership/path migration only; no model or inference change",
+    "numerical_interpretation": "no change",
+    "removed_baseline_field": "reused_legacy_model_implementation_sha256"
+  },
+  "relative_tolerance": 1e-12,
+  "release_projection": {
+    "evidence_role": "pre_amendment_biological_equivalence_historical_baseline",
+    "policy": "project_absolute_paths_to_project_relative_posix",
+    "rebased_project_absolute_paths": 15,
+    "schema_version": "PHAxis-release-safe-evidence-projection-1.0",
+    "source_path": "outputs/phaxis_biological_analysis_native_modelspec_audit_final_20260828/equivalence_audit.json",
+    "source_receipt_sha256": "10314999405b66cd5f1b6042cfc18bf6e3625e64b2aeb6ee9d7d1e04ef7137e7"
+  },
+  "schema_version": "PHAxis-biological-analysis-native-equivalence-audit-1.0",
+  "scope": "CPU-only fieldwise comparison of six locked biological-analysis tables and non-provenance summary fields",
+  "status": "passed",
+  "summary": {
+    "equivalent": true,
+    "expected_provenance_only_differences": {
+      "analysis_identity_sha256": {
+        "baseline": "608341f29ee76835cd3d2ed039f56dd285ccff7cf774e4164b21d4fa8988872b",
+        "candidate": "f6784b0c6fa912556fdc4d9955843ab22bb0aa022c4653182a7e54b59294df9a"
+      },
+      "analysis_result_lock_sha256": {
+        "baseline": "91d72de94f24dc11b1512f5f6cbe2714db69c2d629de3072cd5e2b6fd0d291d2",
+        "candidate": "c284f69603e5fb7de812e77384a4e98ffbd45093d78284d62eef9f9209d7953d"
+      }
+    },
+    "fields": {
+      "blind_images_used": {
+        "baseline": 0,
+        "candidate": 0,
+        "equivalent": true
+      },
+      "canonical_annotations_read": {
+        "baseline": false,
+        "candidate": false,
+        "equivalent": true
+      },
+      "claim_status": {
+        "baseline": "exploratory within-experiment association; not biological-plate randomization-confirmatory and not causal",
+        "candidate": "exploratory within-experiment association; not biological-plate randomization-confirmatory and not causal",
+        "equivalent": true
+      },
+      "clean_full_comparison_rows": {
+        "baseline": 15,
+        "candidate": 15,
+        "equivalent": true
+      },
+      "cohort_build_summary_sha256": {
+        "baseline": "7344f10cabf34d5237cb28a85cf0aaae9c23c6d349358cbcea299094bc3a5a6c",
+        "candidate": "7344f10cabf34d5237cb28a85cf0aaae9c23c6d349358cbcea299094bc3a5a6c",
+        "equivalent": true
+      },
+      "design_identifiability": {
+        "baseline": {
+          "D15_claim_scope": "within-experiment exploratory association with model-based uncertainty; no plate-randomized causal generalization",
+          "authoritative_acquisition_batch_ids_D15_primary": 3,
+          "authoritative_acquisition_batch_ids_full": 21,
+          "authoritative_acquisition_batches_spanning_multiple_conditions_D15_primary": 3,
+          "authoritative_acquisition_batches_spanning_multiple_conditions_full": 12,
+          "biological_plate_id_available": false,
+          "causal_treatment_claim_allowed": false,
+          "legacy_rhaxiscc_filename_regex_plate_claim_reused": false,
+          "plate_treatment_confounding_status": "not_identifiable_from_authoritative_metadata; acquisition batch is not a biological plate and must not be relabelled as one",
+          "six_group_genotype_effect_estimable": false,
+          "six_group_reason": "WT and RHD6 constructs occupy different experiment/study-role strata; six-group comparisons are descriptive only"
+        },
+        "candidate": {
+          "D15_claim_scope": "within-experiment exploratory association with model-based uncertainty; no plate-randomized causal generalization",
+          "authoritative_acquisition_batch_ids_D15_primary": 3,
+          "authoritative_acquisition_batch_ids_full": 21,
+          "authoritative_acquisition_batches_spanning_multiple_conditions_D15_primary": 3,
+          "authoritative_acquisition_batches_spanning_multiple_conditions_full": 12,
+          "biological_plate_id_available": false,
+          "causal_treatment_claim_allowed": false,
+          "legacy_rhaxiscc_filename_regex_plate_claim_reused": false,
+          "plate_treatment_confounding_status": "not_identifiable_from_authoritative_metadata; acquisition batch is not a biological plate and must not be relabelled as one",
+          "six_group_genotype_effect_estimable": false,
+          "six_group_reason": "WT and RHD6 constructs occupy different experiment/study-role strata; six-group comparisons are descriptive only"
+        },
+        "equivalent": true
+      },
+      "output_table_sha256": {
+        "baseline": {
+          "clean_full_comparison": "b29872b3a1e4a70f6d74c93a239067ec7a6e755c161bcd72595a7587440902e1",
+          "group_summaries": "7d74131e283442ec4c32ad9a23b11ade2c7642c54993728a319bde6d05bfc9ce",
+          "model_qc_flow": "24f24eb6327c98c78e888c9bec25fd02cf5cffc61f94a739ec235d9e5fe25baf",
+          "primary_tests": "a0f4b130f42207c0d0a8cb4c5ac36656f7cce316cae4255ca625ad5cdd9b0398",
+          "robust_sensitivity": "4e4fdd2a92bdca6280ca7806783efe65127dffb4273b8b15ab84bb31adacfd61",
+          "sensitivity_tests": "a94eff8c162a9fac76ceb7ef5e8bbff6e8efb9118019fa045cb696e0267ffec0"
+        },
+        "candidate": {
+          "clean_full_comparison": "b29872b3a1e4a70f6d74c93a239067ec7a6e755c161bcd72595a7587440902e1",
+          "group_summaries": "7d74131e283442ec4c32ad9a23b11ade2c7642c54993728a319bde6d05bfc9ce",
+          "model_qc_flow": "24f24eb6327c98c78e888c9bec25fd02cf5cffc61f94a739ec235d9e5fe25baf",
+          "primary_tests": "a0f4b130f42207c0d0a8cb4c5ac36656f7cce316cae4255ca625ad5cdd9b0398",
+          "robust_sensitivity": "4e4fdd2a92bdca6280ca7806783efe65127dffb4273b8b15ab84bb31adacfd61",
+          "sensitivity_tests": "a94eff8c162a9fac76ceb7ef5e8bbff6e8efb9118019fa045cb696e0267ffec0"
+        },
+        "equivalent": true
+      },
+      "primary_cohort": {
+        "baseline": "primary_clean261",
+        "candidate": "primary_clean261",
+        "equivalent": true
+      },
+      "primary_model_BH_FDR_rejections": {
+        "baseline": 9,
+        "candidate": 9,
+        "equivalent": true
+      },
+      "primary_result_rows": {
+        "baseline": 15,
+        "candidate": 15,
+        "equivalent": true
+      },
+      "primary_scope_units": {
+        "baseline": 47,
+        "candidate": 47,
+        "equivalent": true
+      },
+      "root_cap_region_statistics_included": {
+        "baseline": false,
+        "candidate": false,
+        "equivalent": true
+      },
+      "same_direction_clean_vs_full_rows": {
+        "baseline": 14,
+        "candidate": 14,
+        "equivalent": true
+      },
+      "schema_version": {
+        "baseline": "PHAxis-exploratory-biological-analysis-1.0",
+        "candidate": "PHAxis-exploratory-biological-analysis-1.0",
+        "equivalent": true
+      },
+      "sensitivity_cohort": {
+        "baseline": "sensitivity_full283",
+        "candidate": "sensitivity_full283",
+        "equivalent": true
+      },
+      "sensitivity_result_rows": {
+        "baseline": 15,
+        "candidate": 15,
+        "equivalent": true
+      },
+      "sensitivity_scope_units": {
+        "baseline": 61,
+        "candidate": 61,
+        "equivalent": true
+      },
+      "status": {
+        "baseline": "completed_exploratory_clean_primary_full_sensitivity",
+        "candidate": "completed_exploratory_clean_primary_full_sensitivity",
+        "equivalent": true
+      },
+      "whole_hair_zone_confirmatory_traits_included": {
+        "baseline": false,
+        "candidate": false,
+        "equivalent": true
+      }
+    }
+  },
+  "tables": {
+    "clean_vs_full_effect_stability.csv": {
+      "baseline_path": "project:outputs/phaxis_v1_0_biological_analysis_run1_final/tables/clean_vs_full_effect_stability.csv",
+      "baseline_rows": 15,
+      "baseline_sha256": "b29872b3a1e4a70f6d74c93a239067ec7a6e755c161bcd72595a7587440902e1",
+      "byte_identical": true,
+      "candidate_path": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828/tables/clean_vs_full_effect_stability.csv",
+      "candidate_rows": 15,
+      "candidate_sha256": "b29872b3a1e4a70f6d74c93a239067ec7a6e755c161bcd72595a7587440902e1",
+      "columns": {
+        "ci95_high_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "ci95_high_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "ci95_low_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "ci95_low_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "clean_minus_full_log_effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "estimate_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "estimate_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "interpretation": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "model_component": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "n_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "n_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane_BH_FDR_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane_BH_FDR_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model_BH_FDR_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model_BH_FDR_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model_clean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "same_direction_clean_vs_full": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        }
+      },
+      "columns_exact": true,
+      "differing_cells": 0,
+      "equivalent": true,
+      "row_count_exact": true
+    },
+    "full283_sensitivity_factorial_tests.csv": {
+      "baseline_path": "project:outputs/phaxis_v1_0_biological_analysis_run1_final/tables/full283_sensitivity_factorial_tests.csv",
+      "baseline_rows": 15,
+      "baseline_sha256": "a94eff8c162a9fac76ceb7ef5e8bbff6e8efb9118019fa045cb696e0267ffec0",
+      "byte_identical": true,
+      "candidate_path": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828/tables/full283_sensitivity_factorial_tests.csv",
+      "candidate_rows": 15,
+      "candidate_sha256": "a94eff8c162a9fac76ceb7ef5e8bbff6e8efb9118019fa045cb696e0267ffec0",
+      "columns": {
+        "bootstrap_ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "bootstrap_ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "causal_treatment_claim_allowed": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "cohort": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "cohort_role": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "effect_scale": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint_label": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "estimate": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "freedman_lane_null": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "inference_status": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "model": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "model_component": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "n": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nb2_alpha": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane_BH_FDR": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model_BH_FDR": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "poisson_fallback_max_dispersion_locked": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "poisson_fallback_used": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "poisson_pearson_dispersion_diagnostic": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "raw_effect_ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "raw_effect_ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "raw_effect_estimate": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "reject_model_BH_FDR_0p05": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "standardized_ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "standardized_ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "standardized_effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        }
+      },
+      "columns_exact": true,
+      "differing_cells": 0,
+      "equivalent": true,
+      "row_count_exact": true
+    },
+    "primary_clean_exploratory_factorial_tests.csv": {
+      "baseline_path": "project:outputs/phaxis_v1_0_biological_analysis_run1_final/tables/primary_clean_exploratory_factorial_tests.csv",
+      "baseline_rows": 15,
+      "baseline_sha256": "a0f4b130f42207c0d0a8cb4c5ac36656f7cce316cae4255ca625ad5cdd9b0398",
+      "byte_identical": true,
+      "candidate_path": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828/tables/primary_clean_exploratory_factorial_tests.csv",
+      "candidate_rows": 15,
+      "candidate_sha256": "a0f4b130f42207c0d0a8cb4c5ac36656f7cce316cae4255ca625ad5cdd9b0398",
+      "columns": {
+        "bootstrap_ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "bootstrap_ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "causal_treatment_claim_allowed": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "cohort": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "cohort_role": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "effect_scale": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint_label": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "estimate": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "freedman_lane_null": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "inference_status": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "model": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "model_component": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "n": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "nb2_alpha": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_freedman_lane_BH_FDR": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "p_value_model_BH_FDR": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "poisson_fallback_max_dispersion_locked": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "poisson_fallback_used": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "poisson_pearson_dispersion_diagnostic": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "raw_effect_ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "raw_effect_ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "raw_effect_estimate": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "reject_model_BH_FDR_0p05": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "standardized_ci95_high": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "standardized_ci95_low": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "standardized_effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        }
+      },
+      "columns_exact": true,
+      "differing_cells": 0,
+      "equivalent": true,
+      "row_count_exact": true
+    },
+    "primary_group_summaries.csv": {
+      "baseline_path": "project:outputs/phaxis_v1_0_biological_analysis_run1_final/tables/primary_group_summaries.csv",
+      "baseline_rows": 40,
+      "baseline_sha256": "7d74131e283442ec4c32ad9a23b11ade2c7642c54993728a319bde6d05bfc9ce",
+      "byte_identical": true,
+      "candidate_path": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828/tables/primary_group_summaries.csv",
+      "candidate_rows": 40,
+      "candidate_sha256": "7d74131e283442ec4c32ad9a23b11ade2c7642c54993728a319bde6d05bfc9ce",
+      "columns": {
+        "condition_code": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint_label": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "experiment_key": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "genotype_or_construct": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "maximum": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "mean": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "median": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "minimum": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "n_missing": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "n_nonmissing": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "n_total": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "q25": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "q75": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "scope": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "sd": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "temperature_c": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        }
+      },
+      "columns_exact": true,
+      "differing_cells": 0,
+      "equivalent": true,
+      "row_count_exact": true
+    },
+    "primary_model_qc_flow.csv": {
+      "baseline_path": "project:outputs/phaxis_v1_0_biological_analysis_run1_final/tables/primary_model_qc_flow.csv",
+      "baseline_rows": 12,
+      "baseline_sha256": "24f24eb6327c98c78e888c9bec25fd02cf5cffc61f94a739ec235d9e5fe25baf",
+      "byte_identical": true,
+      "candidate_path": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828/tables/primary_model_qc_flow.csv",
+      "candidate_rows": 12,
+      "candidate_sha256": "24f24eb6327c98c78e888c9bec25fd02cf5cffc61f94a739ec235d9e5fe25baf",
+      "columns": {
+        "cohort": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "condition_code": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "formal_statistics_eligible": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "units": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        }
+      },
+      "columns_exact": true,
+      "differing_cells": 0,
+      "equivalent": true,
+      "row_count_exact": true
+    },
+    "robust_sensitivity.csv": {
+      "baseline_path": "project:outputs/phaxis_v1_0_biological_analysis_run1_final/tables/robust_sensitivity.csv",
+      "baseline_rows": 30,
+      "baseline_sha256": "4e4fdd2a92bdca6280ca7806783efe65127dffb4273b8b15ab84bb31adacfd61",
+      "byte_identical": true,
+      "candidate_path": "project:outputs/phaxis_biological_analysis_native_modelspec_candidate_20260828/tables/robust_sensitivity.csv",
+      "candidate_rows": 30,
+      "candidate_sha256": "4e4fdd2a92bdca6280ca7806783efe65127dffb4273b8b15ab84bb31adacfd61",
+      "columns": {
+        "analysis_scale": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "cohort": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "effect": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "endpoint": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "huber_coefficient": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "huber_same_direction": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "leave_one_out_all_same_direction": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "leave_one_out_max": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "leave_one_out_min": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "leave_one_out_same_direction_fraction": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "model_component": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "exact"
+        },
+        "n": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        },
+        "ols_coefficient": {
+          "differing_cells": 0,
+          "equivalent": true,
+          "kind": "numeric",
+          "max_absolute_difference": 0.0,
+          "max_relative_difference": 0.0
+        }
+      },
+      "columns_exact": true,
+      "differing_cells": 0,
+      "equivalent": true,
+      "row_count_exact": true
+    }
+  },
+  "tables_byte_identical": true,
+  "tables_equivalent": true,
+  "total_differing_cells": 0
+}
