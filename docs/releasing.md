@@ -1,11 +1,20 @@
-# Local release preparation
+# Release status and local preparation
 
-**Update, 2026-09-05:** the owner has now authorized public GitHub source upload.
-See [current source status](https://github.com/707728642li/PHAxis/blob/main/GITHUB_SOURCE_STATUS.md). The following describes
-the preceding local preparation; PyPI, model assets and formal releases remain
-outside this upload authorization.
+**Update, 2026-09-05:** the owner authorized public GitHub source upload, followed
+by model weights, original images and annotations. See
+[current source status](https://github.com/707728642li/PHAxis/blob/main/GITHUB_SOURCE_STATUS.md)
+and [research assets](research-assets.md). CPU/package/container and documentation
+CI passed for source commit `466b149319b47ca9c207fb6beb3ddb5c7507e26c`.
+PyPI publication and a stable software release remain separate steps.
 
-No upload is authorized. This tree is a local candidate and does not replace the formal release-authority registry. The sealed builder baseline is kept outside this candidate; SOURCE_MANIFEST.json from that baseline must not be reused to certify these added docs/UX files. LOCAL_SOURCE_MANIFEST.json is the separate local-candidate inventory.
+## Historical local preparation
+
+The preceding local preparation was completed without upload authorization.
+This successor source preview does not replace the formal release-authority
+registry. The sealed builder baseline is kept outside this candidate;
+SOURCE_MANIFEST.json from that baseline must not be reused to certify these
+added docs/UX files. LOCAL_SOURCE_MANIFEST.json inventories the historical local
+candidate; GITHUB_SOURCE_MANIFEST.json inventories the current public source.
 
 Prepared here: source, wheel, sdist, synthetic demo, offline report, documentation, CPU tests, containers, workflow example and disabled/manual-only public publishing templates. No Bioconda artifacts are created.
 

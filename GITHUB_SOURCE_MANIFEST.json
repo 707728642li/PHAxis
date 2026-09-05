@@ -441,8 +441,13 @@
     },
     {
       "path": "docs/releasing.md",
-      "bytes": 1844,
-      "sha256": "d66148f9165ec155ecbda689a5605043b99ecbff55e76cc6be35523b78e75244"
+      "bytes": 2140,
+      "sha256": "eb7fbd0caa1c0a381c86bfa597cded43f978679fd51cd14295cb726992b6ff9b"
+    },
+    {
+      "path": "docs/research-assets.md",
+      "bytes": 3379,
+      "sha256": "37765094eca8af652585cc253c35e6e5779a6b7d49dee021f54f7a213d9cbbc4"
     },
     {
       "path": "docs/STANDARDS_MATRIX_CN.md",
@@ -511,8 +516,8 @@
     },
     {
       "path": "mkdocs.yml",
-      "bytes": 630,
-      "sha256": "99965cb8e117513d27aa20d6b872de7f3c477215a5c21b5d759ffdfe4a656755"
+      "bytes": 670,
+      "sha256": "5849c6a78cd6fa2b2744e8b2dc0a90ba59c0443cedf8df5cdea6a1b0e55d105d"
     },
     {
       "path": "MODEL_CARD.md",
@@ -536,13 +541,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4317,
-      "sha256": "cb315f81d76ec9beb906abffe740592ae1279939c7a2e39770617e8aa891e257"
+      "bytes": 4899,
+      "sha256": "bcae2fb4d6dc22d3c5ecffb475085183c404dff9326cb34be28cac01b535c2f5"
     },
     {
       "path": "README_CN.md",
-      "bytes": 967,
-      "sha256": "cc93c3e888a8367373698acf049cdadbaccbd8a8e7fab6ec6b22706c5eec7738"
+      "bytes": 1779,
+      "sha256": "b12fa7c0a3a4d0f227bfcd304ec4075eba8c356717e6f874ed3bd8c3567937fd"
     },
     {
       "path": "RELEASE_HUMAN_METADATA_TEMPLATE.json",

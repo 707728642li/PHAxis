@@ -31,6 +31,10 @@ phaxis demo --output demo-results
 
 Open `demo-results/report.html`. The deterministic, CPU-only demo runs the real fusion and trait exporter on generated geometry: **2 visible hair identities**, separately linked complete lengths, and a second zero-hair case in the regression tests. It downloads nothing and needs no microscopy images, model weights or GPU. It is an installation/numerical test, not model-accuracy evidence.
 
+## Models and microscopy data
+
+The [research asset preview](https://github.com/707728642li/PHAxis/releases/tag/assets-v1.0.0-preview) provides five selected root-hair checkpoints, the primary-root model bundle, 443 HumanCurated original images with raw annotations, and 283 application images. The two image collections share 22 image hashes. Large files are release downloads, not part of a Git clone. See [contents, verification and extraction](docs/research-assets.md) and the asset-specific rights notice before use.
+
 ## Analyze microscopy images
 
 Install `deployment` dependencies into a separate environment and obtain the separately licensed model capsule. The capsule must carry the exact five selected checkpoints, primary-root provider, calibration and sealed workflow manifest.
@@ -64,4 +68,4 @@ The archive includes input/output contracts, portable CPU tests, numerical fixtu
 
 ## Citation and license
 
-Apache-2.0 source; bundled Tomli is MIT. See [third-party notices](THIRD_PARTY_NOTICES.md). `CITATION.cff` currently uses the existing collective contributor entry. Named authors, public URLs and DOI require owner confirmation before publication; none have been invented.
+Apache-2.0 source; bundled Tomli is MIT. See [third-party notices](THIRD_PARTY_NOTICES.md). `CITATION.cff` currently uses the existing collective contributor entry. Named scholarly authors and DOI still require owner confirmation; none have been invented. Model and microscopy assets have a separate rights notice in their release.

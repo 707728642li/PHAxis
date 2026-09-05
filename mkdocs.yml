@@ -12,6 +12,7 @@ nav:
   - Output contract: outputs.md
   - CLI: cli.md
   - Methods: methods.md
+  - Research assets: research-assets.md
   - Troubleshooting: faq.md
   - Release preparation: releasing.md
   - Changelog: changelog.md
