@@ -1,7 +1,7 @@
 # Local release preparation
 
 **Update, 2026-09-05:** the owner has now authorized public GitHub source upload.
-See [current source status](../GITHUB_SOURCE_STATUS.md). The following describes
+See [current source status](https://github.com/707728642li/PHAxis/blob/main/GITHUB_SOURCE_STATUS.md). The following describes
 the preceding local preparation; PyPI, model assets and formal releases remain
 outside this upload authorization.
 
