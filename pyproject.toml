@@ -82,7 +82,7 @@ test = [
 build = ["build>=1.2,<2", "twine>=6,<7"]
 
 docs = ["mkdocs-material>=9.5,<10"]
-dev = ["pytest>=8,<10", "ruff>=0.12,<1", "mypy>=1.15,<2", "pip-audit>=2.9,<3"]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1", "mypy>=1.15,<3", "pip-audit>=2.9,<3"]
 
 [project.scripts]
 phaxis = "phaxis.cli:main"
