@@ -23,7 +23,7 @@ classifiers = [
 ]
 dependencies = [
   "numpy>=1.26,<3",
-  "packaging>=24,<26",
+  "packaging>=24,<27",
   "scipy>=1.11,<2",
 ]
 
